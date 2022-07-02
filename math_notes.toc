@@ -20,4 +20,5 @@
 \contentsline {section}{\numberline {IV.1}Intuition of Measure}{13}{section.IV.section.IV.1}%
 \contentsline {section}{\numberline {IV.2}Formal Notion of Measure}{15}{section.IV.section.IV.2}%
 \contentsline {paragraph}{($\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$)}{16}{paragraph*.10}%
+\contentsline {paragraph}{}{18}{paragraph*.11}%
 \contentsfinish 

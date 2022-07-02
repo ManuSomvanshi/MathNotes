@@ -1,10 +1,10 @@
 # Fdb version 3
-["makeindex math_notes.idx"] 1656610376 "math_notes.idx" "math_notes.ind" "math_notes" 1656780279
+["makeindex math_notes.idx"] 1656610376 "math_notes.idx" "math_notes.ind" "math_notes" 1656797756
   "math_notes.idx" 0 -1 0 "pdflatex"
   (generated)
   "math_notes.ilg"
   "math_notes.ind"
-["pdflatex"] 1656780274 "math_notes.tex" "math_notes.pdf" "math_notes" 1656780279
+["pdflatex"] 1656797752 "math_notes.tex" "math_notes.pdf" "math_notes" 1656797756
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1650183167 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc" 1650179560 3136 aac2e2476de8af6c827239df395814ee ""
   "/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1650179560 2914 8283dfc24eaf1964346f843d7605c2b0 ""
@@ -314,12 +314,12 @@
   "basics/functions.tex" 1656612815 14434 5ce4182c2f32096849862d7894b83aef ""
   "basics/relations.tex" 1655741834 2718 8ee07f2bb7423a601c89fbeb1710cfa3 ""
   "basics/sets.tex" 1656612900 1760 a50779b874123f8dd4fc84fd548c3cad ""
-  "math_notes.aux" 1656780278 7000 2b015cd87e459b7ecd1ffa5209845f32 "pdflatex"
+  "math_notes.aux" 1656797756 7440 61e51364bd78f2ff565d8e6266462f64 "pdflatex"
   "math_notes.ind" 0 -1 0 "makeindex math_notes.idx"
-  "math_notes.mst" 1656780275 223 b8e66a4aaa0f29d90b9c1dae7c1aa92e "pdflatex"
+  "math_notes.mst" 1656797752 223 b8e66a4aaa0f29d90b9c1dae7c1aa92e "pdflatex"
   "math_notes.tex" 1656742280 2694 56d16521b3cb96b3338331f7b50e8fab ""
-  "math_notes.toc" 1656780278 1477 b73d89a2a4c47ee443d1b62a6d1df4b1 "pdflatex"
-  "measure_theory/formal_def.tex" 1656780274 10445 010f33d03ad5a3cf26c409d4f88ffcdd ""
+  "math_notes.toc" 1656797756 1525 633d36da57889f4b8737ab1c3733aab9 "pdflatex"
+  "measure_theory/formal_def.tex" 1656797750 13087 dfcd2d094cbc423e85acf24d98a6a012 ""
   "measure_theory/intuition.tex" 1656774500 4880 a1350fc55b797688b5661d7dcbda9b3c ""
   (generated)
   "math_notes.aux"
