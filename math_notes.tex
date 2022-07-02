@@ -1,0 +1,84 @@
+\documentclass[11pt,a4paper]{colorart}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{latexsym}
+\usepackage{amsfonts,amssymb}
+\usepackage{psfrag}
+\usepackage{ulem}
+\usepackage{textcomp}
+\usepackage{color}
+\usepackage{physics}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{tikz-cd}
+\usepackage{hyperref}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\nn{\nonumber} 
+\def\pa{{\partial}}
+\def\f{\frac}
+\def\l{\left}
+\def\r{\right}
+\def\d{{\rm d}}
+\def\es{\emptyset}
+\def\R{\mathbb{R}}
+\def\C{\mathbb{C}}
+\def\N{\mathbb{N}}
+\def\Z{\mathbb{Z}}
+\def\e{\epsilon}
+\def\ms{\mathscr}
+\def\mb{\mathbb}
+\numberwithin{equation}{section}
+\makeatletter
+\def\bign#1{\mathclose{\hbox{$\left#1\vbox to8.5\p@{}\right.\n@space$}}\mathopen{}}
+\@addtoreset{section}{part}
+\makeatother
+\allowdisplaybreaks
+\renewcommand*\thesection{\thepart.\arabic{section}}
+%------
+%---tikz environment---
+\usetikzlibrary{arrows}
+%-------
+%---hyperref---
+\renewcommand{\theHsection}{\thepart.section.\thesection}
+%---------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\Huge Notes on Mathematics}
+\author{Manvendra Somvanshi} 
+\date{Updated on: \today} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\maketitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+\newpage
+\part{Basics}
+%------------------SET THEORY-----------------------------------------------------------
+\input{basics/sets.tex}
+%---------------------RELATIONS---------------------------------------------------------
+\input{basics/relations.tex}
+%-------------------FUNCTIONS-----------------------------------------------------------
+\input{basics/functions.tex}
+%-------------------CATEGORIES-----------------------------------------------------------
+\input{basics/category.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\part{Abstract Algebra}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\part{Topology}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\part{Measure Theory}
+%-------------------INTUITION OF MEASURE------------------------------------------------
+\input{measure_theory/intuition.tex}
+%-------------------FORMAL DEFINITION---------------------------------------------------
+\input{measure_theory/formal_def.tex}
+\end{document}

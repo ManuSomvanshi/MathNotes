@@ -1,0 +1,205 @@
+\section{Functions}
+\begin{definition}
+A rule of assignment is a subset $r$ of the cartesian product $C\times D$ of two sets, having the property that each element of $C$ appears as the first ordinate of at most one ordered pair in $r$.
+\end{definition}
+From this definition one can easily conclude that, if $r\subset C\times D$ and $(c,d), (c,d')\in r$ then $d=d'$. One can think of $r$ as assigning an element $c\in C$, the element $d\in D$. The set $C$ is called the domain of $r$ and $D$ is called the image set.
+\begin{definition}
+  A function $f$ is a rule of assignment $r$, along with a set $B$ which contains the image set of $r$. The domain of $r$ is also the domain of $f$. The set $B$ is called the range.
+\end{definition}
+A function having a domain $A$ and range $B$ is written as $f:A\to B$. Given an element $a\in A$, $f(a)$ denotes a unique element in $B$, hence $(a,f(a))\in r$.
+\begin{definition}
+  Given a function $f:A\to B$ and a subset $A_0 \subset A$, then a restriction of $f$ to $A_0$ is the mapping $f|A_0:A_0\to B$ with rule:
+  \[\{(a,f(a))|a\in A_0\}\]
+\end{definition}
+\begin{definition}
+    Given functions $f:A\to B$ and $g:B\to C$, the composite function is defined as $g\circ f:A\to C$, such that $g\circ f(a) = g(f(a))$. More formally, the rule of the function $g\circ f: A \to C$ is:
+    \[\{(a,c)| \forall b\in B,\quad f(a)=b \qq{and} g(b)=c\}\]
+\end{definition}
+\begin{definition}
+  A function $f:A \to B$ is said to be injective if,
+  \[f(a)=f(a') \implies a=a'.\]
+  The function is called surjective if for each $b\in B$ there exists an $a\in A$ such that $b = f(a)$. If $f$ is both injective and surjective it is said to be bijective.
+\end{definition}
+\begin{proposition}\label{pro:2.1}
+  For each bijective function $f:A\to B$, there exists a unique function, called the inverse function, $f^{-1}:B\to A$ such that $f\circ f^{-1}$ and $f^{-1}\circ f$ are both identity functions.  
+\end{proposition}
+\begin{proof}
+  Since $f$ is bijective for every $a\in A$ there exists a unique $b\in B$ (from injection), and for every $b\in B$ also there exists an $a\in A$ (from surjectivity). This implies that every $b\in B$ has a unique pre-image in $A$. Denote this pre-image by $f^{-1}(b)$. The rule of the inverse function is given by:
+  \[\{(b, f^{-1}(b))|\forall b \in B\}\]
+  This proves the existence of inverse. Using the definition of composite function, the rule of the composite function $f\circ f^{-1}$ will be:
+  \[\{(b,b)|\forall b\in B\}.\]
+  Hence the composite is the identity function. Similarly the composite function $f^{-1}\circ f$ is also identity.
+  \paragraph{} For proving the uniqueness, consider there exist two inverse functions, $f^{-1}$ and $\tilde{f}^{-1}$, of $f$. Hence,
+  \[f(f^{-1}(b)) = b,\]
+  \[\implies \tilde{f}^{-1}(f(f^{-1}(b))) = \tilde{f}^{-1}(b),\]
+  But since $\tilde{f}^{-1}(f(a)) = a$,
+  \[f^{-1}(b) = \tilde{f}^{-1}(b) \qq{$\forall b\in B$}\]
+Hence the inverse is unique.
+\end{proof}
+\begin{proposition}
+  The inverse of a bijective function $f:A\to B$ is also bijective.
+\end{proposition}
+\begin{proof}
+  Let the inverse be $f^{-1}$. Let $b,b'\in B$ such that
+  \[f^{-1}(b) = f^{-1}(b')\]
+  \[\implies f(f^{-1}(b)) = f(f^{-1}(b'))\]
+  \[\implies b = b'\]
+  This shows that $f^{-1}$ is injective. For proof of surjectivity, we can show that for each $a\in A$ there exists a $b(=f(a))\in B$ such that $a = f^{-1}(b)$. This shows that $f^{-1}$ is also bijective.
+\end{proof}
+\begin{proposition}
+  Let $f:A\to B$. If there are functions $g:B\to A$ and $h:B\to A$ such that $g(f(a))=a$ $\forall a \in A$ and $f(h(b)) = b$ $\forall b\in B$, then $f$ is bijective and $g=h=f^{-1}$. 
+  \label{pro:2.2}
+\end{proposition}
+\begin{proof}
+  Let $a,a'\in A$, such that
+  \[f(a) = f(a')\]
+  Using the function $g$,
+  \[g(f(a)) = g(f(a')),\]
+  \[\implies a = a'\]
+  hence $f$ is an injective function. Now coming to surjectivity. Using the existance of $h$, we can show that for each $b\in B$ there exists $a (= h(b))\in A$ such that $b = f(a)$. Hence $f$ is a bijective function. For the final part of the proposition, since,
+  \[f(h(b)) = b,\]
+  \[\implies g(f(h(b))) = g(b),\]
+  \[\implies h(b) = g(b) \qq{$\forall b\in B$}.\]
+  And since the inverse is unique, they must also be equal to $f^{-1}$.
+\end{proof}
+When there exists a bijection $f:A\to B$ then $A$ and $B$ are called \textit{isomorphic}. This is sometimes represented as $A\simeq B$. Using the concept of isomorphism the notion of disjoint union can be made more rigourous.
+\begin{definition}
+  The disjoint union of two sets $A$ and $B$ is detemined by constructing sets $A'\simeq A$ and $B' \simeq B$ such that $A'\cup B' = \emptyset$, and then determining the union $A'\cup B'$. Such sets can always be constructed for every set since $\{0\}\times A \simeq A$ and $\{1\}\times B \simeq B$ and $\l(\{0\}\times A\r)\cap \l(\{1\}\times B\r) = \emptyset$.
+\end{definition}
+A less restrictive notion of invertibility is defined in terms of \textit{left-invertible} and \textit{right-invertible} functions. If for a function $f:A\to B$ there exists a $g:B\to A$ such that $g\circ f:A \to A$ is $id_A$ then $f$ is said to be left invertible. Similarly if there exists $h:B\to A$ such that $f\circ h:B\to B$ is $id_B$ then $f$ is called right invertible. The following is more general statement to proposition \ref{pro:2.2}.
+\begin{proposition}
+  Let $f:A\to B$ be a function then:
+  \begin{enumerate}
+    \item $f$ is injective if and only if it is left invertible.
+    \item $f$ is surjective if and only if it is right invertible.
+  \end{enumerate}
+\end{proposition}
+\begin{proof}
+  For statement 1, the foward implication follows from the fact that if $f$ injective then on can construct a $g:B\to A$ as follows: let $p\in B$ be a fixed point and
+  \begin{align}
+    g(b) = \begin{cases}
+             a,\ \text{where $f(a)=b$}\\
+             p,\ \text{when $b$ not in image of A.}
+           \end{cases}
+  \end{align}
+  Clearly the function $g\circ f(a) = id_A(a) = a$. The backward implication for statement 1, is true because if a $g$ exists such that:
+  \[g\circ f(a) = a\ \forall\ a\in A\]
+  then,
+  \[g\circ f(a) = a \neq a' = g\circ f(a') \implies f(a) \neq f(a')\]
+  which is the contrapositive of the statement required to prove.
+  \paragraph{} Statement 2 can be proven in a similar way. Assuming that $f$ is surjective, it follows that for each $b$ there is atleast one $a\in A$ such that $f(a) = b$. Choosing anyone of these $a$ for each $b$ we can construct the map $h:B\to A$, $h(b) = a$. Hence it follows that $f\circ h(b) = f(a) = b = id_B(b)$. For the backward implication, assuming that there is an $h:B\to A$ such that $\forall\ b\in B$, $f\circ h(b) = id_B(b) = b$. Since $h(b) = a$ for some $a\in A$, it follows $f(a) = b$ for some $a\in A$. Hence $f$ is surjective.
+\end{proof}
+\paragraph{} There is another way to look at bijective functions using the concept of monomorphisms and epimorphisms. This is a more fundamental and equivalent approach to defining bijections.
+\begin{definition}
+  A function $f:A\to B$ is said to be a monomorphism if the following holds:
+  \[\forall\ Z,\ \forall\ \alpha', \alpha'':Z\to A,\ f\circ \alpha' = f\circ \alpha'' \implies \alpha' = \alpha''\]
+\end{definition}
+\begin{proposition}
+  A function $f:A\to B$ is a monomorphism if and only if it is injective.
+\end{proposition}
+\begin{proof}
+    Consider first the forward implication. Assuming $f$ is a monomorphism, we know that for all sets $Z$ and $\alpha', \alpha'':Z\to A$,
+    \[f\circ\alpha' = f\circ\alpha'' \implies \alpha' = \alpha''\]
+    if $\alpha'(z) = a$ and $\alpha''(z) = a'$ then the above condition reduces to,
+    \[f(a) = f(a') \implies a = a'\]
+    Hence $f$ is injective.\\
+
+    For the backward implication we assume that $f$ is an injective function. Then we know that $f$ is left-invertible, with inverse $g$. If,
+    \begin{align*}
+      f\circ\alpha'&=f\circ\alpha''\\
+      \implies g\circ f\circ\alpha'&=g\circ f\circ\alpha''\\
+      \implies \alpha' &= \alpha''
+    \end{align*}
+\end{proof}
+\begin{definition}
+  A function $f:A\to B$ is said to be an epimorphism if,
+  \[\forall\ Z,\ \forall\ \beta',\beta'':B\to Z,\ \beta'\circ f = \beta''\circ f \implies \beta' = \beta''\]
+\end{definition}
+\begin{proposition}
+  A function $f:A\to B$ is an epimorphism if and only if it is surjective.
+\end{proposition}
+\begin{proof}
+  Let's first consider the forward implication:
+  \[(\forall\ Z,\ \beta',\beta'':B\to Z\ \beta'\circ f = \beta''\circ f \implies \beta'=\beta'') \implies (\forall\ b\in B\ \exists\ a\in A\ \text{such that}\ b=f(a))\]
+  The contraposition of this statment is:
+  \[(\exists\ b\in B,\ \forall\ a\in A,\ b\neq f(a)) \implies (\exists Z,\ \beta',\beta'':B\to Z\ \text{such that}\ \beta'\neq\beta'' \And \beta'\circ f = \beta''\circ f )\]
+  Assuming there exists $b\in B$ such that $b$ is not in the image of $f$, let $Z = \{0,1\}$, $\beta'(b) = 0,\ \forall\ b\in B$, and
+  \begin{align*}
+    \beta''(b) = \begin{cases}
+      0,\ \text{if $b$ is in image of $f$}\\
+      1,\ \text{if $b$ is not in image of $f$}
+    \end{cases}
+  \end{align*}
+  Clearly $\beta' \neq \beta''$ but we have $\beta'\circ f = \beta''\circ f$. Hence the contrapositive is true, therefore proving the forward implication.\\
+
+  For the backward implication, assuming the funciton is surjective we also know that it would be right invertible. Let $h$ be the right inverse then, 
+  \begin{align*}
+    \beta'\circ f &= \beta''\circ f\\
+    \implies \beta'\circ f\circ h &= \beta'' \circ f \circ h\\
+    \implies \beta' &= \beta''
+  \end{align*}
+  Hence completing the proof. 
+\end{proof}
+\paragraph{Diagrams.} Diagrams are graphical representations of a collection of sets and how they are operated on by functions. A diagram is said to be \textit{commutative} if taking different paths between sets result in the same function. For example if $f:A\to B$ and $g:B\to C$, then here is a commutative diagram of $A,B,C$:
+\[
+  \begin{tikzcd}[sep=huge]
+    A \arrow{r}{f} \arrow[swap]{dr}{g\circ f} & B \arrow{d}{g}\\ & C 
+  \end{tikzcd}
+\]
+For injective functions a $\hookrightarrow$ is used, for surjective functions $\twoheadrightarrow$ is used, and isomorphisms are represented by $\tilde{\rightarrow}$.
+\paragraph{Canonical Decomposition.} Let $f:A \to B$ be a function on $A$. Define the equivalence relation $\sim$ on $A$ as $a\sim a'$ iff $f(a) = f(a')$. A surjection $g:A\twoheadrightarrow A\bign/\sim$ can be defined as $g(a) = [a]_{\sim}$. Also it is possible to find an injection $h:\text{im}f \hookrightarrow B$, given by $h(b) = b$. Hence we have a diagram:
+\[
+  \begin{tikzcd}[sep=huge]
+    A \arrow{r}{f}  \arrow[two heads, swap]{d}{g} & B \\  A\bign/\sim & \text{im}f \arrow[hook, swap]{u}{h}
+  \end{tikzcd}
+\]
+If we can find an isomorphism $i:A\bign/\sim \tilde{\rightarrow} \text{im}f$ then the above diagram will commute. Consider the following proposition:
+\begin{proposition}
+  The function $i:A\bign/\sim \to \text{im}f$ given by $i([a]_\sim) = f(a)$ is an isomorphism.
+\end{proposition}
+\begin{proof}
+  First we must check if $i$ is a function. Let $[a]_\sim,[a']_\sim\in A\bign/\sim$ then, $[a]= [a'] \implies f(a) = f(a') \implies i([a]_\sim) = i([a']_\sim)$. This means for each $[a]_\sim$ there is a unique image. 
+  \paragraph{Injective.} If $i([a]_\sim) = i([a']_\sim)$ then $f(a)=f(a')$ by definition of $i$. Further it implies that $a\sim a'$ by definition of the equivalence relation. Hence $a$ and $a'$ are in the same equivalence class, or $[a]_\sim = [a']_\sim$. 
+  \paragraph{Surjective.} Let $b\in\text{im}f$. Then there exists an $a\in A$ such that $f(a) = b$. Hence there exists $[a]_\sim$ such that $b = i([a]_\sim)$.
+\end{proof}
+As a result of this proposition we have shown that any funciton $f$ can be decomposed according to the commutative diagram:
+\[
+  \begin{tikzcd}[sep=huge]
+    A \arrow{r}{f}  \arrow[two heads, swap]{d}{g} & B \\  A\bign/\sim \arrow[swap]{r}{i}[swap]{\sim} & \text{im}f \arrow[hook, swap]{u}{h}
+  \end{tikzcd}
+\]
+This shows that any function can be written as a composition of injections, surjections, and isomorphisms. This decomposition is called the canonical decompositions. 
+\begin{definition}
+  Let $f:A\to B$ be a function, and $A_0 \subset A$. Then define,
+  \[f(A_0) = \{b\ |\ b = f(a), \ a\in A_0 \},\]
+  and
+  \[f^{-1}(B_0) = \{a\ |\ f(a)\in B_0\}.\]
+\end{definition}
+Note that this definition is for all functions, not just bijective functions.
+\begin{proposition}
+  Let $f:A\to B$ be a function, and let $A_0 \subset A$, $B_0 \subset B$ then,
+    \[A_0 \subset f^{-1}(f(A_0)) \qq{and} f(f^{-1}(B_0)) \subset B_0\]
+\end{proposition}
+\begin{proof}
+  For the first statement, let $a\in A_0$. Then $f(a) \in f(A_0)$. Which further implies, by definition, that $a \in f^{-1}(f(A_0))$. Hence,
+  \[\implies A_0 \subset f^{-1}(f(A_0)) \]
+  For the second part of the proposition, let $b \in f(f^{-1}(B_0))$. This means that there exists $a\in f^{-1}(B_0)$ such that $b = f(a)$. Since $a \in f^{-1}(B_0)$, again by definition, $f(a) \in B_0$. Hence $b \in B_0$. Since this is true for any $b\in f(f^{-1}(B_0))$, we conclude that $f(f^{-1}(B_0)) \subset B_0$.
+\end{proof}
+\begin{proposition}
+  Let \(f:A\to B\), \(A_0,\ A_1 \subset A\), and \(B_0,\ B_1\subset B\). Then \(f^{-1}\) preserves:
+  \begin{enumerate}
+    \item inclusions
+    \item unions
+    \item intersections
+    \item differences
+  \end{enumerate}
+\end{proposition}
+%
+\begin{proof}
+  Preservation of inclusion: let $B_0\subset B_1$. From the definition it follows that $f^{-1}(B_0) = \{a\ |\ f(a)\in B_0 \}$. Since $B_0 \subset B_1$, if $f(a)\in B_0$ then $f(a) \in B_1$. Hence if $a \in f^{-1}(B_0)$ then $a \in f^{-1}(B_1)$. Hence $f^{-1}(B_0)\subset f^{-1}(B_0)$. \\
+
+ Proof of preservation of unions: the set $f^{-1}(B_0 \cup B_1) = \{a\ |\ f(a)\in B_0 \cup B_1\}$. While $f^{-1}(B_i) = \{a\ |\ f(a)\in B_i $. The union $f^{-1}(B_0)\cup f^{-1}(B_1) = \{a\ | f(a)\in B_0\ \text{or}\ f(a)\in B_1\}$, which is the same as $\{a\ |\ f(a)\in B_0 \cup B_1\}$. Hence the two sides are equivalent. \\
+
+  Proof for intersections and differences is very similar to the one for unions.
+\end{proof}
+Unlike it's inverse $f$ only preserves inclusions and unions. Showing this is pretty easy. Also another property of functions is that $(g\circ f)^{-1}(C_0)$ is equivalent to $f^{-1}(g^{-1}(C_0))$ for functions $f:A\to B$, $g:B\to C$, and set $C_0 \subset C$.

@@ -1,0 +1,65 @@
+\section{Intuition of Measure}
+Consider any interval of $\R$, $(a,b]$. Intuitively we define the length of this interval as $\lambda\l((a,b]\r) = b-a$. Now is it possible to extend this concept of length to any subset of $\R$? For that we would wish to find a function $\lambda$ such that the following properties are true:
+\begin{enumerate}
+  \item $\lambda: \mathfrak{P} (\R)\to \R^{+}$ is a set function.
+  \item If $I = (a,b]$ is any interval in $\R$ then $\lambda(I) = b-a$.
+  \item Length of union of two disjoint subsets $A, B\in \mathfrak{P}(\R)$ must be the sum of their individual lengths, i.e. $\lambda(A+B) = \lambda(A)+\lambda(B)$. This can be extended to any countable union of pairwise disjoint subsets. 
+  \item The translation of any subset $A\in \mathfrak{P}(\R)$ must have the same length, i.e. $\forall\ x\in \R,\ \lambda(A+x) = \lambda(A)$. 
+\end{enumerate}
+\begin{conjecture}
+  The function $\lambda$ as described above does not exist.
+  \label{con:not-exist}
+\end{conjecture}
+To prove this we must first prove some other propositions. We use the following notations: let $\sim$ be an equivalence relation on $\R$ defined as:
+  \[x\sim y\ \text{if}\ x-y\in\mathbb{Q}\]
+  Let $[x]$ denote the equivalence classes of $x$, and let $\Lambda = \R/\sim$. 
+\begin{proposition}
+ The set $\Lambda$ is uncouontable.  
+ \label{uncountable}
+\end{proposition}
+\begin{proof}
+  Let $\alpha\in\Lambda$ be an equivalence class. Let $x\in\alpha$ be a fixed point. Then for each $y\in\alpha$ it is possible to find a unique rational number given by $x-y$. Hence $\alpha$ is a countable set. Since the countable union of countable sets is countable, but $\R$ is uncountable, it follows that $\Lambda$ must be uncountable. 
+\end{proof}
+Let $\Omega\subset \R$ be set constructed in the following way: for each $\alpha\in\Lambda$ we know that a point can be found between $(0,1)$; so take one such point from each $\alpha$ and put it in the set $\Omega$. From this construction it is easy to see that $\Omega\subset (0,1)$.
+\begin{proposition}
+  Let $p,q\in \mathbb{Q}$, then either $\Omega+q=\Omega+p$ or $\Omega+q\cap\Omega+p=\emptyset$.
+  \label{trans_eq}
+\end{proposition}
+\begin{proof}
+  Let's say $\Omega+q\cap\Omega+p\neq\emptyset$. Then for $a,b \in \Omega$ we can find an $x\in\Omega+q\cap\Omega+p$ such that $x=a+p=b+q$. Hence $a-b = q-p$ for all $a,b\in\Omega$. Since $q-p$ is rational, $a-b$ will also be rational. Hence $a$ and $b$ belong to the same equivalence class. But since we only chose one element from each equivalence class in the construction of $\Omega$, we must have $a=b$. Hence $q=p$, making the two sets in question equal. 
+\end{proof}
+Hence from this proposition we can say that if $q\neq p$ then $\Omega+q\cap\Omega+p=\emptyset$.
+\begin{proposition}
+  Let $\lambda$ be a length function as defined above. If $A\subset B\subset\R$ then $\lambda(A)\leq \lambda(B)$.
+  \label{measure prop}
+\end{proposition}
+\begin{proof}
+ Since $B = A \cup (B-A)$, and $A$ and $B-A$ are disjoint,
+ \begin{align*}
+   \lambda(B) &= \lambda(A \cup (B-A))\\
+        &= \lambda(A) + \lambda(B-A)\\
+        &\geq \lambda(A)
+ \end{align*}
+ Hence proving our claim.
+\end{proof}
+Now we are ready to prove \cref{con:not-exist}.
+\begin{proof}[proof of \cref{con:not-exist}]
+  Consider the union of sets $\Omega+q$:
+  \[\underset{-1<q<1}{\bigcup_{q\in \mathbb{Q}}}\Omega+q\]
+  From proposition \ref{trans_eq} we know that this is a union of disjoint sets. Hence,
+  \[\lambda\l(\underset{-1<q<1}{\bigcup_{q\in \mathbb{Q}}}\Omega+q\r) = \underset{-1<q<1}{\sum_{q\in \mathbb{Q}}}\lambda\l(\Omega+q\r)\]
+  Using property $4$ of $\lambda$, 
+  \[\lambda\l(\underset{-1<q<1}{\bigcup_{q\in \mathbb{Q}}}\Omega+q\r) = \underset{-1<q<1}{\sum_{q\in \mathbb{Q}}}\lambda\l(\Omega\r) = 0\]
+  Let $x\in (0,1)$. Let $a\in \Omega\cap [x]$. Then we know that $x-a = q$ for some rational $q$. Since $a\in\Omega$ implies $a\in (0,1)$, the range of $q$ must be $-1<q<1$. Hence $x = a + q$ for some $-1<q<1$ implying that
+ \[x \in \underset{-1<q<1}{\bigcup_{q\in \mathbb{Q}}}\Omega+q\]
+ further implying that,
+ \[(0,1) \subset \underset{-1<q<1}{\bigcup_{q\in \mathbb{Q}}}\Omega+q\]
+ Using proposition \ref{measure prop},
+ \[1 \leq \lambda\l(\underset{-1<q<1}{\bigcup_{q\in \mathbb{Q}}}\Omega+q\r)\]
+ Hence we have arrived at a contradiction. This shows that a function $\lambda$ with the properties 1,2,3,4 as given above does not exist.
+\end{proof}
+Hence this shows that to construct a general notion of length (called the \textit{measure}) we must let go of one of the four properties: 1,2,3, or 4. Since $2,3,4$ are essential for a notion of length, we change 1 to be the following:
+\begin{enumerate}
+  \item  $\lambda: \mathscr{B}(\subset\mathfrak{P} (\R))\to \R^{+}$ is a set function.
+\end{enumerate}
+This means that we are discarding the notion that all subsets of $\R$ can be assigned a length. 

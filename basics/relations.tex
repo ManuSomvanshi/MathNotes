@@ -1,0 +1,33 @@
+\section{Relations}
+\begin{definition}
+  A relation on a set $A$ is a subset $C$ of the cartesian product $A\times A$. If $(x,y)\in C$ then it is denoted as $xCy$.
+\end{definition}
+\begin{definition}
+  An equivalence relation on a set $A$ is a relation $C$ on $A$ such that:
+  \begin{itemize}
+    \item It is reflexive, i.e. $xCx\ \forall\ x\in A$.
+    \item It is symmetric, i.e. if $xCy$ then $yCx$.
+    \item It is transitive, i.e. if $xCy$ and $yCz$ then $xCz$.
+  \end{itemize}
+\end{definition}
+Generally the symbol $\sim$ is used to denote an equivalence relation. For a given element $x\in A$ we also define a set called the equivalence class as:
+\[E = \{y\ |\ y\sim x\ \}\]
+\begin{proposition}
+  Two equivalence classes $E$ and $E'$ are either disjoint or equal.
+\end{proposition}
+\begin{proof}
+  Let $E$ be the equivalence class of $x$ and $E'$ be the equivalence class of $x'$. Assuming that $E\cap E'$ is non-empty, for all $y\in E\cap E'$ it follows that $y\sim x'$ and $y\sim x$. From symmetry and transitivity it follows that $x'\sim x$. Hence every element similar to $x'$ will be similar to $x$. Hence $E'=E$, whenever $E\cap E'$ is non-empty.
+\end{proof}
+\begin{definition}
+  A partition of a set $A$ is a collection of disjoint nonempty subsets of $A$ whose union is all of $A$.
+\end{definition}
+\begin{proposition}
+  Given any partition $\mathscr{D}$ of $A$, there is a unique equivalence relation $C$ on $A$ such that each element of $\mathscr{D}$ is an equivalence class of $C$.
+\end{proposition}
+\begin{proof}
+  Consider a relation $C$ defined as: $xCy$ if both $x$ and $y$ belong to the same element of $\mathscr{D}$. Since $x$ is always in the same element as itself, $xCx$ is true for all $x$. If $xCy$, which means $x$ is in the same subset as $y$. Since the converse is also true, $yCx$. If $x$ is in the same subset as $y$ and $y$ is in the subset as $z$, then $x$ is in the same subset as $z$. Hence $xCy$ and $yCz$ imply $xCz$. This means that $C$ is an equivalent relation. Each element of $\mathscr{D}$ can be viewed as an equivalence class of $C$.
+  \paragraph{} Assume that there exist two equivalence relations $C_1$ and $C_2$ such that the set of each their equivalence classes is $\mathscr{D}$. Let $E_1$ and $E_2$ be equivalence classes of $x$ with respect to relations $C_1$ and $C_2$. $E_1$ and $E_2$ must be the same since we are claiming that both relations generate the identical collection of sets. Hence if $yC_1x$ then $yC_2x$ which implies that $C_1 = C_2$.
+\end{proof}
+\begin{definition}
+  The quotient of the set $S$, denoted $S\bign/\sim$ with respect to the equivalence relation $\sim$ is the set of equivalence classes of $S$ with respect to $\sim$.
+\end{definition}

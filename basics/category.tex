@@ -1,0 +1,44 @@
+\section{Categories}
+A category is essentially a collection of 'objects' and of 'morphisms' between these objects, satisfying a list of natural conditions. These objects might be sets, groups, vector spaces, etc. Since there is simply no set of all sets (due to Russell's paradox), this collection of objects is just too 'big' to be called a set. The formal term used is a \textit{class of objects}. The formal definition of categories is as follows.
+\begin{definition}
+  A category $\mathsf{C}$ consists of:
+  \begin{enumerate}
+    \item a class Obj(C) of \textit{objects} of the category.
+    \item for every two objects $A,B$ of $\mathsf{C}$, a set $\mathsf{Hom}_{\mathsf{C}}(A,B)$ of morphisms satisfying the following properties:
+      \begin{enumerate}
+        \item for every object $A$ of $\mathsf{C}$ there exists (at least) one morphism $1_A \in \mathsf{H}_{\mathsf{C}}(A,A)$. This is the identity on $A$.
+        \item one can compose morphisms: two morphisms $f\in \mathsf{Hom}_{\mathsf{C}}(A,B)$ and $\mathsf{Hom}_{\mathsf{C}}(B,C)$ determine a morphism $gf\in\mathsf{Hom}_{\mathsf{C}}(A,C)$. For every triplet of objects $A,B,C$ of $\mathsf{C}$ there is a function (of sets)
+          \[\mathsf{Hom}_{\mathsf{C}}(A,B) \times\mathsf{Hom}_{\mathsf{C}}(B,C)\to\mathsf{Hom}_{\mathsf{C}}(A,C) \]
+        \item this composition law is associative.
+        \item the identity morphisms are identities with respect to composition, i.e. if $f\in\mathsf{Hom}_{\mathsf{C}}(A,B)$ then
+          \[f1_A = f,\ 1_Bf = f\]
+        \item the sets $\mathsf{Hom}_{\mathsf{C}}(A,B)$ and $\mathsf{Hom}_{\mathsf{C}}(C,D)$ are disjoint unless $A=C$ and $B=D$.
+      \end{enumerate}
+  \end{enumerate}
+\end{definition}
+One can make morphism diagrams similar to those of set functions. The set of morphisms from an object to itself are known as endomorphisms and are denoted $\mathsf{End}(A)$. The subscript $\mathsf{C}$ will be dropped from now on, unless it is necassary to use it. 
+\begin{example}[Sets]
+  As a first example consider the category $\mathsf{Set}$ defined as $\mathsf{Obj}(\mathsf{Set}) =$ the class of all sets, and $\mathsf{Hom}(A,B) = $ the set of all set-functions from $A$ to $B$. We must verify if this is a category. For every $A$ there is an indentity function $1_A:A\to A,\ 1_A(a) = a$. Composition of set-functions is possible, the composition is known to be associative, and the identity function is identity with respect to the composition. The last property is also triially true. Hence $\mathsf{Set}$ is indeed a category. 
+\end{example}
+\begin{example}
+  Consider this example.
+  \paragraph{} Suppose $S$ is a set and $\sim$ is a reflexive and transitive relation. Then define a category $\mathsf{C}$ as:
+  \begin{itemize}
+    \item objects are elements of $S$;
+    \item $\mathsf{Hom}(a,b)$, where $a,b$ are objects, is the set consisting $(a,b)\in S\times S$ if $a\sim b$, and let $\mathsf{Hom}(a,b) = \emptyset$ otherwise. 
+  \end{itemize}
+  Verification that this is a category:
+  \begin{enumerate}
+    \item Since $a\sim a$ using reflexive property, $1_a = (a,a) \in \mathsf{Hom}(a,a)$.
+    \item Given two morphisms $f= (a,b)\in \mathsf{Hom}(a,b)$ and $g = (b,c)\in \mathsf{Hom}(b,c)$ then using transitivity we know that $a\sim c$ and hence $gf = (a,c) \in \mathsf{Hom}(a,c)$. Hence a composition exists.
+    \item The composition is clearly associative. 
+    \item Let $f = (a,b)\in \mathsf{Hom}(a,b)$, and we know that $1_a=(a,a)$ and $1_b=(b,b)$. Clearly $f1_a = (a,b)$ and $1_bf = (a,b)$. 
+    \item Since each $\mathsf{Hom}(a,b)$ has either one element $(a,b)$ or is empty, any two set of morphisms will be disjont. 
+  \end{enumerate}
+  As an example of this kind of category consider the set $\{1,2,3\}$ along with the ordering $\leq$. The following is a commutative diagram of this category:
+  \[
+    \begin{tikzcd}[sep=huge]
+      1 \arrow[loop left]{l}{1_1}\arrow{r}{f} \arrow[swap]{dr}{gf} & 2\arrow[loop right]{r}{1_2} \arrow{d}{g} \\ & 3 \arrow[loop right]{r}{1_3} 
+    \end{tikzcd}
+  \]
+\end{example}

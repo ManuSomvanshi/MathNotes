@@ -1,0 +1,28 @@
+\section{Elementary Set Theory}
+A set $S$ is a collection of objects. The objects of a set are called the elements. The union of two sets $S,T$ contains elements of both sets, and is written as $S\cup U$. The intersection of two sets contains the common elements of the two sets, and is represented $S\cap U$. The complement of a set $A(\subset S)$ with respect to some set $S$ is represented as $A'$. The difference  of set $S$ from $T$ is defined as $T-S=T\cap S'$. The algebra of these operations is as follows
+\begin{itemize}
+  \item \textit{Commutativity,}
+    \begin{align*}
+        A \cup B &= B\cup A\\
+        A \cap B &= B\cap A
+    \end{align*}
+  \item \textit{Associativity},
+    \begin{align*}
+      A \cap \left( B \cap C\right) &= \left( A \cap B \right) \cap C\\
+      A \cup \left( B \cup C\right) &= \left( A \cup B \right) \cup C
+    \end{align*}
+  \item \textit{Distribution,}
+    \begin{align*}
+      A \cup \left( B \cap C \right) &= \left( A \cup B \right) \cap \left( A \cup C \right)\\
+      A \cap \left( B \cup C \right) &= \left( A \cap B \right) \cup \left( A \cap C \right)
+    \end{align*}
+  \item \textit{De Morgan's rules,}
+    \begin{align*}
+      (A\cap B)' = A'\cup B'\\
+      (A\cup B)' = A'\cap B'
+    \end{align*}
+\end{itemize}
+\begin{definition}
+  The cartesian product of two sets $A$ and $B$, denoted $A\times B$, is the set of ordered pairs $\{(a,b)|\forall a\in A \qq{and} b\in B\}$.
+\end{definition}
+Other than these operations one can define a set operation called disjoint union, denoted $S\sqcup T$, which is loosely constructed in the following way: we first make copies $S'$ and $T'$ such that $S'\cap T' = \emptyset$ and then take their ordinary union. A more rigourous definition would be constructed later.
