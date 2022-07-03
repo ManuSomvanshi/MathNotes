@@ -82,7 +82,7 @@ The above proposition also applies to $\sigma$-algebras as well. Essentially the
     \item $\mu(\emptyset) = 0$,
     \item If $E_1,...,E_n \in \mathscr{C}$ are pairwise disjoint and if $\bigcup_{j=1}^nE_j \in \mathscr{C}$ then $\mu(\bigcup_{j=1}^nE_j)=\sum_{j=1}^n\mu(E_j)$.
   \end{enumerate}
-  then $\mu$ is said to be additive.
+  then $\mu$ is said to be an additive measure.
 \end{definition}
 \begin{remark}
 Observe that if we have a $A\in \mathscr{C}$ such that $\mu(A)<\infty$ then:
@@ -117,7 +117,7 @@ this means that $\mu(E)\leq \mu(F)$, the equality being true when $\mu(E) = \inf
     \item $\mu(\emptyset) = 0$,
     \item If $E_1,E_2,... \in \mathscr{C}$ are pairwise disjoint and if $\bigcup_{j\geq1}E_j \in \mathscr{C}$ then $\mu(\bigcup_{j\geq1}E_j)=\sum_{j\geq1}\mu(E_j)$.
   \end{enumerate}
-  then $\mu$ is said to be $\sigma-$additive.
+  then $\mu$ is said to be a $\sigma-$additive measure.
 \end{definition}
 \begin{example}
   Let $\Omega = (0,1)$ and $ \mathscr{C} = \{(a,b]\ |\ 0\leq a < b < 1\ \}\cup\{\emptyset\}$. Define a function $\mu: \mathscr{C}\to \R^+$ as:
@@ -188,6 +188,40 @@ this means that $\mu(E)\leq \mu(F)$, the equality being true when $\mu(E) = \inf
   \end{enumerate}
   In addition such a measure on $ \mathscr{A}$ is unique.  
 \end{theorem}
-%
-%
-%
+\begin{proof}
+  Let $\nu: \mathscr{A}\to \R^+$ be a function defined in the following way. Using \cref{lem:generated} we know that for any $A\in \mathscr{A}$ we can find disjoint $E_1,...,E_n\in \mathscr{S}$ such that $A = \bigcup_{j=1}^n E_n$; then define $\nu$ as,
+  \[\nu(A) = \sum_{j=1}^n\mu(E_j)\]
+  First we must show that $\nu$ is well defined, since there can be more than one sequence of pairwise disjoint sets whose union is $A$. Let $E_1,...,E_n$ and $F_1,...,F_m$ be two sequences of pairwise disjoint sets in $ \mathscr{S}$ whose union is $A$. Then, 
+  \[\nu(A) = \sum_{j=1}^n\mu(E_j) \]
+  and
+  \[\nu(A) = \sum_{j=1}^m\mu(F_j). \]
+  Since $A = \bigcup_{k=1}^m F_k$
+  \[\implies E_j = \bigcup_{k=1}^m F_k\cap E_j\]
+  \[\implies \mu(E_j) = \sum_{k=1}^m \mu(F_k \cap E_j)\]
+  Hence,
+  \[\nu(A) =\sum_{j=1}^n\sum_{k=1}^m \mu(F_k \cap E_j) \]
+  Similarly it can shown that,
+  \[\mu(F_j) = \sum_{k=1}^n \mu(E_k \cap F_j)\]
+  and therefore
+  \[\sum_{j=1}^m\mu(F_j) =\sum_{j=1}^n\mu(E_j). \]
+  Hence $\nu$ is well defined. \\
+
+  Clearly for $A\in \mathscr{S}$ we have $\nu(A) = \mu(A)$. For additivity, let $A_1, A_2,...,A_n$ be pairwise disjoint sets in $ \mathscr{A}$ whose union is $A$. Again from \cref{lem:generated} for each $A_j = \bigcup_{k=1}^{n_j}E_{jk}$ where $E_{j1},...,E_{jn_j} \in \mathscr{S}$ are pairwise disjoint. Let $F_1,...,F_{N}$, where $N=\sum_{j=1}^n n_j$, be defined as $F_1 = E_{11}, F_2 = E_{12}$ and so on. Then,
+  \begin{align*}
+    A &= \bigcup_{j=1}^N F_j\\
+    \implies \nu(A) &= \sum_{j=1}^{N} \mu(F_j) = \sum_{j=1}^{n}\sum_{k=1}^{n_j} \mu(E_{jk})
+  \end{align*}
+  since
+  \begin{align*}
+    \nu(A_j) &= \sum_{j=1}^{n_j} \mu(E_{jk}),\\
+    \implies \nu(A) &= \sum_{j=1}^n \nu(A_j)
+  \end{align*}
+  Therefore $\nu$ is additive.\\
+
+  For uniqueness, let's assume that two such functions $\nu_1$ and $\nu_2$ exist. From property $1$ we know that $\nu_1(A) = \nu_2(A) \forall\ A\in \mathscr{S}$. Let $A\in \mathscr{A}$ and let $A_1,...,A_n\in \mathscr{S}$ be pairwise disjoint with union $A$. Then using additivity 
+  \[\nu_1(A) = \sum_{j=1}^n\nu_1(A_j) = \sum_{j=1}^n\nu_2(A_j) = \nu_2(A)\]
+  This completes the proof.
+\end{proof}
+\begin{remark}
+  This is theorem can be easily generalised for $\sigma-$additive measures. The only change in the proof would be considering countably many $A_j$ in the proof of additivity.
+\end{remark}
