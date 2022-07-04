@@ -28,11 +28,59 @@
    The function $\pi^*$ as defined above is an outer measure.
  \end{proposition}
  \begin{proof}
-   Since $\emptyset \subset \Omega$, and it is a subset of every possible covering, clearly for the covering $\{E_i = \emptyset \forall\ i\geq 1\}$,
+   Since $\emptyset \subset \Omega$, and it is a subset of every possible covering, clearly for the covering $\{E_i = \emptyset\ |\ \forall\ i\geq 1\}$,
    \[\sum_{i\geq 1} \nu(E_i) = 0\]
    and hence $\pi^*(\emptyset) = 0$.\\
 
    Let $E\subset F$ where $E,F \in \mathscr{C}$. Let $\{F_j\ |\ j\geq 1\}$ be a covering of $F$. Since $E\subset F$ any covering of $F$ is also a covering of $E$. If $E_j = F\cap F_j$ then $E_j \subset F_j$ and $\bigcup_{j\geq 1}E_j = F \supset E$. Hence $\{E_j\}$ is a covering $E$. Since $\nu$ is a $\sigma-$additive measure,
    \[\nu(E_j) \leq \nu(F_j)\ \text{and hence,}\ \sum_{i\geq 1}\nu(E_i) \leq \sum_{i\geq 1}\nu(F_i).\]
-   Since for every covering of $F$ a covering of $E$ can be constructed such that the above is true, $\pi^*$ is monotone. 
+   Since for every covering of $F$ a covering of $E$ can be constructed in the above manner such that the above inequality is true, hence $\pi^*$ is monotone. \\
+
+   For sub-additivity let $E \subset \Omega$ and let $\{E_i \in \mathscr{A}\ |\ i\geq 1\}$ be a covering of $E$. In the case when $\pi^*(E_i) = \infty$, clearly $\pi^*(E) \leq \pi^*(E_i)$. In the case when $\pi^*(E_i) < \infty\ \forall\ i\geq 1$, for each $\epsilon>0$ we can find a covering of $E_i$, say $\{F_{ij}\in \mathscr{A}\ |\ j\geq 1\}$ such that,
+   \[\pi^*(E_i) \leq \sum_{j\geq 1} \nu(F_{ij}) \leq \pi^*(E_i) + \f{\epsilon}{2^i}\]
+   Hence,
+   \[\sum_{i\geq 1}\pi^*(E_i) \leq \sum_{j\geq 1} \nu(\bigcup_{j\geq 1}F_{ij}) = \sum_{i\geq 1}\nu(E_i)\leq \sum_{i\geq 1}\pi^*(E_i) + \epsilon\]
+   Using $\pi^*(E) \leq \sum_{i\geq 1}\nu(E_i)$, we get
+   \[\pi^*(E) \leq \sum_{i\geq 1}\nu(E_i) \leq \sum_{i\geq 1}\pi^*(E_i) + \epsilon\]
+   Since this is true for arbitrary $\epsilon$ we conclude that $\pi^*$ is sub-additive. 
+ \end{proof}
+ \begin{definition}
+   A set $A\subset\Omega$ is said to be measurable if $\forall\ E\subset \Omega$,
+   \[\pi^*(E) = \pi^*(E\cap A) + \pi^*(E\cap A^c)\]
+   Define $ \mathscr{M} $ to be the set of all measurable subsets of $ \Omega$.
+ \end{definition}
+ \begin{remark}
+   Using sub-additivity of $\pi^*$ it is possible to prove that
+   \[\pi^*(E) \leq \pi^*(E\cap A) + \pi^*(E\cap A^c)\]
+   since $E = (E\cap A)\cup (E\cap A^c)$. Hence showing that $A$ is measurable just boils down to showing
+   \[\pi^*(E) \geq \pi^*(E\cap A) + \pi^*(E\cap A^c)\]
+ \end{remark}
+ \begin{proposition}
+   Any alegebra $ \mathscr{B}$ of subsets of $\Omega$ is a subset of $ \mathscr{M}$.
+ \end{proposition}
+ \begin{proof}
+   Let $A\in \mathscr{B}$ and let $E\in\Omega$. If we can show that $A$ is measurable, we prove the proposition. Let $\{E_i \in \mathscr{A}\}$ be a covering of $E$, and let $\e>0$. In the case when $\pi^*(E_i) = \infty$ even for a single $i$, it is clear that the inequality
+   \begin{align}
+     \pi^*(E) \geq \pi^*(E\cap A) + \pi^*(E\cap A^c)
+   \end{align}
+   holds. In the case when $\pi^*(E_i) < \infty$ forall $i\geq 1$ let $\e>0$. Then
+   \[\pi^*(E) \leq \sum_{i\geq 1}\nu(E_i) \leq \pi^*(E) + \e \]
+   Since $E\cap A \subset \bigcup_{i\geq 1} E_i\cap A$,
+   \[\pi^*(E\cap A) \leq \sum_{i \geq 1} \nu(E_i \cap A)\]
+   Using similar arguments for $A^c$
+   \[\pi^*(E\cap A^c) \leq \sum_{i \geq 1} \nu(E_i \cap A^c)\]
+   Adding these two inequalities
+   \[\pi^*(E\cap A^c) + \pi^*(E\cap A) \leq \sum_{i \geq 1} \nu(E_i)\]
+   Here I have used the additivity of $\nu$ since $E_i\cap A$ and $E_i\cap A^c$ are in the algebra. Using inequality (1):
+   \[\pi^*(E\cap A^c) + \pi^*(E\cap A) \leq \sum_{i \geq 1} \nu(E_i) \leq \pi^*(E) + \e\]
+   Since this is true for arbitrary $\e$, we have
+   \[\pi^*(E\cap A^c) + \pi^*(E\cap A)  \leq \pi^*(E) \]
+   Hence we have shown that $A$ is measurable, completing the proof.
+ \end{proof}
+ \begin{proposition}
+   $ \mathscr{M}$ is a $\sigma-$algebra.
+ \end{proposition}
+ \begin{proof}
+   Since every algebra is a subset of $ \mathscr{M}$ clearly $\Omega \in \mathscr{M}$. Also it is easy to see that if $A\in \mathscr{M}$ then $A^c \in \mathscr{M}$ since replcaing $A$ by $A^c$ in the condition of measurable set does not change the inequality.\\
+   The only condition that remains to be checked is closure under countable union. 
  \end{proof}

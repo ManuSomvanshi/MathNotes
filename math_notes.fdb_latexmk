@@ -1,10 +1,10 @@
 # Fdb version 3
-["makeindex math_notes.idx"] 1656610376 "math_notes.idx" "math_notes.ind" "math_notes" 1656888405
+["makeindex math_notes.idx"] 1656610376 "math_notes.idx" "math_notes.ind" "math_notes" 1656976328
   "math_notes.idx" 0 -1 0 "pdflatex"
   (generated)
   "math_notes.ilg"
   "math_notes.ind"
-["pdflatex"] 1656888400 "math_notes.tex" "math_notes.pdf" "math_notes" 1656888405
+["pdflatex"] 1656976324 "math_notes.tex" "math_notes.pdf" "math_notes" 1656976328
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1650183167 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc" 1650179560 3136 aac2e2476de8af6c827239df395814ee ""
   "/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1650179560 2914 8283dfc24eaf1964346f843d7605c2b0 ""
@@ -314,12 +314,12 @@
   "basics/functions.tex" 1656612815 14434 5ce4182c2f32096849862d7894b83aef ""
   "basics/relations.tex" 1655741834 2718 8ee07f2bb7423a601c89fbeb1710cfa3 ""
   "basics/sets.tex" 1656612900 1760 a50779b874123f8dd4fc84fd548c3cad ""
-  "math_notes.aux" 1656888404 8128 d5ddb9a5ecdff286ce39ba0fa9811a7e "pdflatex"
+  "math_notes.aux" 1656976328 8171 5904de3a2dba6f77f36d4e32dcac11ac "pdflatex"
   "math_notes.ind" 0 -1 0 "makeindex math_notes.idx"
-  "math_notes.mst" 1656888401 223 b8e66a4aaa0f29d90b9c1dae7c1aa92e "pdflatex"
-  "math_notes.tex" 1656880258 2827 18a0683567046ff0ca7f8b24dd3b280a ""
-  "math_notes.toc" 1656888405 1619 35ff0784eb7e463160e3f51537da1bfb "pdflatex"
-  "measure_theory/caratheodory_thm.tex" 1656888399 3275 6db2680ab9c9ef95b81e63af0b603c8e ""
+  "math_notes.mst" 1656976324 223 b8e66a4aaa0f29d90b9c1dae7c1aa92e "pdflatex"
+  "math_notes.tex" 1656888535 2827 18a0683567046ff0ca7f8b24dd3b280a ""
+  "math_notes.toc" 1656976328 1619 35ff0784eb7e463160e3f51537da1bfb "pdflatex"
+  "measure_theory/caratheodory_thm.tex" 1656976322 6533 e9ae5f22f1d813b0590da7233f5d922e ""
   "measure_theory/formal_def.tex" 1656879794 15472 71dd9a20108f15662a63033df7c084d1 ""
   "measure_theory/intuition.tex" 1656797806 4880 a1350fc55b797688b5661d7dcbda9b3c ""
   (generated)
