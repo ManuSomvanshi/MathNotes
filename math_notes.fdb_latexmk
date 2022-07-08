@@ -1,10 +1,10 @@
 # Fdb version 3
-["makeindex math_notes.idx"] 1656610376 "math_notes.idx" "math_notes.ind" "math_notes" 1656976328
+["makeindex math_notes.idx"] 1656610376 "math_notes.idx" "math_notes.ind" "math_notes" 1657312893
   "math_notes.idx" 0 -1 0 "pdflatex"
   (generated)
   "math_notes.ilg"
   "math_notes.ind"
-["pdflatex"] 1656976324 "math_notes.tex" "math_notes.pdf" "math_notes" 1656976328
+["pdflatex"] 1657312887 "math_notes.tex" "math_notes.pdf" "math_notes" 1657312893
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1650183167 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc" 1650179560 3136 aac2e2476de8af6c827239df395814ee ""
   "/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1650179560 2914 8283dfc24eaf1964346f843d7605c2b0 ""
@@ -314,14 +314,15 @@
   "basics/functions.tex" 1656612815 14434 5ce4182c2f32096849862d7894b83aef ""
   "basics/relations.tex" 1655741834 2718 8ee07f2bb7423a601c89fbeb1710cfa3 ""
   "basics/sets.tex" 1656612900 1760 a50779b874123f8dd4fc84fd548c3cad ""
-  "math_notes.aux" 1656976328 8171 5904de3a2dba6f77f36d4e32dcac11ac "pdflatex"
+  "math_notes.aux" 1657312892 9087 cc4a6f17d54e65bc8e5b9f96aa4cd6e8 "pdflatex"
   "math_notes.ind" 0 -1 0 "makeindex math_notes.idx"
-  "math_notes.mst" 1656976324 223 b8e66a4aaa0f29d90b9c1dae7c1aa92e "pdflatex"
-  "math_notes.tex" 1656888535 2827 18a0683567046ff0ca7f8b24dd3b280a ""
-  "math_notes.toc" 1656976328 1619 35ff0784eb7e463160e3f51537da1bfb "pdflatex"
-  "measure_theory/caratheodory_thm.tex" 1656976322 6533 e9ae5f22f1d813b0590da7233f5d922e ""
+  "math_notes.mst" 1657312888 223 b8e66a4aaa0f29d90b9c1dae7c1aa92e "pdflatex"
+  "math_notes.tex" 1657273823 2956 90ab1baf3cf5485e35067e021e728778 ""
+  "math_notes.toc" 1657312892 1710 2380bc9cfe2592d33bf432d048094640 "pdflatex"
+  "measure_theory/caratheodory_thm.tex" 1657285743 17859 b61ef07cbb26eebdc3e15a4072628a80 ""
   "measure_theory/formal_def.tex" 1656879794 15472 71dd9a20108f15662a63033df7c084d1 ""
   "measure_theory/intuition.tex" 1656797806 4880 a1350fc55b797688b5661d7dcbda9b3c ""
+  "measure_theory/lebesgue_measure.tex" 1657312886 1620 9a65c593346d5775dafbde579cb337a1 ""
   (generated)
   "math_notes.aux"
   "math_notes.idx"
