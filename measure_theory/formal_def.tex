@@ -95,7 +95,13 @@ Hence the first condition is just a consequence of the second if a subset with f
 \begin{align*}
   \mu(E\cup F-E) = \mu(F) = \mu(E) + \mu(F-E)
 \end{align*}
-this means that $\mu(E)\leq \mu(F)$, the equality being true when $\mu(E) = \infty$. In the case where $\mu(E)<\infty$ we have the identity $\mu(F-E) = \mu(F)-\mu(E)$.
+this means that $\mu(E)\leq \mu(F)$, the equality being true when $\mu(E) = \infty$. In the case where $\mu(E)<\infty$ we have the identity $\mu(F-E) = \mu(F)-\mu(E)$. This property is called monotonicity. 
+\end{remark}
+\begin{remark}
+  Observe that if $A, B$ are any sets in $ \mathscr{C}$ and $A\cup B\in \mathscr{C}$ then additivity implies that $\mu(A\cup B) \leq \mu(A) + \mu(B)$, since
+  \begin{align*}
+    \mu(A\cup B) = \mu(A \cup (B-A)) = \mu(A) + \mu(B-A) \leq \mu(A) + \mu(B).\ \text{(using monotonicity)}
+  \end{align*}
 \end{remark}
 \begin{example}
   Let $\Omega$ be any non-empty set and let $X_1,X_2,...\in \Omega$. Also let $a_1, a_2,...\geq0$ be some constants. Then define a measure $\mu: \mathscr{C}\subset (\mathfrak{P}(\Omega))\to \R^+$ as:

@@ -8,15 +8,47 @@ In this section we define a $\sigma-$additive measure on a class of subsets $\R$
 \begin{definition}  
 Let $ \mathscr{S} = \{ \emptyset,\ \R,\ (a,b],\ (a,\infty),\ (-\infty, b]\}$. It is easy to check that $ \mathscr{S}$ is a semi-algebra of subsets of $\R$. Let $F:\R\to\R$ be a non-decreasing function. Then define $\mu_F: \mathscr{S}\to \R^+$ as:
 \begin{align*}
-  \mu_F(\emptyset) = 0,\ \mu_F(\R)=F(\infty),\ \mu_F((a,b]) = F(b)-F(a),\ \mu_F((a,\infty))=F(\infty),\ \text{and}\ \mu_F((-\infty,b]) = F(\infty)
+  \mu_F(\emptyset) = 0,\quad \mu_F(\R)=F(\infty),\quad &\mu_F((a,b]) = F(b)-F(a), \\ \mu_F((a,\infty))=F(\infty),\quad &\mu_F((-\infty,b]) = F(\infty).
 \end{align*}
 \end{definition}
 \begin{remark}
-  Observe that if we construct a function $G:\R\to\R$ given by $G(x) = \lim_{n\to\infty} F(x_n)$, where $x_n \downarrow x$. It is easy to verify that $G$ is non-decreasing, right continuous and $\mu_G(A) = \mu_F(A),\ \forall\ A \in \mathscr{S}$. Hence without loss of generalization it is fair to assume that $F$ is always right continuous.
+  Observe that if we construct a function $G:\R\to\R$ given by $G(x) = \lim_{n\to\infty} F(x_n)$ when $-\infty<x<\infty$ and $G(\pm \infty) = F(\pm \infty)$, where $x_n \downarrow x$. It is easy to verify that $G$ is non-decreasing, right continuous and $\mu_G(A) = \mu_F(A),\ \forall\ A \in \mathscr{S}$. Hence without loss of generalization it is fair to assume that $F$ is always right continuous. Also observe that $\mu_F$ is monotone. 
 \end{remark}
 \begin{proposition}
-  $\mu$ is a $\sigma$-additive measure.
+  $\mu_F$ is a $\sigma$-additive measure. 
 \end{proposition}
 \begin{proof}
-  By definition we have that $\mu_F(\emptyset) = 0$. 
+  By definition we have that $\mu_F(\emptyset) = 0$. Consider the interval $(a,b] = \bigcup_{j=1}^n (a_j,b_j]$, where $(a_j,b_j]$ are pairwise disjoint. Then it is always possible to reindex the intervals such that $b_j = a_{j+1}$ when $j<n$, $a_{n+1} \equiv b_n = b$, and $a_1=a$ (this uses both the fact that the intervals are disjoint and their union is $(a,b]$). Since,
+  \begin{align*}
+    F(b) - F(a) &= F(a_{n+1}) - F(a_1)\\
+                &= F(a_{n+1}) - F(a_2) + F(a_2) - F(a_1)\\
+                &= (F(a_{n+1}) - F(a_n))+...+ (F(a_2) - F(a_1))\\
+                &= \sum_{j=1}^n F(a_{j+1}) - F(a_j)
+  \end{align*}
+  This sum can again be reindexed such that
+  \[F(b)-F(a) = \sum_{j=1}^n F(b_j) - F(a_j)\]
+  This implies that
+  \[\mu_F((a,b]) = \sum_{j=1}^n \mu_F((a_j,b_j])\]
+  Hence $\mu_F$ is additive. Now consider the case when $(a,b] = \bigcup_{j\geq 1} (a_j,b_j]$ where $(a_j,b_j]$ are pairwise disjoint. Using montonicity and additivity of $\mu_F$
+  \[\mu_F((a,b]) \geq \mu_F(\bigcup_{j=1}^k (a_j,b_j]) = \sum_{j=1}^k \mu_F((a_j,b_j]).\]
+  Taking the limit $k\to\infty$,
+  \[\mu((a,b]) \geq \sum_{j\geq 1} \mu_F((a_j, b_j]).\]
+  All that remains to be proven is that the $\leq$ ineqality. To prove this fix an $\e>0$. Choose a $c>a$ such that $F(c)-F(a)<\e$, choose $d_j> b_j$ such that $F(d_j) -F(b_j) < \e/2^j$ and $[c,b] \subset \bigcup_{j\geq 1} (a_j,d_j)$ (such choices are possible since $F$ is continuous from the right). Using Heine-Borel theorem, since $[c,b]$ is closed and bounded and $\{(a_j,d_j)\}$ forms an open cover of $[c,b]$, there exists a finite subcover $\{(a_j,d_j)\ |\ j\leq k\}$ of $[c,b]$. Without loss of generality we can assume that $c\in (a_1, d_1)$ and $b \in (a_k, d_k)$. Since,
+  \begin{align*}
+    \mu_F((a,b]) = F(b)-F(a) < F(b) - F(c) + \e = \mu_F((b,c]) + \e 
+  \end{align*}
+  Then using the montonicity of $\mu_F$,
+  \begin{align*}
+    \mu_F((b,c]) &\leq \mu_F(\bigcup_{j=1}^k(a_j,d_j])\\
+               &\leq \sum_{j=1}^k \mu_F((a_j,d_j])\\
+               &\leq \sum_{j=1}^k F(d_j) - F(a_j)\\
+               &< \sum_{j=1}^k F(b_j) -F(a_j) +\e\\
+               &< \sum_{j\geq1} F(b_j) -F(a_j) +\e.
+  \end{align*}
+  Thus for any $\e>0$
+  \[\sum_{j\geq 1} \mu_F((a_j,b_j]) \leq \mu_F((a,b]) < \sum_{j\geq 1} \mu_F((a_j,b_j]) + 2\e\]
+  Following a similar arguement it is possible to show this is true also for intervals $(-\infty, b]$ and $(a,\infty)$. This proves $\sigma-$additivity. 
 \end{proof}
+Using the extension theorem and then caratheodory theorem the function $\mu^*_F: \mathscr{F} \to \R^+$
+\[\mu^*_F(A) = \inf\l\{\sum_j \mu_F(A_j)\ |\ A_j \in \mathscr{A} \And A \subset \bigcup_{j\geq1}A_j\r\}\]
+is a unique $\sigma-$additive extension of $\mu$ on the $\sigma-$algebra $ \mathscr{F}$ (to be more general it can be defined on the $\sigma-$algebra $ \mathscr{M}_{\mu^*}$, which is the set of measurable functions w.r.t. $\mu^*$). The measure space $(\R, \mathscr{F}, \mu_F^*)$ is called Lebesgue-Stieltjes measure space. In the case when $F(a) = a$ and hence $\mu((a,b]) \equiv \mu_F((a,b]) = b-a$, $(\R, \mathscr{F}, \mu^*)$ is called the Lebesgue measure space.

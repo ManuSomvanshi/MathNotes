@@ -1,10 +1,10 @@
 # Fdb version 3
-["makeindex math_notes.idx"] 1656610376 "math_notes.idx" "math_notes.ind" "math_notes" 1657312893
+["makeindex math_notes.idx"] 1656610376 "math_notes.idx" "math_notes.ind" "math_notes" 1657477092
   "math_notes.idx" 0 -1 0 "pdflatex"
   (generated)
   "math_notes.ilg"
   "math_notes.ind"
-["pdflatex"] 1657312887 "math_notes.tex" "math_notes.pdf" "math_notes" 1657312893
+["pdflatex"] 1657477086 "math_notes.tex" "math_notes.pdf" "math_notes" 1657477092
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1650183167 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc" 1650179560 3136 aac2e2476de8af6c827239df395814ee ""
   "/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1650179560 2914 8283dfc24eaf1964346f843d7605c2b0 ""
@@ -50,6 +50,7 @@
   "/usr/share/texmf-dist/fonts/tfm/public/tex-gyre/ec-qhvr-sc.tfm" 1650183167 14048 c8c254f92259159d194821905ade8dd8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/tex-gyre/ec-qhvr.tfm" 1650183167 12084 374c5b7e91efcc10472ab8e61f66d36b ""
   "/usr/share/texmf-dist/fonts/tfm/public/tex-gyre/ec-qhvri.tfm" 1650183167 13000 e730d0ebac741bb40e33ae43a6264526 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/txfonts/t1xtt.tfm" 1650183167 1384 8943063000d26272532f74ca134dfecd ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1650183167 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1650183167 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1650183167 35752 024fb6c41858982481f6968b5fc26508 ""
@@ -67,6 +68,7 @@
   "/usr/share/texmf-dist/fonts/type1/public/tex-gyre/qhvb.pfb" 1650183167 112164 176018dd42fcc60204173fa10e357da5 ""
   "/usr/share/texmf-dist/fonts/type1/public/tex-gyre/qhvr.pfb" 1650183167 110045 c159829aa6d7d99f1777bb40c90b8157 ""
   "/usr/share/texmf-dist/fonts/type1/public/tex-gyre/qhvri.pfb" 1650183167 107228 b17b486f62f05155703d11b6eedee9cc ""
+  "/usr/share/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb" 1650183167 26301 f08b3c26ea42c3177a262c2ac37d6a91 ""
   "/usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb" 1650183167 52665 661b1e6b26edb5f50dd491f8a701cb57 ""
   "/usr/share/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb" 1650183167 50022 90249cba7e3e4e9845f80328d6f9bd13 ""
   "/usr/share/texmf-dist/fonts/vf/adobe/palatino/pplr7t.vf" 1650183167 1380 037725697594405988999f61172f52de ""
@@ -249,6 +251,7 @@
   "/usr/share/texmf-dist/tex/latex/microtype/mt-ppl.cfg" 1650183167 6374 8e807ab43a7020663b3a2a77b4aff6fd ""
   "/usr/share/texmf-dist/tex/latex/mweights/mweights.sty" 1650179560 4953 67f29a12ea26221103fce6bae3433e60 ""
   "/usr/share/texmf-dist/tex/latex/newpx/newpxtext.sty" 1650179560 17615 8b846e9d1dd35dc6a85afe10dcc3adfa ""
+  "/usr/share/texmf-dist/tex/latex/newpx/t1npxtt.fd" 1650179560 1516 46f9b92bb2cc9d19ed155682d6cb0c8b ""
   "/usr/share/texmf-dist/tex/latex/newpx/t1zpltlf.fd" 1650179560 2056 b993067044321f636d8deed368abf142 ""
   "/usr/share/texmf-dist/tex/latex/nowidow/nowidow.sty" 1650181202 1779 047ddae5c808452526118051abc46740 ""
   "/usr/share/texmf-dist/tex/latex/oberdiek/aliascnt.sty" 1650183167 2652 813491e2bc95c1dafbb39cd7c54b380b ""
@@ -314,15 +317,16 @@
   "basics/functions.tex" 1656612815 14434 5ce4182c2f32096849862d7894b83aef ""
   "basics/relations.tex" 1655741834 2718 8ee07f2bb7423a601c89fbeb1710cfa3 ""
   "basics/sets.tex" 1656612900 1760 a50779b874123f8dd4fc84fd548c3cad ""
-  "math_notes.aux" 1657312892 9087 cc4a6f17d54e65bc8e5b9f96aa4cd6e8 "pdflatex"
+  "math_notes.aux" 1657477091 9534 80dfd5918eaf108097ef9d6b8c3b9e4c "pdflatex"
   "math_notes.ind" 0 -1 0 "makeindex math_notes.idx"
-  "math_notes.mst" 1657312888 223 b8e66a4aaa0f29d90b9c1dae7c1aa92e "pdflatex"
-  "math_notes.tex" 1657273823 2956 90ab1baf3cf5485e35067e021e728778 ""
-  "math_notes.toc" 1657312892 1710 2380bc9cfe2592d33bf432d048094640 "pdflatex"
+  "math_notes.mst" 1657477087 223 b8e66a4aaa0f29d90b9c1dae7c1aa92e "pdflatex"
+  "math_notes.tex" 1657477035 3167 578f97a6d9810e0c49c6bc49c3ea4415 ""
+  "math_notes.toc" 1657477091 1795 c34ecd91c7d66bcb47bc1f9c8f83e6c1 "pdflatex"
   "measure_theory/caratheodory_thm.tex" 1657285743 17859 b61ef07cbb26eebdc3e15a4072628a80 ""
-  "measure_theory/formal_def.tex" 1656879794 15472 71dd9a20108f15662a63033df7c084d1 ""
+  "measure_theory/formal_def.tex" 1657462066 15836 8952f9131f2a9575f0b7a4f5f31cd85b ""
+  "measure_theory/integration.tex" 1657477071 22 373299496bc145bcec7e25a0a539dd5d ""
   "measure_theory/intuition.tex" 1656797806 4880 a1350fc55b797688b5661d7dcbda9b3c ""
-  "measure_theory/lebesgue_measure.tex" 1657312886 1620 9a65c593346d5775dafbde579cb337a1 ""
+  "measure_theory/lebesgue_measure.tex" 1657463441 4788 25dbb355190bb9baa7c786a671e13cbe ""
   (generated)
   "math_notes.aux"
   "math_notes.idx"
