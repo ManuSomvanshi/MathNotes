@@ -1,0 +1,62 @@
+\section{Complete Measures}
+\begin{definition}
+  A measure space $(\Omega, \mathscr{F}, \mu)$ is said to be \textit{complete} if $A\in \mathscr{F}$, $\mu(A) = 0$ and $E\subset A$ imply that $E\in \mathscr{F}$.
+\end{definition}
+\begin{definition} 
+  Let $(\Omega, \mathscr{F}, \mu)$ measure space and $A\in \mathscr{F}$ such that $\mu(A) = 0$. Then subsets of $A$ are said to be \textit{negligible sets}.
+\end{definition}
+\begin{proposition}\label{pro:extending}
+  If $(\Omega, \mathscr{F}, \mu)$ is a measure space and $\mathscr{F}'$ is defined as
+  \[\mathscr{F}' = \{A\cup N\ |\ A\in \mathscr{F} \And N\subset E \in \mathscr{F}\ \text{where}\ \mu(E) = 0\}.\]
+  Then $ \mathscr{F}'$ is a $\sigma-$algebra.
+\end{proposition}
+\begin{proof}
+  Let $A\in \mathscr{F}$ and $E = \emptyset$ (implying that $\mu(E) = 0$) then $A\cup N = A$ where $N\subset E$, hence $A\in \mathscr{F}'$. It further follows that $ \mathscr{F} \subset \mathscr{F}'$. This means that $\Omega\in \mathscr{F}'$.\\
+
+  Let $A \in \mathscr{F}'$. Then $A = E\cup N$ where $E \in \mathscr{F}$ and $N \subset H$ such that $\mu(H) = 0$. One can then write $A^c = E^c \cap N^c = (E^c \cap H^c) \cup (E^c \cap (H-N))$. Clearly $E^c\cap H^c \in \mathscr{F}$ and $E^c\cap (H-N) \subset H-N \subset H$. Hence $A^c \in \mathscr{F}'$.\\
+
+  Let $A_1,A_2,... \in \mathscr{F}'$. Let $A_j = E_j \cup N_j$ where $E_j\in \mathscr{F}$, $N_j \subset H_j$ and $H_j \in \mathscr{F}$ such that $\mu(H_j) = 0$. Then
+  \begin{align*}
+    \bigcup_{j\geq 1} A_j= \l(\bigcup_{j\geq 1} E_j \r) \cup \l( \bigcup_{j\geq 1} N_j \r)
+  \end{align*}
+  Since $\bigcup_{j\geq1} E_j \in \mathscr{F}$, $ \bigcup_{j\geq1} N_j \subset \bigcup_{j\geq 1} H_j$ and $\mu(\bigcup_{j\geq1} H_j) = \sum_{j\geq1} \mu(H_j) = 0$, it follows that $\bigcup_{j\geq1} A_j \in \mathscr{F}'$. 
+\end{proof}
+\begin{definition}
+  Let $(\Omega, \mathscr{F}, \mu)$ be a measure space and $ \mathscr{F}' \supset \mathscr{F}$ be a $\sigma-$algebra as defined in \cref{pro:extending}. Then define $\mu': \mathscr{F} \to \R^+$ as follows. If $A\in \mathscr{F}'$ and $A = E \cup N$ where $A\in \mathscr{F}$ and $N$ is a negligible set then
+  \[\mu'(A) = \mu(E)\]
+\end{definition}
+\begin{proposition}
+  $\mu^*$ is a unique, $\sigma-$additive extension of $\mu$.
+\end{proposition}
+\begin{proof}
+  Let $E\cup N = F\cup M$ where $E,F\in \mathscr{F}$ and $N\subset H, M\subset H'$ where $H,H'\subset \mathscr{F}$ and $\mu(H) = \mu(H') =0$. Clearly $E \subset E\cup N = F\cup M \subset F\cup H'$. Using monotonicity we have $\mu(E)\leq \mu(F)$. Similarly it can be shown that $\mu(F)\leq \mu(E)$, implying that $\mu(E) = \mu(F)$. This shows that $\mu'(E\cup N) = \mu(E) = \mu(F) = \mu'(F\cup M)$. Hence $\mu'$ is well defined.\\
+
+  Clearly $\mu'(\emptyset) = 0$. Let $A_1,A_2,...\in \mathscr{F}'$ be pairwise disjoint, and let their representation be $A_j = E_j \cup N_j$ where $E_j\in \mathscr{F}$ and $N_j$ are negligible. By definition $\mu'(A_j) = \mu(E_j)$. Also since $A_j$ are paorwise disjoint so will be $E_j$. Thus:
+  \begin{align*}
+    \mu'(\bigcup_{j\geq1}A_j) &= \mu'(\bigcup_{j\geq1} E_j\cup \bigcup_{j\geq1}N_j)\\
+                     &= \mu(\bigcup_{j\geq1}E_j)\\
+                     &= \sum_{j\geq1}\mu(E_j)\\
+                     &= \sum_{j\geq1}\mu'(A_j)\\
+  \end{align*}
+  Hence $\mu'$ is $\sigma-$additive.\\
+
+  Let $A \in \mathscr{F}$. Then clearly $\mu'(A) = \mu'(A\cup \emptyset) = \mu(A)$. Thus $\mu'$ is an extension of $\mu$. To prove that this is a unique extension let $\mu_1,\mu_2: \mathscr{F}' \to \R^+$ be $\sigma-$additive functions such that $\mu_1(A) = \mu_2(A) = \mu(A)\ \forall\ A\in \mathscr{F}$. Then for some $E\cup N$, where $E, H\in \mathscr{F}$, $N\subset H$, and $\mu(H) = 0$:
+  \[\mu_1(E\cup N) \leq \mu_2(E\cup H) = \mu_2(E) \leq \mu_2(E\cup N)\]
+  Similarly it can be shown that $\mu_1(E\cup N) \geq \mu_2(E\cup N)$. Hence $\mu'$ is also unique.
+\end{proof}
+\begin{proposition}
+  The measure space $(\Omega, \mathscr{F}', \mu')$ is complete. 
+\end{proposition}
+\begin{proof}
+  If $A\in \mathscr{F}'$, $\mu'(A)= 0$, $A = F\cup M$ where $F\in \mathscr{F}$ and $M$ is negligible. Then $\mu(F) = \mu'(A) =0$. Thus we could simply make the choice $M\subset F$ and hence $A=F$. Therefore shown that if $\mu'(A) = 0$ then $A\in \mathscr{F}$. Let $E\subset F$. Then we can simply represent $E$ as $\emptyset\cup E$. Since $\emptyset \in \mathscr{F}$ and $E \subset A \in \mathscr{F}$ where $\mu(A) = 0$, it follows that $E\in \mathscr{F}'$. 
+\end{proof}
+\begin{proposition}
+  Let $(\Omega, \mathscr{M}, \pi^*|_{ \mathscr{M}})$ be the measure space as defined in \cref{thm:caratheodory}. This is a complete measure space.
+\end{proposition}
+\begin{proof}
+  Let $B\in \mathscr{M}$, $\pi^*(B) = 0$, and $A\subset B$. For any $F \subset \Omega$,
+  \[F\cap A \subset A \subset B,\]
+  hence $\pi^*(F\cap A) \leq \pi^*(B) = 0$. Since $F\cup A^c \subset F \implies \pi^*(F\cup E^c) \leq \pi^*(F)$. Adding these two inequalities we get:
+  \[\pi^*(F) \geq \pi^*(F\cap A)+ \pi^*(F\cap A^c).\]
+  Thus $A\in \mathscr{M}$.
+\end{proof}

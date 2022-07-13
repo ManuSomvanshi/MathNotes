@@ -1,10 +1,10 @@
 \babel@toc {english}{}\relax 
 \babel@toc {english}{}\relax 
 \contentsline {part}{\numberline {I}Basics}{2}{part.1}%
-\contentsline {section}{\numberline {I.1}Elementary Set Theory}{2}{section.I.section.I.1}%
-\contentsline {section}{\numberline {I.2}Relations}{2}{section.I.section.I.2}%
+\contentsline {section}{\numberline {1}Elementary Set Theory}{2}{section.I.section.1}%
+\contentsline {section}{\numberline {2}Relations}{2}{section.I.section.2}%
 \contentsline {paragraph}{}{3}{paragraph*.1}%
-\contentsline {section}{\numberline {I.3}Functions}{3}{section.I.section.I.3}%
+\contentsline {section}{\numberline {3}Functions}{3}{section.I.section.3}%
 \contentsline {paragraph}{}{4}{paragraph*.2}%
 \contentsline {paragraph}{}{6}{paragraph*.3}%
 \contentsline {paragraph}{}{6}{paragraph*.4}%
@@ -12,16 +12,17 @@
 \contentsline {paragraph}{Canonical Decomposition.}{7}{paragraph*.6}%
 \contentsline {paragraph}{Injective.}{8}{paragraph*.7}%
 \contentsline {paragraph}{Surjective.}{8}{paragraph*.8}%
-\contentsline {section}{\numberline {I.4}Categories}{9}{section.I.section.I.4}%
+\contentsline {section}{\numberline {4}Categories}{9}{section.I.section.4}%
 \contentsline {paragraph}{}{10}{paragraph*.9}%
 \contentsline {part}{\numberline {II}Abstract Algebra}{11}{part.2}%
 \contentsline {part}{\numberline {III}Topology}{12}{part.3}%
 \contentsline {part}{\numberline {IV}Measure Theory}{13}{part.4}%
-\contentsline {section}{\numberline {IV.1}Intuition of Measure}{13}{section.IV.section.IV.1}%
-\contentsline {section}{\numberline {IV.2}Formal Notion of Measure}{15}{section.IV.section.IV.2}%
+\contentsline {section}{\numberline {1}Intuition of Measure}{13}{section.IV.section.1}%
+\contentsline {section}{\numberline {2}Formal Notion of Measure}{15}{section.IV.section.2}%
 \contentsline {paragraph}{($\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$)}{16}{paragraph*.10}%
 \contentsline {paragraph}{}{19}{paragraph*.11}%
-\contentsline {section}{\numberline {IV.3}Caratheodory Theorem}{21}{section.IV.section.IV.3}%
-\contentsline {section}{\numberline {IV.4}Lebersgue Measure}{27}{section.IV.section.IV.4}%
-\contentsline {section}{\numberline {IV.5}Integration}{29}{section.IV.section.IV.5}%
+\contentsline {section}{\numberline {3}Caratheodory Theorem}{21}{section.IV.section.3}%
+\contentsline {section}{\numberline {4}Lebersgue Measure}{27}{section.IV.section.4}%
+\contentsline {section}{\numberline {5}Complete Measures}{29}{section.IV.section.5}%
+\contentsline {section}{\numberline {6}Integration}{31}{section.IV.section.6}%
 \contentsfinish 

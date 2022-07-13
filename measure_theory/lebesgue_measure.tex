@@ -39,7 +39,7 @@ Let $ \mathscr{S} = \{ \emptyset,\ \R,\ (a,b],\ (a,\infty),\ (-\infty, b]\}$. It
   \end{align*}
   Then using the montonicity of $\mu_F$,
   \begin{align*}
-    \mu_F((b,c]) &\leq \mu_F(\bigcup_{j=1}^k(a_j,d_j])\\
+    \mu_F((c,b]) &\leq \mu_F(\bigcup_{j=1}^k(a_j,d_j])\\
                &\leq \sum_{j=1}^k \mu_F((a_j,d_j])\\
                &\leq \sum_{j=1}^k F(d_j) - F(a_j)\\
                &< \sum_{j=1}^k F(b_j) -F(a_j) +\e\\
@@ -47,8 +47,11 @@ Let $ \mathscr{S} = \{ \emptyset,\ \R,\ (a,b],\ (a,\infty),\ (-\infty, b]\}$. It
   \end{align*}
   Thus for any $\e>0$
   \[\sum_{j\geq 1} \mu_F((a_j,b_j]) \leq \mu_F((a,b]) < \sum_{j\geq 1} \mu_F((a_j,b_j]) + 2\e\]
-  Following a similar arguement it is possible to show this is true also for intervals $(-\infty, b]$ and $(a,\infty)$. This proves $\sigma-$additivity. 
+  It is easy to show that this is true also for intervals $(-\infty, b]$ and $(a,\infty)$. This proves $\sigma-$additivity. 
 \end{proof}
 Using the extension theorem and then caratheodory theorem the function $\mu^*_F: \mathscr{F} \to \R^+$
 \[\mu^*_F(A) = \inf\l\{\sum_j \mu_F(A_j)\ |\ A_j \in \mathscr{A} \And A \subset \bigcup_{j\geq1}A_j\r\}\]
-is a unique $\sigma-$additive extension of $\mu$ on the $\sigma-$algebra $ \mathscr{F}$ (to be more general it can be defined on the $\sigma-$algebra $ \mathscr{M}_{\mu^*}$, which is the set of measurable functions w.r.t. $\mu^*$). The measure space $(\R, \mathscr{F}, \mu_F^*)$ is called Lebesgue-Stieltjes measure space. In the case when $F(a) = a$ and hence $\mu((a,b]) \equiv \mu_F((a,b]) = b-a$, $(\R, \mathscr{F}, \mu^*)$ is called the Lebesgue measure space.
+is a unique $\sigma-$additive extension of $\mu$ on the $\sigma-$algebra $ \mathscr{M}_{\mu^*}$ (which is the set of measurable functions w.r.t. $\mu^*$). The measure space $(\R, \mathscr{M}_{\mu^*}, \mu_F^*)$ is called Lebesgue-Stieltjes measure space. In the case when $F(a) = a$ and hence $\mu((a,b]) \equiv \mu_F((a,b]) = b-a$, $(\R, \mathscr{M}_{\mu^*}, \mu^*)$ is called the Lebesgue measure space.
+\begin{convention*}
+  From now on we refer to $(\Omega, \mathscr{F}, \mu)$ a measure space if $\Omega$ is some set, $ \mathscr{F}$ is some $\sigma-$algebra containing $ \Omega$, and $\mu$ is a $\sigma-$additive measure. From now we also adopt the convention of calling $\sigma-$additive measures as just measures. 
+\end{convention*}
