@@ -9,13 +9,15 @@
 \usepackage{psfrag}
 \usepackage{ulem}
 \usepackage{textcomp}
-\usepackage{color}
+\usepackage{xcolor}
 \usepackage{physics}
 \usepackage{amsthm}
 \usepackage{mathrsfs}
 \usepackage{tikz-cd}
+\usepackage{import, pdfpages, transparent}
+\usepackage{caption, subcaption}
+\usepackage[section]{placeins}
 \usepackage{hyperref}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \def\nn{\nonumber} 
@@ -46,6 +48,14 @@
 %---hyperref---
 \renewcommand{\theHsection}{\thepart.section.\thesection}
 %---------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%inkscape diagram settings
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{Figures/}{#2.pdf_tex}
+  }
+
+\pdfsuppresswarningpagegroup=1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}

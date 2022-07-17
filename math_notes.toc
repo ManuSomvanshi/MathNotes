@@ -25,4 +25,6 @@
 \contentsline {section}{\numberline {4}Lebersgue Measure}{27}{section.IV.section.4}%
 \contentsline {section}{\numberline {5}Complete Measures}{29}{section.IV.section.5}%
 \contentsline {section}{\numberline {6}Integration}{31}{section.IV.section.6}%
+\contentsline {paragraph}{($\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$)}{32}{paragraph*.13}%
+\contentsline {paragraph}{($\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Relbar \tmspace +\thickmuskip {.2777em}$)}{32}{paragraph*.14}%
 \contentsfinish 
