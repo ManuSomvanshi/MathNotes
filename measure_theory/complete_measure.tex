@@ -22,11 +22,11 @@
   Since $\bigcup_{j\geq1} E_j \in \mathscr{F}$, $ \bigcup_{j\geq1} N_j \subset \bigcup_{j\geq 1} H_j$ and $\mu(\bigcup_{j\geq1} H_j) = \sum_{j\geq1} \mu(H_j) = 0$, it follows that $\bigcup_{j\geq1} A_j \in \mathscr{F}'$. 
 \end{proof}
 \begin{definition}
-  Let $(\Omega, \mathscr{F}, \mu)$ be a measure space and $ \mathscr{F}' \supset \mathscr{F}$ be a $\sigma-$algebra as defined in \cref{pro:extending}. Then define $\mu': \mathscr{F} \to \R^+$ as follows. If $A\in \mathscr{F}'$ and $A = E \cup N$ where $A\in \mathscr{F}$ and $N$ is a negligible set then
+  Let $(\Omega, \mathscr{F}, \mu)$ be a measure space and $ \mathscr{F}' \supset \mathscr{F}$ be a $\sigma-$algebra as defined in \cref{pro:extending}. Then define $\mu': \mathscr{F}' \to \R^+$ as follows. If $A\in \mathscr{F}'$ and $A = E \cup N$ where $A\in \mathscr{F}$ and $N$ is a negligible set then
   \[\mu'(A) = \mu(E)\]
 \end{definition}
 \begin{proposition}
-  $\mu^*$ is a unique, $\sigma-$additive extension of $\mu$.
+  $\mu'$ is a unique, $\sigma-$additive extension of $\mu$.
 \end{proposition}
 \begin{proof}
   Let $E\cup N = F\cup M$ where $E,F\in \mathscr{F}$ and $N\subset H, M\subset H'$ where $H,H'\subset \mathscr{F}$ and $\mu(H) = \mu(H') =0$. Clearly $E \subset E\cup N = F\cup M \subset F\cup H'$. Using monotonicity we have $\mu(E)\leq \mu(F)$. Similarly it can be shown that $\mu(F)\leq \mu(E)$, implying that $\mu(E) = \mu(F)$. This shows that $\mu'(E\cup N) = \mu(E) = \mu(F) = \mu'(F\cup M)$. Hence $\mu'$ is well defined.\\

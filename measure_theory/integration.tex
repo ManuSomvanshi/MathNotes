@@ -94,6 +94,7 @@ The non-negative condition was applied to avoid cases like the following: $\mu(E
     \item $f^2$,
     \item $1/f$,
     \item $f^\pm$, where $f^\pm(\omega) = \max(\pm f(\omega), 0)$,
+    \item $|f|$,
     \item $fg$
   \end{enumerate}
   are measurable functions.
@@ -104,7 +105,7 @@ The non-negative condition was applied to avoid cases like the following: $\mu(E
     \item In this case we need to show that $\{\omega\ |\ \alpha f(\omega)\leq x\}\in \mathscr{F}$. When $\alpha = 0$, forall $x\geq 0$ the set in question is $\Omega$ and when $x<0$ it is $\emptyset$. Both of these are in $ \mathscr{F}$. When $\alpha>0$, the set $\{\omega\ |\ \alpha f(\omega) \leq x\} = \{\omega\ |\ f(\omega)\leq x/\alpha\} \in \mathscr{F}$. Similarly for $\alpha < 0$, $\{\omega\ |\ \alpha f(\omega)\leq x\} = \{\omega\ |\ f(\omega)\geq x/\alpha\}\in \mathscr{F}$.\\
     \item Using similar logic as above $\{\omega\ |\ -\infty <f(\omega) +\alpha \leq x\} =\{\omega\ |\ -\infty <f(\omega) \leq x-\alpha \} \in \mathscr{F}$. \\
     \item Consider the set $\{\omega\ |\ f(\omega)+g(\omega) \leq x\}$. Using density of $ \mathbb{Q}$ in $\R$ we know that it is always possible to find $r\in \mathbb{Q}$ such that $f(\omega)\leq r$ and hence $g(\omega)\leq x-r $. Thus $\{\omega\ |\ f(\omega)+g(\omega) \leq x\} = \bigcup_{r\in \mathbb{Q}}\{\omega\ |\ f(\omega) \leq r\}\cap \{\omega\ |\ g(\omega) \leq x-r\} $. Since each $\{\omega\ |\ f(\omega) \leq r\}$ and $\{\omega\ |\ g(\omega) \leq x-r\}$ is in $ \mathscr{F}$, by closure under countable unions and intersections $\{\omega\ |\ f(\omega)+g(\omega) \leq x\}\in \mathscr{F}$.\\
-    \item Consider the set $\{\omega\ |\ f^2(\omega) \leq x\}$. In the case when $x<0$, the set $\{\omega\ |\ f^(\omega) \leq x\} = \emptyset\in \mathscr{F}$. In the case when $x\geq0$, $\{\omega\ |\ f^2(\omega) \leq x\} = \{\omega\ |\ -\sqrt{x} \leq f(\omega) \leq \sqrt{x}\}\in \mathscr{F}.$\\   
+    \item Consider the set $\{\omega\ |\ f^2(\omega) \leq x\}$. In the case when $x<0$, the set $\{\omega\ |\ f^2(\omega) \leq x\} = \emptyset\in \mathscr{F}$. In the case when $x\geq0$, $\{\omega\ |\ f^2(\omega) \leq x\} = \{\omega\ |\ -\sqrt{x} \leq f(\omega) \leq \sqrt{x}\}\in \mathscr{F}.$\\   
     \item Consider the set $\{\omega\ |\ 1/f(\omega) < x\}$. In the case when $x>0$, 
       \begin{align*}
         \{\omega\ |\ 1/f(\omega) < x\} &= \{\omega\ |\ 1/f(\omega) < 0\}\cup \{\omega\ |\ 0<1/f(\omega) < x\}\\ &= \{\omega\ |\ f(\omega) \leq 0\}\cup \{\omega\ |\ 0<f(\omega) \leq 1/x\}
@@ -112,8 +113,36 @@ The non-negative condition was applied to avoid cases like the following: $\mu(E
       Since each set in the RHS is in $ \mathscr{F}$ it follows that $\{\omega\ |\ 1/f(\omega) < x\}\in \mathscr{F}$. When $x=0$, $\{\omega\ |\ 1/f(\omega) < 0\} = \{\omega\ |\ f(\omega) < 0\} \in \mathscr{F}$. When $x<0$ then
       \[\{\omega\ |\ 1/f(\omega) < x\} = \{\omega\ |\ 0>f(\omega) > 1/x\} \]
       which is clearly in $ \mathscr{F}$.\\
+    \item The set $\{\omega\ |\ f^+(\omega) \leq x\} = \{\omega\ |\ f(\omega) \leq x\}$ when $x\geq 0$, and $\{\omega\ |\ f^+(\omega) \leq x\} = \emptyset$ when $x<0$. Thus $\{\omega\ |\ f^+(\omega) \leq x\}\in \mathscr{F}$. Similarly since $\{\omega\ |\ f^-(\omega) \leq x\} = \{\omega\ |\ f(\omega) \geq x\}$ when $x\geq 0$ (and $\emptyset$ otherwise). Hence $\{\omega\ |\ f^-(\omega) \leq x\}\in \mathscr{F}$.\\
+    \item Since $|f| = f^+ + f^-$, it is obvious that $|f|$ is also measurable.
     \item In the case of product of measurable functions, we simply use the identity:
       \[fg = \f{1}{2} \big((f+g)^2 - f^2 - g^2\big)\]
       Since $f+g$, $f^2$, and $g^2$ are measurable (by points 3,4) it follows that $fg$ is also measurable (again by point 3).
   \end{enumerate} 
 \end{proof}
+\begin{proposition}
+  Let $(\Omega, \mathscr{F}, \mu)$ be measure space, $f:\Omega\to \R$ be some function, and $f_j:\Omega\to \R$ are a sequence of measurable functions. Then
+  \begin{enumerate}
+    \item $\sup f_n$,
+    \item $\inf f_n$,
+    \item $\limsup f_n$,
+    \item $\liminf f_n$, and
+    \item $\lim f_n$
+  \end{enumerate}
+  are measurable functions.
+\end{proposition}
+\begin{proof}
+ \begin{enumerate}
+   \item Consider the set $\{\omega\ |\ \sup f_n < x\}$. Since $f_n \leq \sup f_n$ forall $n$, hence $f_n < x$. Thus
+     \[\{\omega\ |\ \sup f_n < x\} = \bigcup_{n\geq 1}\{\omega\ |\ f_n < x\}\in \mathscr{F} \]
+   \item Since $\inf f_n = -\sup \{-f_n\}$, it is clear that $\inf f$ is also measurable.
+   \item Since
+     \[\limsup f_n = \inf_{n} \sup_{m\geq n} f_n\]
+     and both the infimum and supremum of sequence of measurable functions is measurable, it follows that $\limsup f_n$ is also measurable.
+   \item Similar argument as above for $\liminf f_n$.
+   \item For converging sequences $\limsup f_n = \liminf f_n = \lim f_n$. Hence the limit of a converging sequence of functions is converging.
+ \end{enumerate} 
+\end{proof}
+\begin{lemma}
+  Let $f: \Omega \to \R$ be a non-negative function, then there exists a sequence of non-negative simple functions $f_n:\Omega\to\R$ such that $f_n \uparrow f$.
+\end{lemma}
