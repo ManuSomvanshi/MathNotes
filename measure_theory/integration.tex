@@ -143,6 +143,187 @@ The non-negative condition was applied to avoid cases like the following: $\mu(E
    \item For converging sequences $\limsup f_n = \liminf f_n = \lim f_n$. Hence the limit of a converging sequence of functions is converging.
  \end{enumerate} 
 \end{proof}
+\begin{definition}
+  A property $P$ is said to be true almost everywhere w.r.t. $\mu$, also written as a.e. ($\mu$), if $\mu(\{\omega\ |\ \text{$P$ is false}\ \}) = 0$. In other words $P$ is true everywhere except in a set with zero measure.
+\end{definition}
+\begin{proposition}\label{pro:properties}
+  Let $f$ and $g$ be simple functions, then:
+  \begin{enumerate}
+    \item Integral is linear, i.e.
+      \[\int af = a\int f \And \int f+g = \int f + \int g.\]
+    \item Integral is monotonic, i.e.
+      \[f\leq g \implies \int f \leq \int g.\]
+    \item $\int f = 0 \iff f = 0,\ \text{a.e. ($\mu$)} $.
+    \item If $f=g$ a.e. ($\mu$), then $\int f = \int g$.
+  \end{enumerate}
+\end{proposition}
+\begin{proof}
+Let $\{E_j\}$, $\{F_j\}$ be a partition of $\Omega$ and let the representation of $f,g$ be:
+\begin{align*}
+  f(\omega) &= \sum_{j\geq 1} c_j 1_{E_j}(\omega)\\
+  g(\omega) &= \sum_{j\geq 1} d_j 1_{F_j}(\omega)
+\end{align*}
+then:
+\begin{enumerate}
+  \item The representation of $af$ would be:
+    \[f(\omega) = \sum_{j\geq 1} (a c_j) 1_{E_j}(\omega))\]
+    Thus its integration would be:
+    \begin{align*}
+      \int af &= \sum_{j\geq 1} (ac_j) \mu(E_j)\\
+       &= a\sum_{j\geq 1} c_j \mu(E_j)\\
+       &= a\int f.
+    \end{align*}
+    The representation of $f+g$ would be:
+    \begin{align*}
+      (f+g)(\omega) &= \sum_{j\geq 1} c_j 1_{E_j}(\omega) + \sum_{j\geq 1} d_j 1_{F_j}(\omega)\\
+                    &= \sum_{j\geq 1} \sum_{k\geq 1} (c_j+d_k)1_{E_j\cap F_k}(\omega)
+    \end{align*}
+    The final inequality is due to the fact that if $\omega \in E_j\cap F_k \neq \emptyset$ in which case we have $c_j$ from the first sum and $d_k$ from the second sum in the LHS and a $c_j+d_k$ in the RHS. Since both the summations are countable it is possible to write it out as a single sum (using the fact that product of countable sets is countable). Thus
+    \begin{align*}
+      \int (f+g) &= \sum_{j\geq 1}\sum_{k\geq 1} (c_j+d_k) \mu(E_j \cup F_k)\\
+       &= \sum_{j\geq 1}\sum_{k\geq 1} c_j \mu(E_j \cup F_k) + \sum_{j\geq 1}\sum_{k\geq 1} d_j \mu(E_j \cup F_k)\\
+       &= \int f + \int g
+    \end{align*}
+  \item If $\omega \in E_i\cap F_j \neq \emptyset$ then
+    \begin{align*}
+      c_i = f(\omega) \leq g(\omega) = d_j,
+    \end{align*}
+    and since
+    \begin{align*}
+      \int f &= \sum_{i\geq1} \sum_{j\geq 1} c_i \mu(E_i\cap F_j)\\
+    \end{align*}
+    Either $E_i\cap F_j = \emptyset$, or $E_i\cap F_j\neq \emptyset$ in which case $c_i \leq d_j$. Thus 
+    \begin{align*}
+      \int f \leq \sum_{i\geq 1}\sum_{j\geq 1} d_j \mu(E_i\cap F_j) = \int g
+    \end{align*}
+  \item Its clear that when $f = 0$, then $\int f = 0$. For the forward implication let $D = \{\omega\ |\ f> 0\}$ and $D_n = \{\omega\ |\ f> 1/n\}$. Clearly $D_n \uparrow D$. Since
+    \begin{align*}
+      f &\geq f 1_{D_n} \geq \f{1}{n} 1_{D_n} \\
+      0 = \int f &\geq \int \f{1}{n} 1_{D_n} = \f{1}{n} \mu(D_n)\\
+      \implies \mu(D_n) &\leq 0\implies \mu(D_n) = 0
+    \end{align*}
+    Using monotone continuity from below, we get that $\mu(D) = 0$. Thus $f=0$ a.e. ($\mu$). 
+  \item Let $h = f -g$. Thus $h = 0$, a.e. ($\mu$). From the previous property we know that $\int h = 0$. Then using linearity $\int f = \int g$.
+  \end{enumerate}
+  Thus completing the proof.
+\end{proof}
+\begin{remark}
+  The second property can be further generalised to $f \leq g$ a.e. ($\mu$) implies that $\int f \leq \int g$ using the fourth property.
+\end{remark}
 \begin{lemma}
-  Let $f: \Omega \to \R$ be a non-negative function, then there exists a sequence of non-negative simple functions $f_n:\Omega\to\R$ such that $f_n \uparrow f$.
+  Let $f:\Omega \to \R$ be a non-negative function, then there exists a sequence of non-negative simple functions $f_n:\Omega\to\R$ such that $f_n \uparrow f$.
 \end{lemma}
+\begin{proof}
+  Consider the sequence of simple functions $(f_n)_{n\geq 1}$ given by:
+  \begin{align*}
+    f_n(\omega) = \begin{cases}
+      n,\ \text{if}\ f(\omega) > n\\
+      \f{k}{2^n},\ \text{if}\ \f{k}{2^n} \leq f(\omega) \leq \f{k+1}{2^n},\ 0\leq k \leq n2^n -1
+    \end{cases}
+  \end{align*}
+  If $f(\omega)= \infty$, then $f_n(\omega) = n$ implying that $f_n(\omega)\to f(\omega)$. When $f(\omega)<\infty$, then $\exists\ n_0$ such that $f(\omega) < n_0$. If $n>n_0$ then
+  \begin{align*}
+    f_n(\omega) = \f{\l[2^n f(\omega)\r]}{2^n} \leq f(\omega). 
+  \end{align*}
+  Since $f\geq0$ it follows that:
+  \begin{align*}
+    \f{2^n f(\omega)-1}{2^n}\leq f_n(\omega) &= \f{\l[2^n f(\omega)\r]}{2^n} \leq f(\omega)\\
+    \implies f(\omega) \leq &\lim_{n\to \infty}f_n(\omega) \leq f(\omega)
+  \end{align*}
+  Thus as $n\to\infty$ we get $f_n \to f$.\\
+
+  Now it is requred to show that $f_{n+1}>f_n$. In the case when $f(\omega)=\infty$ clearly $f_n(\omega)=n<f_{n+1}(\omega) = n+1$. When $f(\omega)>n+1$, then $f_n(\omega)<f_{n+1}(\omega)$. When $n< f(\omega) < n+1$, we know that
+  \[f_{n+1}(\omega)=\f{\l[2^{n+1}f(\omega)\r]}{2^{n+1}}\geq \f{\l[n2^{n+1}\r]}{2^{n+1}} \geq n = f_{n}(\omega)\]
+  And finally when $f_n(\omega)<n<n+1$ then:
+  \[f_{n+1}(\omega) = \f{\l[2^{n+1}f(\omega)\r]}{2^{n+1}} \]
+  Since for any $x>0$ we have:
+  \begin{align*}
+    [2x] = \begin{cases}
+      2[x]+1,\ \text{if}\ \{x\}\geq0.5\\
+      2[x],\ \text{if}\ \{x\}< 0.5
+    \end{cases}
+  \end{align*}
+  Thus:
+  \begin{align*}
+    \f{\l[2^{n+1}f(\omega)\r]}{2^{n+1}} &= \begin{cases}
+        \f{2\l[2^{n}f(\omega)\r]+1}{2^{n+1}},\\
+        \f{\l[2^{n}f(\omega)\r]}{2^{n}}
+        \end{cases}\\
+      \implies f_{n+1}(\omega) &\geq f_n(\omega)
+  \end{align*}
+  Hence we have proved that $f_n \uparrow f$.
+\end{proof}
+\begin{definition}[Definition of integral of non-negative functions]\label{def:int}
+  Let $(\Omega, \mathscr{F}, \mu)$ be a measure space and $f:\Omega\to \R$ be a non-negative function, and $f_n$ be a sequence of non-negative simple functions such that $f_n \uparrow f$. Then
+  $$\int f \coloneqq \lim_{n\to\infty} \int f_n$$
+\end{definition}
+\begin{proposition}
+  Integral in \cref{def:int} is well defined. 
+\end{proposition}
+\begin{proof}
+  Let $f_n, g_n$ be sequences of non-negative simple functions such that $f_n,g_n \uparrow f$. Let the representation of $f_n,g_n$ be as follows,
+  \begin{align*}
+    f_n = \sum_{i\geq 1} c_{ni} 1_{E_{ni}}\\
+    g_n = \sum_{i\geq 1} d_{ni} 1_{F_{ni}},
+  \end{align*}
+  let
+  \begin{align*}
+    I_n = \int f_n = \sum_{i\geq 1} c_{ni} \mu(E_{ni}) =\sum_{i\geq 1} \sum_{j\geq 1} c_{ni} \mu(E_{ni}\cap F_{nj}) \\
+    J_n = \int g_n = \sum_{j\geq 1} d_{nj} \mu(F_{nj}) =\sum_{j\geq 1} \sum_{i\geq 1} d_{nj} \mu(F_{nj}\cap E_{ni}),
+  \end{align*}
+  and let $\e>0$. Since we know that $f_n$ and $g_n$ converge to the same function, $f$, assuming that $\omega \in E_{nk}\cap F_{nl} \neq \emptyset$ it follows that $\exists\ N$ such that $n>N$ implies
+  \begin{align*}
+    |f_n(\omega) - g_n(\omega)| &< \f{\e}{2^{k+l}\mu(E_{nk}\cap F_{nl})}\\
+    \implies |\sum_{i\geq 1} c_{ni} 1_{E_{ni}}(\omega) - \sum_{i\geq 1} d_{ni} 1_{F_{ni}}(\omega)| &<\f{\e}{2^{k+l}\mu(E_{nk}\cap F_{nl})}\\
+    \implies |c_{nk} - d_{nl}|&<\f{\e}{2^{k+l}\mu(E_{nk}\cap F_{nl})}.
+  \end{align*}
+  Also,
+  \begin{align*}
+    |I_n - J_n| &= \l|\sum_{j\geq 1} \sum_{i\geq 1} (c_{ni} - d_{nj}) \mu(F_{nj}\cap E_{ni})\r|
+  \end{align*}
+  In this sum we either have that $E_{ni}\cap F_{nj} = \emptyset$, or $E_{ni}\cap F_{nj}\neq \emptyset$ in which case we know that $|c_{ni}-d_{nj}|$ is arbitrarily close to zero. Hence we get
+  \begin{align*} 
+    |I_n - J_n| &\leq \sum_{j\geq 1} \sum_{i\geq 1} \l|c_{ni} - d_{nj}\r| \mu(F_{nj}\cap E_{ni})\\
+                &< \sum_{j\geq 1} \sum_{i\geq 1} \f{\e}{2^{i+j}\mu(E_{ni}\cap F_{nj})}\mu(F_{nj}\cap E_{ni}) = \e
+  \end{align*}
+  Thus $n>N\implies |I_n - J_n|< \e$. Hence
+  \[\lim I_n = \lim J_n = \int f\]
+  proving that the integral is well defined. 
+\end{proof}
+\begin{proposition}
+  The properties in \cref{pro:properties} extend to non-negative measurable functions. 
+\end{proposition}
+\begin{proof}
+  Let $f,g$ be non-negative measurable functions, let $f_n \uparrow f$, and $g_n \uparrow g$ where $f_n, g_n$ are non-negative simple functions. Then:
+  \begin{enumerate}
+    \item Since $f_n \uparrow f \implies af_n \uparrow af$. Thus
+      \begin{align*}
+        \int a f &= \lim_{n\to\infty} \int a f_n\\
+                 &= a\lim_{n\to\infty} \int f_n\\
+                 &= a \int f.
+      \end{align*}
+    \item If $f\leq g$ then there exists $N$ such that $n\geq N \implies f_n \leq g_n$. Thus
+      \begin{align*}
+        \int f_n &\leq \int g_n\\
+        \implies \lim_{n\to\infty} \int f_n &\leq\lim_{n\to\infty} \int g_n\\
+        \implies \int f &\leq \int g.
+      \end{align*}
+    \item The proof for the third property did not assume anything about the function $f$ thus it is true for non-negative functions too.
+    \item Since $f = g$ a.e. ($\mu$), let $\e >0$, then there exists $N$ such that $n>N$ implies that
+      \begin{align*}
+        g_n - \e < &f_n < g_n + \e,\ \text{a.e. ($\mu$)}\\
+        \implies \int g_n - \e \mu(\Omega) < &\int f_n < \int g_n + \e \mu(\Omega),\ \text{everywhere}\\
+        \implies \lim_{n\to\infty} \int g_n - \e \mu(\Omega) <\lim_{n\to\infty} &\int f_n <\lim_{n\to\infty} \int g_n +\e \mu(\Omega)\\
+        \implies \int g \leq &\int f \leq \int g\\
+        \implies \int f &= \int g
+      \end{align*}
+      Thus completing the proof.
+  \end{enumerate}
+\end{proof}
+\begin{theorem}[Monotone Convergence Theorem]
+  If $(f_n)_{n\geq 1}$, $f$ be non-negative measurable functions such that $f_n \uparrow f$ a.e. ($\mu$). Then,
+  \[\int f =\lim_{n\to\infty} \int f_n.\]
+\end{theorem}
+\begin{proof}
+  
+\end{proof}
