@@ -7,7 +7,7 @@ This is my attempt at making organised notes on maths in all the fields that I l
 
 If you just want to read the notes download the `math_notes.pdf` file. If you wish to edit the notes for yourself, install git and enter the following command on the terminal:
 
-`git clone https://github.com/ManuSomvanshi/MathNotes`
+`$ git clone https://github.com/ManuSomvanshi/MathNotes`
 
 ## Structure
 
