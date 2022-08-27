@@ -1,0 +1,109 @@
+\section{Construction of Real Numbers}
+\begin{definition}[Ordered Set]
+  An order on a set $S$ is a relation $<$ with the following properties:
+  \begin{enumerate}
+    \item If $x,y\in S$ then either $x<y$, $y<x$, or $x=y$.
+    \item If $x,y,z\in S$, $x<y$, $y<z$ then $x<z$.
+  \end{enumerate}
+  The set $S$ is said to be ordered w.r.t. order $<$.
+\end{definition}
+\begin{definition}[Bounds]
+  Let $S$ be an ordered set and $E\subset S$ if $\exists\ \alpha\in S$ such that $x \leq \alpha,\ \forall\ x\in E$ then $\alpha$ is called an upper bound of $E$, and $E$ is said to be bounded from above.\\
+
+  Let $S$ be an ordered set and $E\subset S$ if $\exists\ \alpha\in S$ such that $x \geq \alpha,\ \forall\ x\in E$ then $\alpha$ is called a lower bound of $E$, and $E$ is said to be bounded from below.\\
+
+  A subset bounded from above and below is said to be bounded.
+\end{definition}
+\begin{definition}[Supremum]
+  Let $S$ be an ordered set and $E\subset S$ be bounded from above. If $\alpha\in x$ such that $\alpha$ is an upper bound of $E$ and $\gamma < \alpha$ implies that $\gamma$ is not an upper bound. $\alpha$ is called the supremum and written as $\sup E$. 
+\end{definition}
+\begin{definition}[Infimum]
+  Let $S$ be an ordered set and $E\subset S$ be bounded from below. If $\alpha\in x$ such that $\alpha$ is a lower bound of $E$ and $\gamma > \alpha$ implies that $\gamma$ is not an upper bound. $\alpha$ is called the infimum and written as $\inf E$. 
+\end{definition}
+\begin{definition}
+  An ordered set $S$ is said to have the least-upper-bound property (l.u.b property) if every subset which is bounded from above has a supremum in S.
+\end{definition}
+\begin{theorem}
+  Let $S$ be an ordered set with l.u.b property. Then every subset of $S$ which is bounded from below has an infimum in $S$.
+\end{theorem}
+\begin{proof}
+  Let $E\subset S$ that is bounded from below and $L = \{\alpha\in S\ |\ \alpha\leq x,\ \forall\ x\in E \}$. Clearly the set $L$ is bounded from above (since every element of $E$ acts as an upper bound). Thus $L$ has a supremum in $S$, $\beta = \sup L$. If $x<\beta$ then $x$ is not an upper bound of $L$, thus $x\notin E$ (since every $x\in E$ is an upper bound of $L$ by definition). Thus if $x\in E$ then $\beta \leq x$. This means that $\beta$ is a lower bound for $E$. But since by definition it is the largest lower bound $\beta$ is $\inf E$.
+\end{proof}
+\begin{definition}[Fields]
+  A field is a triplet, $(F, +, \times)$, where $F$ is a set, and $+,\times:F\times F\to F$ such that:
+  \begin{enumerate}
+    \item $(F, +)$ is an abelian group. The identity of this group is denoted $0$.
+    \item $(F-\{0\}, \times)$ is an abelian group. The identity of this group is denoted $1$.
+    \item The "product" (i.e. $\times$ operator) is distributive over the "addition" (i.e. $+$ operation). 
+  \end{enumerate}
+\end{definition}
+The additive inverse of $a\in F$ is denoted $-a$ and the multiplicative is denoted $a^{-1}$ or $1/a$.
+\begin{proposition}[Field Properties]
+  Let $x,y\in F$ then:
+  \begin{enumerate}
+    \item $0.y = 0$.
+    \item $(-x)y = -(xy)$.
+    \item $(-x)(-y) = xy$.
+  \end{enumerate}
+\end{proposition}
+\begin{proof}
+  \begin{enumerate}
+    \item Using the distribution property $y(0+0) = y.0 + y.0$. Adding $-y.0$ on both sides gives us $y.0 = 0$.
+    \item Again using distributive property:
+      \begin{align*}
+        (-x)y + (x)y = 0\\
+        \implies (-x)y = -(xy)
+      \end{align*}
+    \item In the above property just substituting $-y$ instead of $y$ gives us $(-x)(-y) = xy$.
+  \end{enumerate}
+\end{proof}
+\begin{definition}
+  An ordered field $(F, +, \times )$ is a field with an ordering $<$ on $F$ such that
+  \begin{enumerate}
+    \item $y<z \implies x+y < x+z$.
+    \item If $x>0,\ y>0 \implies xy>0 $.
+  \end{enumerate}
+\end{definition}
+\begin{proposition}
+  If $(F,+,\times)$ is an ordered field and then:
+  \begin{enumerate}
+    \item $x>0 \implies -x<0$ and vice versa.
+    \item If $x>0$ and $y<z$ then $xy<xz$.
+    \item If $x<0$ and $y<z$ then $xy>xz$.
+    \item If $x\neq 0$ then $x^2 >0$.
+    \item $0<x<y\implies 0<1/y<1/x$.
+  \end{enumerate}
+\end{proposition}
+\begin{proof}
+  \begin{enumerate}
+    \item Since $x>0$ and $x+ (-x) = 0$, adding the inverse on boths sides gives $0>-x$ (due to property 1 of ordered fields).
+    \item Since $z-y>0$,
+      \begin{align*}
+        \implies z-y &> 0\\
+        \implies x(z-y) &> 0,\ \text{(using property 2 of ordered fields)}\\
+        \implies xz > xy.
+      \end{align*}
+    \item If $x<0$ then $-x>0$. Applying the same method as above but multiplying $-x$ instead of $x$ gives the result. 
+    \item Since $x>0$, by property 2 in definition of ordered field we can conclude that $x^2>0$.
+    \item Observe that if $xy>0$ and $x>0$ then either $y>0$ or $y<0$. If $y<0$ then $-y>0$ and $-xy > 0 \implies xy < 0$ leading to a contradiction. Thus if $xy>0$ and $x>0$ then $y>0$. Since $x>0$ and $x(1/x) = 1 > 0 \implies 1/x >0$. Since $x<y$
+      \begin{align*}
+        \implies 1&< y(1/x)\\
+        \implies 1/y &< 1/x
+      \end{align*}
+  \end{enumerate}
+\end{proof}
+\begin{theorem}
+  There exists an ordered field $\R$ with l.u.b. property. More over $ \mathbb{Q} \subset \R$.
+\end{theorem}
+\begin{corollary}[Archemedian property]
+  If $x<y\in \R$ then $\exists n\in \N$ such that $nx>y$.
+\end{corollary}
+\begin{proof}
+  Let $A = \{nx\ |\ n\in \N\}$. If we assume that the corollary is false then $y$ is an upper bound of $A$. Since $\R$ has l.u.b. property $A$ has a supremum, $a = \sup A$. Since $a - 1< a$ it is not an upper bound of $A$. Hence $\exists\ m\in \N$ such that $a-1<m$. It follows further that $a<m+1$ contradicting the fact that $a$ is supremum and that the corollary is false. 
+\end{proof}
+\begin{corollary}[Denseness of rationals in reals]
+  Let $x<y\in \R$ then $\exists\ q\in \mathbb{Q}$ such that $x<q<y$.
+\end{corollary}
+\begin{proof}
+  Since $y-x>0$ $\exists n \in \N$ such that $n(y-x)>1$ (using archemedian property). Thus $ny - nx >1$ meaning that there is an integer $m$ such that $nx<m<ny$ (since there is an integer in every interval of length $1$). Dividing by $n$ we get $x<m/n<y$, proving the claim
+\end{proof}

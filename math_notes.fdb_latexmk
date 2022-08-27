@@ -1,10 +1,10 @@
 # Fdb version 3
-["makeindex math_notes.idx"] 1656610376 "math_notes.idx" "math_notes.ind" "math_notes" 1659709361
+["makeindex math_notes.idx"] 1661351639 "math_notes.idx" "math_notes.ind" "math_notes" 1661441162
   "math_notes.idx" 0 -1 0 "pdflatex"
   (generated)
   "math_notes.ilg"
   "math_notes.ind"
-["pdflatex"] 1659709355 "math_notes.tex" "math_notes.pdf" "math_notes" 1659709361
+["pdflatex"] 1661441155 "math_notes.tex" "math_notes.pdf" "math_notes" 1661441162
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1650183167 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc" 1650179560 3136 aac2e2476de8af6c827239df395814ee ""
   "/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1650179560 2914 8283dfc24eaf1964346f843d7605c2b0 ""
@@ -324,21 +324,25 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1651327182 2927666 949651d8e586667af2754ae2151ee2d9 ""
   "Figures//lebesgue_int.pdf" 1657933822 1888 02cc926497a0c6e01b689bc3f6159fcd ""
   "Figures//riemann_int.pdf" 1657930986 1267 c49ee97b8708ca7deee46c62227f496f ""
+  "Figures//triangle.pdf" 1661222153 1130 e925d7761cd9dce0c68ef80e168bb38d ""
   "Figures/lebesgue_int.pdf_tex" 1657933822 2630 dab60a160086a45a31c4647c74125876 ""
   "Figures/riemann_int.pdf_tex" 1657930986 2549 23c5a66ceee43599531461269e51f94f ""
+  "Figures/triangle.pdf_tex" 1661222153 2413 ab7bf92217a4a43adaf33b60fad9ccf6 ""
+  "algebra/intro.tex" 1661351746 6237 93e9330028d944b9d2a470d00c4cfc4e ""
+  "analysis/construction.tex" 1661441154 6178 a9f2626559208aa51270a185cbc683a9 ""
   "basics/category.tex" 1656430270 4041 7e4b6065f470ffcda430451e53d11164 ""
   "basics/functions.tex" 1656612815 14434 5ce4182c2f32096849862d7894b83aef ""
   "basics/relations.tex" 1655741834 2718 8ee07f2bb7423a601c89fbeb1710cfa3 ""
   "basics/sets.tex" 1656612900 1760 a50779b874123f8dd4fc84fd548c3cad ""
-  "math_notes.aux" 1659709361 11053 3063c0ce4d83307272d340b0e07d13af "pdflatex"
+  "math_notes.aux" 1661441162 12968 042af91022855f7d90fa9a62614404e0 "pdflatex"
   "math_notes.ind" 0 -1 0 "makeindex math_notes.idx"
-  "math_notes.mst" 1659709356 223 b8e66a4aaa0f29d90b9c1dae7c1aa92e "pdflatex"
-  "math_notes.tex" 1659381092 3646 c243b52c8b98c5a393f5716f73d5c08b ""
-  "math_notes.toc" 1659709361 2151 e18773d39f13776f6d86d8c841122802 "pdflatex"
+  "math_notes.mst" 1661441156 223 b8e66a4aaa0f29d90b9c1dae7c1aa92e "pdflatex"
+  "math_notes.tex" 1661351759 4099 30ad1098571cc9d32667a430f3754db3 ""
+  "math_notes.toc" 1661441162 2453 8c50ee560a5ff57e53a5b0f2b1a29a14 "pdflatex"
   "measure_theory/caratheodory_thm.tex" 1657754426 17859 9145539cda508bdf1ae02ac895f2e555 ""
   "measure_theory/complete_measure.tex" 1658639322 5055 bce43bcf81391bb64301c5c67a0b8d64 ""
   "measure_theory/formal_def.tex" 1657462066 15836 8952f9131f2a9575f0b7a4f5f31cd85b ""
-  "measure_theory/integration.tex" 1659709354 22236 195def7568850dc8fd58b445d535a693 ""
+  "measure_theory/integration.tex" 1660559075 22236 195def7568850dc8fd58b445d535a693 ""
   "measure_theory/intuition.tex" 1656797806 4880 a1350fc55b797688b5661d7dcbda9b3c ""
   "measure_theory/lebesgue_measure.tex" 1659089209 5045 02e43b8a4406df6d003233c2af09fc35 ""
   (generated)
