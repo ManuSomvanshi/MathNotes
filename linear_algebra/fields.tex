@@ -1,0 +1,88 @@
+\section{Fields}
+\begin{definition}[Fields]
+  A field is a triplet, $(F, +, \times)$, where $F$ is a set, and $+,\times:F\times F\to F$ such that:
+  \begin{enumerate}
+    \item $(F, +)$ is an abelian group. The identity of this group is denoted $0$.
+    \item $(F-\{0\}, \times)$ is an abelian group. The identity of this group is denoted $1$.
+    \item The "product" (i.e. $\times$ operator) is distributive over the "addition" (i.e. $+$ operation). 
+  \end{enumerate}
+\end{definition}
+The additive inverse of $a\in F$ is denoted $-a$ and the multiplicative is denoted $a^{-1}$ or $1/a$.
+\begin{proposition}[Field Properties]
+  Let $x,y\in F$ then:
+  \begin{enumerate}
+    \item $0.y = 0$.
+    \item $(-x)y = -(xy)$.
+    \item $(-x)(-y) = xy$.
+  \end{enumerate}
+\end{proposition}
+\begin{proof}
+  \begin{enumerate}
+    \item Using the distribution property $y(0+0) = y.0 + y.0$. Adding $-y.0$ on both sides gives us $y.0 = 0$.
+    \item Again using distributive property:
+      \begin{align*}
+        (-x)y + (x)y = 0\\
+        \implies (-x)y = -(xy)
+      \end{align*}
+    \item In the above property just substituting $-y$ instead of $y$ gives us $(-x)(-y) = xy$.
+  \end{enumerate}
+\end{proof}
+\begin{definition}
+  An ordered field $(F, +, \times )$ is a field with an ordering $<$ on $F$ such that
+  \begin{enumerate}
+    \item $y<z \implies x+y < x+z$.
+    \item If $x>0,\ y>0 \implies xy>0 $.
+  \end{enumerate}
+\end{definition}
+\begin{proposition}
+  If $(F,+,\times)$ is an ordered field and then:
+  \begin{enumerate}
+    \item $x>0 \implies -x<0$ and vice versa.
+    \item If $x>0$ and $y<z$ then $xy<xz$.
+    \item If $x<0$ and $y<z$ then $xy>xz$.
+    \item If $x\neq 0$ then $x^2 >0$.
+    \item $0<x<y\implies 0<1/y<1/x$.
+  \end{enumerate}
+\end{proposition}
+\begin{proof}
+  \begin{enumerate}
+    \item Since $x>0$ and $x+ (-x) = 0$, adding the inverse on boths sides gives $0>-x$ (due to property 1 of ordered fields).
+    \item Since $z-y>0$,
+      \begin{align*}
+        \implies z-y &> 0\\
+        \implies x(z-y) &> 0,\ \text{(using property 2 of ordered fields)}\\
+        \implies xz > xy.
+      \end{align*}
+    \item If $x<0$ then $-x>0$. Applying the same method as above but multiplying $-x$ instead of $x$ gives the result. 
+    \item Since $x>0$, by property 2 in definition of ordered field we can conclude that $x^2>0$.
+    \item Observe that if $xy>0$ and $x>0$ then either $y>0$ or $y<0$. If $y<0$ then $-y>0$ and $-xy > 0 \implies xy < 0$ leading to a contradiction. Thus if $xy>0$ and $x>0$ then $y>0$. Since $x>0$ and $x(1/x) = 1 > 0 \implies 1/x >0$. Since $x<y$
+      \begin{align*}
+        \implies 1&< y(1/x)\\
+        \implies 1/y &< 1/x
+      \end{align*}
+  \end{enumerate}
+\end{proof}
+\begin{example}
+  The following are examples of fields:
+  \begin{enumerate}
+    \item $(\{0,1\}, +, \times)$ where $1+1= 0$. This is called the trivial field.
+    \item $(\mathbb{Q} , +, \times)$
+    \item $(\R, +, \times)$
+    \item $(\C, +, \times)$
+    \item Consider the field $ \mathbb{F}_4 = \{0,1,\omega, \omega^2\}$, with operations given by the following rules:
+      \begin{enumerate}
+        \item $1+1 = 0$ and $1+\omega+\omega^2 = 0$.
+        \item $\omega\times \omega^2 = 1$ and $\omega\times\omega = \omega^2$.
+      \end{enumerate}
+    \item $(\Z\bign/p\Z, \oplus_p, \otimes_p)$, where $p$ is prime, is a field.
+  \end{enumerate}
+\end{example}
+\begin{theorem}
+  If $(F,+,\times)$ is a field then either $ \mathbb{Q} \subset F$ or $\Z\bign/p\Z \subset F$. In the former case $F$ is said to have characteristic $0$ and in the later it is said to have characteristic $p$.
+\end{theorem}
+\begin{definition}
+  A field $(F, +, \times)$ is said to be algebraically closed if for each polynomial $p(x)$ with co-efficients in $F$ then $\exists\ a\in F$ such that $p(a) = 0$.  
+\end{definition}
+\begin{theorem}
+  For every field $(F, +, \times)$ is a subfield of an algebraically closed field.
+\end{theorem}

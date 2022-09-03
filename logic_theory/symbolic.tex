@@ -1,0 +1,61 @@
+\section{Symbolic Logic}
+\begin{definition}\label{def:logic}
+  A \textit{logic system} is defined as being composed of:
+  \begin{enumerate}
+    \item A language, which is:
+      \begin{enumerate}
+        \item A collection of symbols.
+        \item A grammer, i.e. a set of rules determining valid statements.
+      \end{enumerate}
+    \item A collection of axioms.
+    \item Rules for inference.
+    \item A model, i.e. an assignment of truth value to valid statements in the language. We also require the assignment to be such that all axioms are true. A model only gives truth value to atomic statements.
+  \end{enumerate}
+\end{definition}
+\begin{example}\label{def:prologic}
+  Propositional logic is an example of a logic system, defined as follows:
+  \begin{enumerate}
+    \item Symbols: 
+      \begin{enumerate}
+        \item Letters: $P,Q,R,\cdots, P_1, P_2, \cdots$.
+        \item $\land$, $\lor$, $\sim$, $\to$, $\leftarrow$, $\leftrightarrow$, $($, $)$.
+      \end{enumerate}
+    \item The valid forms in the laguage are:
+      \begin{enumerate}
+         \item Atomic forms: $P,\ Q,\ R,\ \cdots$
+         \item If $p$ is a valid form then $\sim p$ is also a valid form.
+         \item If $p,q$ are valid forms then $(p)\land (q),\ (p)\lor (q),\ (p)\to (q),\ (p)\leftrightarrow (q)$ are also valid forms.
+      \end{enumerate}
+    \item The axioms of propositional logic are:
+      \begin{enumerate}
+         \item (FL1) $p\to (q\to p)$.
+         \item (FL2) $p\to (q\to r) \to (p\to q \to (p\to r))$.
+         \item (FL3) $\sim p \to \sim q \to (q\to p)$.
+      \end{enumerate}
+    \item A valid form $q$ is \textit{infered} from $p_1,...,p_n$ if $q$ can be written whenever $p_1,...,p_n$. Denote this by $p_1,...,p_n \implies q$. The rules of inference are as follows in propositional logic:
+      \begin{enumerate}
+        \item $p\to q,\ p \implies q$ (Modus Ponens).
+        \item $p\to q,\ \sim q \implies \sim p$ (Modus Tolens).
+        \item $(p\to q)\land (r\to s), (p\lor r) \implies (q\lor s)$ (Constructive Dilemma).
+        \item $(p\to q)\land (r\to s),\ \sim q \lor \sim s\implies \sim p \lor \sim r$ (Destructive Dilemma).
+        \item $p\lor q,\ \sim p\implies q$ (Disjunctive Syllogism).
+        \item $p\to q,\ (q\to r)\implies p\to r$ (Hypothetical Syllogism).
+        \item $p,\ q \implies p\land q$ (Conjunction).
+        \item $p\land q \implies p$ (Simplification).
+        \item $p \implies p\lor q$ (Addition).
+      \end{enumerate}
+      Along with these we also have the rules of replacement:
+      \begin{enumerate}
+        \item $p\land q\land r \iff p\land(q\land r)$ and $p\lor q\lor r \iff p\lor(q\lor r)$.
+        \item $p\land q \iff q\land p$ and $p\lor q \iff q\lor p$.
+        \item $p\land(q\lor r) = p\land q \lor p\land r$ and $p\lor(q\land r) = p\lor q \land p\lor r$.
+        \item $p\to q \iff \sim q\to \sim p$.
+        \item $p\iff \sim (\sim p)$.
+        \item $\sim (p\land q) \iff \sim p\lor \sim q$ and $\sim (p\lor q) \iff \sim p\land \sim q$.
+        \item $p\land p\iff p$ and $p\lor p \iff p$.
+        \item $p\to q \iff \sim p\lor q$.
+        \item $p\leftrightarrow q \iff (p\to q)\land (q\to p)$.
+      \end{enumerate}
+    \item The model in propositional logic assigns each atomic form a value $\{T, F\}$. Given two valid forms $p,q$ every model must satisfy the following truth table:
+  \end{enumerate}
+\end{example}

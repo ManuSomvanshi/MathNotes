@@ -1,34 +1,39 @@
 \babel@toc {english}{}\relax 
 \babel@toc {english}{}\relax 
-\contentsline {part}{\numberline {I}Basics}{2}{part.1}%
-\contentsline {section}{\numberline {1}Elementary Set Theory}{2}{section.I.section.1}%
-\contentsline {section}{\numberline {2}Relations}{2}{section.I.section.2}%
-\contentsline {paragraph}{}{3}{paragraph*.1}%
-\contentsline {section}{\numberline {3}Functions}{3}{section.I.section.3}%
-\contentsline {paragraph}{}{4}{paragraph*.2}%
-\contentsline {paragraph}{}{6}{paragraph*.3}%
-\contentsline {paragraph}{}{6}{paragraph*.4}%
-\contentsline {paragraph}{Diagrams.}{7}{paragraph*.5}%
-\contentsline {paragraph}{Canonical Decomposition.}{7}{paragraph*.6}%
-\contentsline {paragraph}{Injective.}{8}{paragraph*.7}%
-\contentsline {paragraph}{Surjective.}{8}{paragraph*.8}%
-\contentsline {section}{\numberline {4}Categories}{9}{section.I.section.4}%
-\contentsline {paragraph}{}{10}{paragraph*.9}%
-\contentsline {part}{\numberline {II}Abstract Algebra}{11}{part.2}%
-\contentsline {section}{\numberline {1}Introduction}{11}{section.II.section.1}%
-\contentsline {part}{\numberline {III}Analysis}{14}{part.3}%
-\contentsline {section}{\numberline {1}Construction of Real Numbers}{14}{section.III.section.1}%
-\contentsline {part}{\numberline {IV}Linear Algebra}{17}{part.4}%
-\contentsline {part}{\numberline {V}Topology}{18}{part.5}%
-\contentsline {part}{\numberline {VI}Measure Theory}{19}{part.6}%
-\contentsline {section}{\numberline {1}Intuition of Measure}{19}{section.VI.section.1}%
-\contentsline {section}{\numberline {2}Formal Notion of Measure}{21}{section.VI.section.2}%
-\contentsline {paragraph}{($\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$)}{22}{paragraph*.11}%
-\contentsline {paragraph}{}{25}{paragraph*.12}%
-\contentsline {section}{\numberline {3}Caratheodory Theorem}{27}{section.VI.section.3}%
-\contentsline {section}{\numberline {4}Lebersgue Measure}{33}{section.VI.section.4}%
-\contentsline {section}{\numberline {5}Complete Measures}{35}{section.VI.section.5}%
-\contentsline {section}{\numberline {6}Integration}{37}{section.VI.section.6}%
-\contentsline {paragraph}{($\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$)}{38}{paragraph*.14}%
-\contentsline {paragraph}{($\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Relbar \tmspace +\thickmuskip {.2777em}$)}{38}{paragraph*.15}%
+\contentsline {part}{\numberline {I}Basics}{3}{part.1}%
+\contentsline {section}{\numberline {1}Elementary Set Theory}{3}{section.I.section.1}%
+\contentsline {section}{\numberline {2}Relations}{3}{section.I.section.2}%
+\contentsline {paragraph}{}{4}{paragraph*.1}%
+\contentsline {section}{\numberline {3}Functions}{4}{section.I.section.3}%
+\contentsline {paragraph}{}{5}{paragraph*.2}%
+\contentsline {paragraph}{}{7}{paragraph*.3}%
+\contentsline {paragraph}{}{7}{paragraph*.4}%
+\contentsline {paragraph}{Diagrams.}{8}{paragraph*.5}%
+\contentsline {paragraph}{Canonical Decomposition.}{8}{paragraph*.6}%
+\contentsline {paragraph}{Injective.}{9}{paragraph*.7}%
+\contentsline {paragraph}{Surjective.}{9}{paragraph*.8}%
+\contentsline {section}{\numberline {4}Categories}{10}{section.I.section.4}%
+\contentsline {paragraph}{}{11}{paragraph*.9}%
+\contentsline {part}{\numberline {II}Abstract Algebra}{12}{part.2}%
+\contentsline {section}{\numberline {1}Introduction}{12}{section.II.section.1}%
+\contentsline {section}{\numberline {2}More on Permutation Group}{16}{section.II.section.2}%
+\contentsline {section}{\numberline {3}Lagrange's Theorem}{18}{section.II.section.3}%
+\contentsline {part}{\numberline {III}Analysis}{20}{part.3}%
+\contentsline {section}{\numberline {1}Construction of Real Numbers}{20}{section.III.section.1}%
+\contentsline {part}{\numberline {IV}Set Theory and Logic}{23}{part.4}%
+\contentsline {section}{\numberline {1}Symbolic Logic}{23}{section.IV.section.1}%
+\contentsline {part}{\numberline {V}Linear Algebra}{25}{part.5}%
+\contentsline {section}{\numberline {1}Fields}{25}{section.V.section.1}%
+\contentsline {part}{\numberline {VI}Topology}{27}{part.6}%
+\contentsline {part}{\numberline {VII}Measure Theory}{28}{part.7}%
+\contentsline {section}{\numberline {1}Intuition of Measure}{28}{section.VII.section.1}%
+\contentsline {section}{\numberline {2}Formal Notion of Measure}{30}{section.VII.section.2}%
+\contentsline {paragraph}{($\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$)}{31}{paragraph*.11}%
+\contentsline {paragraph}{}{34}{paragraph*.12}%
+\contentsline {section}{\numberline {3}Caratheodory Theorem}{36}{section.VII.section.3}%
+\contentsline {section}{\numberline {4}Lebesgue Measure}{42}{section.VII.section.4}%
+\contentsline {section}{\numberline {5}Complete Measures}{44}{section.VII.section.5}%
+\contentsline {section}{\numberline {6}Integration}{46}{section.VII.section.6}%
+\contentsline {paragraph}{($\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$)}{47}{paragraph*.14}%
+\contentsline {paragraph}{($\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Relbar \tmspace +\thickmuskip {.2777em}$)}{47}{paragraph*.15}%
 \contentsfinish 
