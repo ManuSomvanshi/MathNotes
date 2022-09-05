@@ -20,20 +20,21 @@
 \contentsline {section}{\numberline {3}Lagrange's Theorem}{18}{section.II.section.3}%
 \contentsline {part}{\numberline {III}Analysis}{20}{part.3}%
 \contentsline {section}{\numberline {1}Construction of Real Numbers}{20}{section.III.section.1}%
-\contentsline {part}{\numberline {IV}Set Theory and Logic}{23}{part.4}%
-\contentsline {section}{\numberline {1}Symbolic Logic}{23}{section.IV.section.1}%
-\contentsline {part}{\numberline {V}Linear Algebra}{25}{part.5}%
-\contentsline {section}{\numberline {1}Fields}{25}{section.V.section.1}%
-\contentsline {part}{\numberline {VI}Topology}{27}{part.6}%
-\contentsline {part}{\numberline {VII}Measure Theory}{28}{part.7}%
-\contentsline {section}{\numberline {1}Intuition of Measure}{28}{section.VII.section.1}%
-\contentsline {section}{\numberline {2}Formal Notion of Measure}{30}{section.VII.section.2}%
-\contentsline {paragraph}{($\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$)}{31}{paragraph*.11}%
-\contentsline {paragraph}{}{34}{paragraph*.12}%
-\contentsline {section}{\numberline {3}Caratheodory Theorem}{36}{section.VII.section.3}%
-\contentsline {section}{\numberline {4}Lebesgue Measure}{42}{section.VII.section.4}%
-\contentsline {section}{\numberline {5}Complete Measures}{44}{section.VII.section.5}%
-\contentsline {section}{\numberline {6}Integration}{46}{section.VII.section.6}%
-\contentsline {paragraph}{($\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$)}{47}{paragraph*.14}%
-\contentsline {paragraph}{($\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Relbar \tmspace +\thickmuskip {.2777em}$)}{47}{paragraph*.15}%
+\contentsline {section}{\numberline {2}Metric Spaces and Euclidean Space}{24}{section.III.section.2}%
+\contentsline {part}{\numberline {IV}Set Theory and Logic}{26}{part.4}%
+\contentsline {section}{\numberline {1}Symbolic Logic}{26}{section.IV.section.1}%
+\contentsline {part}{\numberline {V}Linear Algebra}{28}{part.5}%
+\contentsline {section}{\numberline {1}Fields}{28}{section.V.section.1}%
+\contentsline {part}{\numberline {VI}Topology}{30}{part.6}%
+\contentsline {part}{\numberline {VII}Measure Theory}{31}{part.7}%
+\contentsline {section}{\numberline {1}Intuition of Measure}{31}{section.VII.section.1}%
+\contentsline {section}{\numberline {2}Formal Notion of Measure}{33}{section.VII.section.2}%
+\contentsline {paragraph}{($\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$)}{34}{paragraph*.11}%
+\contentsline {paragraph}{}{37}{paragraph*.12}%
+\contentsline {section}{\numberline {3}Caratheodory Theorem}{39}{section.VII.section.3}%
+\contentsline {section}{\numberline {4}Lebesgue Measure}{45}{section.VII.section.4}%
+\contentsline {section}{\numberline {5}Complete Measures}{47}{section.VII.section.5}%
+\contentsline {section}{\numberline {6}Integration}{49}{section.VII.section.6}%
+\contentsline {paragraph}{($\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$)}{50}{paragraph*.14}%
+\contentsline {paragraph}{($\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Relbar \tmspace +\thickmuskip {.2777em}$)}{50}{paragraph*.15}%
 \contentsfinish 

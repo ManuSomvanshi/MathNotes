@@ -92,11 +92,101 @@ The additive inverse of $a\in F$ is denoted $-a$ and the multiplicative is denot
       \end{align*}
   \end{enumerate}
 \end{proof}
-\begin{theorem}
-  There exists an ordered field $\R$ with l.u.b. property. More over $ \mathbb{Q} \subset \R$.
+\begin{theorem}\label{thm:R}
+  There exists an ordered field $\R$ with l.u.b. property. More over $ \mathbb{Q}$ is field isomorphic to some subset of $\R$.
 \end{theorem}
+To prove this theorem we will explicitly construct a field and show that it both contains $\Q$ and has l.u.b property.
+\begin{definition}\label{def:cuts}
+  A cut $\alpha$ is a subset of $\Q$ such that:
+  \begin{enumerate}
+    \item $\alpha, \alpha^c$ are not empty.
+    \item If $p\in \alpha$, $q\in \Q$, and $q<p$ then $q\in \alpha$.
+    \item For each $p\in \alpha$ there exists $r\in \alpha$ such that $p<r$.
+  \end{enumerate}
+\end{definition}
+\begin{proposition}\label{pro:cuts}
+  If $\alpha$ is a cut then the following are true:
+  \begin{enumerate}
+    \item If $q\notin \alpha$ then $q>p$ forall $p\in \alpha$.
+    \item If $r\notin \alpha$ and $r<s$ then $s\notin \alpha$.
+  \end{enumerate}
+\end{proposition}
+\begin{proof}
+  Both of these follow from 2 in \cref{def:cuts}:
+  \begin{enumerate}
+    \item The first statement is just the contrapositive of 2 in \cref{def:cuts}.
+    \item If $r\notin \alpha$ then $r>p$ forall $p\in \alpha$. Since $s>r \implies s>p,\ \forall\ p\in \alpha$. If we assume that $s\in \alpha$ then the third property is violated (i.e. a cut does not have a maximum element). Thus $s\notin \alpha$.
+  \end{enumerate}
+\end{proof}
+\begin{definition}
+  Let $\R$ be the collection of all cuts.
+\end{definition}
+\begin{definition}
+  Let $<$ be a relation on $\R$ defined as $\alpha<\beta \iff \alpha \subsetneq \beta$.
+\end{definition}
+\begin{proposition}
+  The relation $<$ is an ordering on $\R$.
+\end{proposition}
+\begin{proof}
+  First we must prove that either $\alpha<\beta$, $\beta<\alpha$, or $\alpha = \beta$. Assuming that the later two are wrong, $\alpha \neq \beta$ and $\beta \nless \alpha$. The later can be rephrased as $\exists\ b\in \beta$ such that $b\notin \alpha$. But using 1 in \cref{pro:cuts} then $a<b,\ \forall\ a\in \alpha \And b\in\beta$. Further using 2 in \cref{def:cuts} we get that $a\in \alpha \implies a<b \implies a\in \beta$ where $b\in \beta$. Thus $\alpha \leq \beta$. Since we have assumed that $\alpha \neq \beta$, $\alpha<\beta$. Similarly it can be shown that if $\alpha \nless \beta$ and $\alpha \neq \beta$ then $\beta < \alpha$. If we assume that $\beta \nless \alpha$ and $\alpha \nless \beta$, then the former implies that $\alpha \subset \beta$ and the later implies that $\beta \subset \alpha$. Thus $\alpha = \beta$.\\
+
+  Finally if $\alpha < \beta$ and $\beta < \gamma$ then it is clear by definition that $\alpha < \gamma$.
+\end{proof}
+\begin{proposition}
+  Let $A$ be some set, and if $\alpha_i,\ i\in A$ be cuts then
+  \[\bigcup_{i\in A} \alpha_i\]
+  is a cut.
+\end{proposition}
+\begin{proof}
+  Since $\alpha_i$ are cuts then clearly $\bigcup_{i\in A} \alpha_i$ is non-empty, and the compliment $\bigcap_{i\in A} \alpha_i^c$ is also non-empty (since cuts cannot be disjoint by the above proposition). If $p\in \bigcup_{i\in A} \alpha_i$ then $p\in \alpha_i$ for some $i$. It follows that if $q\in \Q$ and $q< p$ then $q\in \alpha_i$ implying that $q\in \bigcup_{i\in A} \alpha_i$. Similarly there exists $r\alpha_i$ such that $r>p$, implying that $\exists\ r\in \bigcup_{i\in A} \alpha_i$ such that $r>p$. Thus $\bigcup_{i\in A} \alpha_i$ is a cut.
+\end{proof}
+\begin{proposition}\label{pro:lub}
+  The set $\R$ has l.u.b. property.
+\end{proposition}
+\begin{proof}
+  Let $A\subset \R$ which is bounded from above. I claim that $\alpha_0 = \bigcup_{\alpha \in A} \alpha$ is the supremum of $A$. From the above proposition $\alpha_0$ is a cut. Clearly $\alpha_0$ is an upper bound for $A$ since if $\alpha\in A$ then $\alpha < \bigcup_{\alpha \in A} \alpha \implies \alpha < \alpha_0$. Let $\gamma < \alpha_0$, then there exists $a\in \alpha_0$ s.t. $a\notin \gamma$. Thus there exists a cut $\alpha\in A$ such that $b\in \alpha$. Again since $<$ is an ordering on $\R$ we must have $\gamma < \alpha$. This shows that $\alpha_0$ is the least upper bound of $A$.
+\end{proof}
+\begin{definition}
+  Define "addition" on $\R$ as $\alpha + \beta = \{a+b\ |\ a\in \alpha,\ b\in\beta\}$.
+\end{definition}
+\begin{proposition}
+  $(\R,+)$ is an abelian group. 
+\end{proposition}
+\begin{proof}
+  We must prove the following: $\alpha+\beta$ is a cut, there exists an identity $0^*$ such that $\alpha + 0^* = \alpha + 0^* = \alpha$, and that for each $\alpha$ there exists an inverse such that $\alpha + (-\alpha) = 0^* = (-\alpha) + \alpha$. The associativity of the operator follows from the associativity of $\Q$. Also note that $+$ is commutative again due to commutativity of addition on $\Q$.\\
+
+  Let $\alpha,\beta$ be cuts. Then clearly $\alpha+\beta$ is non-empty. Since there exists $a'>a$ and $b'>b$ for all $a\in \alpha$ and $b\in\beta$ it follows that $a'+b'>a+b$ implying that $a'+b' \notin \alpha+\beta$. Thus $(\alpha+\beta)^c$ is also non-empty. If $p \in \alpha+\beta$ then $p = a+b,\ a\in \alpha,\ b\in \beta$. If $q<p= a+b \implies q-b < a \implies q-b\in \alpha$. Thus $q = (q-b)+b \in \alpha$. Also since there exists $a'\in \alpha$ and $b'\in \beta$ such that $a<a'\And b<b'$. Hence $p<a'+b'$ and $a'+b'\in \alpha+\beta$. Thus $\alpha+\beta$ is a cut.\\
+
+  Define $0^* = \{r\in \Q\ |\ r<0\}$. If $p\in \a + 0^*$ then $p = a+r$ where $a\in\a$ and $r<0$, this implies $p<a \implies p\in \a$. Thus $\a+0^* \subset \a$. If $p\in \a$ then $\exists\ p' \in \a$ s.t. $p'>p$. Since $p-p'<0 \implies p-p'\in 0^*$. Thus by definition $p = (p-p')+p'\in \a + 0^*$. Thus $\a \subset \a + 0^*$, and therefore $\a = \a + 0^*$. The commutativity proves that $\a + 0^* = 0^* + \a = \a$.\\
+
+  Define the inverse of $\a$ as $-\a = \{p\in \Q\ |\ \exists\ r>0\ \text{s.t.} -r-p\notin \a\}$. If $p\in-\a$ then $\exists\ r>0$ s.t. $-p-r \notin \a$. Since $-q-r>-p-r$, using 3 in \cref{pro:cuts} we get that $-q-r\notin \a\implies q\in -\a$. If we set $t = p + (r/2)$ then $t>p$ and $-t-r/2 = -p -r \notin \a \implies t\in -\alpha$. Thus $-\alpha$ is a cut. If $p\in \a$ and $q\in -\alpha$ then $\exists\ r>0$ s.t. $-q-r\notin \alpha$. Using the second property in \cref{pro:cuts}, $-q-r>p \implies p+q < -r < 0 \implies p+q \in 0^*$. Thus $\a + (-\a) \subset 0^*$. If $u\in 0^*$ then $u<0$. Define $w = -u/2$. Clearly $w>0$. Using Archemedian property in $\Q$ we know that exists $n$ such that $nw\in \a$ but $(n+1)w \notin \a$. Let $p = -(n+2)w$, then $-p-w\notin \a$ implying that $p\in -\a$. Thus $nw + p = nw - nw - 2w = v \in \a + (-\a)$. Hence $0^* \subset \a + (-\a)$, and therefore $\a + (-\a) = 0^*$.\\
+\end{proof}
+One can also easily check that the field properties for $+$ are followed.
+\begin{definition}
+  Define a "product" on $\R^+$ (i.e. set of all cuts $\a > 0^*$) as:
+  \[\a \b = \{p\in \Q\ |\ p\leq rs,\ \text{for some $r\in \a$, $s\in \b$ and $r,s>0$}\}.\]
+  This definition is extended to all $\a,\b$ in $\R$ in the following way:
+  \begin{align*}
+    \a\b = \begin{cases}
+      \a\b,\ \a,\b>0^*\\
+      -(-\a)(\b),\ \a<0^* \And \b > 0^*\\
+      -(\a)(-\b),\ \a>0^* \And \b < 0^*\\
+      (-\a)(-\b),\ \a,\b<0^*\\
+    \end{cases}
+  \end{align*}
+\end{definition}
+\begin{definition}
+  Let $1^* = \{q\in \Q\ |\ q<1\}$.
+\end{definition}
+\begin{proposition}
+  $(\R - \{0^*\}, \cdot)$ forms an abelian group.
+\end{proposition}
+\begin{proof}
+  It's too tedious, but similar to that of addition (proof by "cause I said so").
+\end{proof}
+Similarly it can be shown that all ordered field properties are followed by this product. Also it can be shown that the product is distributive over addition. Thus $(\R,+,\cdot)$ is indeed an ordered field with least upper bound property. Thus the remaining part is that $\Q$ is isomorphic to some subset of $\R$. This can be shown by mapping each rational $r$ to the cut $r^* = \{p\in \Q\ |\ p<r\}$. It can be easily shown that products and additions are preserved under this map. This completes the proof for \cref{thm:R}.
 \begin{corollary}[Archemedian property]
-  If $x<y\in \R$ then $\exists n\in \N$ such that $nx>y$.
+  If $0<x<y\in \R$ then $\exists n\in \N$ such that $nx>y$.
 \end{corollary}
 \begin{proof}
   Let $A = \{nx\ |\ n\in \N\}$. If we assume that the corollary is false then $y$ is an upper bound of $A$. Since $\R$ has l.u.b. property $A$ has a supremum, $a = \sup A$. Since $a - 1< a$ it is not an upper bound of $A$. Hence $\exists\ m\in \N$ such that $a-1<m$. It follows further that $a<m+1$ contradicting the fact that $a$ is supremum and that the corollary is false. 

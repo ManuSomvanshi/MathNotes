@@ -2067,6 +2067,10 @@ INPUT ./analysis/construction.tex
 INPUT analysis/construction.tex
 INPUT ./analysis/construction.tex
 INPUT analysis/construction.tex
+INPUT ./analysis/metric.tex
+INPUT analysis/metric.tex
+INPUT ./analysis/metric.tex
+INPUT analysis/metric.tex
 INPUT ./logic_theory/symbolic.tex
 INPUT logic_theory/symbolic.tex
 INPUT ./logic_theory/symbolic.tex
@@ -2154,6 +2158,7 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/tex-gyre/qhvb.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/tex-gyre/qhvr.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/tex-gyre/qhvri.pfb
