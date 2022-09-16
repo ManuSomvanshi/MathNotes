@@ -1,0 +1,127 @@
+\section{Homomorphism and Normal Subgroups}
+\begin{definition}
+  Let $G$ be a group and $A,B\subset G$, and $x\in G$. Then we define the following sets:
+  \begin{enumerate}
+    \item $Ax = \{ax\ |\ a\in A\}$,
+    \item $xA = \{xa\ |\ a\in A\}$,
+    \item $AB = \{ab\ |\ a\in A,\ b\in B\}$.
+  \end{enumerate}
+  When $A$ is a subgroup then $Ax$ is called the right coset, and $xA$ is called the left coset.
+\end{definition}
+\begin{proposition}
+  If $A,B\subset G$ and $x,y\in G$, where $G$ is a group, then:
+  \begin{enumerate}
+    \item $(Ax)y = A(xy)$,
+    \item $(Ax)B = A(xB)$,
+    \item $(AB)x = A(Bx)$,
+    \item $(AB)C = A(BC)$.
+  \end{enumerate}
+\end{proposition}
+\begin{proof}
+  It's pretty trivial, follows from the definitions.
+\end{proof}
+\begin{proposition}
+  If $A,B\subset G$ and $x\in G$, for some group $G$, then $A\subset B \implies$:
+  \begin{enumerate}
+    \item $Ax \subset Bx$,
+    \item $xA \subset xB$.
+  \end{enumerate}
+\end{proposition}
+\begin{proof}
+  Define a function $f_x:G\to G$ defined as $f_x(g) = gx$. Clearly $f_x(A) = Ax$. Since inclusion is preserved under functions $A\subset B \implies f_x(A) \subset f_x(B) \implies Ax \subset Bx$. Similar proof for the second one.
+\end{proof}
+\begin{definition}
+  Let $G$ and $G'$ be two groups and $\phi: G\to G'$ then $\phi$ is called a homomorphism if $\phi(ab) = \phi(a)\phi(b),\ \forall a,b\in G$. If $\phi$ is bijective and a homomorphism then it is called a group isomorphism. A group isomorphism from $G$ to itself is called an automorphism.
+\end{definition}
+\begin{lemma}
+  Let $\phi$ be a homomorphism from $G\to G'$ then:
+  \begin{enumerate}
+    \item $\phi(e) = e'$
+    \item $\phi(a^{-1}) = \phi(a)^{-1},\ \forall\ a\in G$.
+  \end{enumerate}
+\end{lemma}
+\begin{proof}
+  Let $a\in G$, since $\p(a) = \p(a.e) = \p(a)\p(e)$ and $\p(a) = \p(e.a) = \p(e)\p(a)$ it follows that $\p(e) = e'$. Similarly it can be shown that $\p(a^{-1}) = \p(a)^{-1}$.
+\end{proof}
+\begin{lemma}
+  If $\p:G\to G'$ is a homomorphism then $\p(G)$ is a subgroup of $G'$.
+\end{lemma}
+\begin{proof}
+  If $g', h' \in \phi(G)$ then $\exists\ g,h\in G$ s.t. $g' = \p(g) \And h'=\p(h)$. Thus $g'h' = \p(g)\p(h) = \p(gh) \in \phi(G)$. Thus $\phi(G)$ is closed. Since $g\in G\implies g^{-1} \in G \implies \p(g^{-1}) \in \p(G) \implies \p(g)^{-1}\in G$. Thus $\p(G)$ is a subgroup.
+\end{proof}
+\begin{definition}
+  Let $\p:G\to G'$ be a homomorphism then the kernel of $\p$ is defined as $\Ker_\p = \{a\in G\ |\ \p(a) = e'\}$.
+\end{definition}
+\begin{lemma}\label{lem:W}
+  If $w\in \p(G)$ such that $w = \phi(x)$ then $W \coloneq \{y\ |\ \p(y) = w\} = \Ker_\p x$. 
+\end{lemma}
+\begin{proof}
+  Since $\p(yx^{-1}) = \p(y)\p(x^{-1}) = \p(y)\p(x)^{-1} = ww^{-1} = e'$. Thus $yx^{-1}\in \Ker_\p \implies y = kx,\ k\in \Ker_\p \implies W\subset \Ker_\p x$. If $y\in \Ker_\p x$ then $y =kx \implies \p(y)= \p(k)\p(x) = w$ thus $\Ker_\p \subset W$.
+\end{proof}
+\begin{theorem}
+  If $\p:G\to G'$ is a homomorphism then:
+  \begin{enumerate}
+    \item $\Ker_\p$ is a subgroup of $G$.
+    \item $g \Ker_\phi g^{-1} \subset \Ker_\phi$.
+  \end{enumerate}
+\end{theorem}
+\begin{proof}
+  It's trivial:
+  \begin{enumerate}
+    \item $\Ker_\p$ is closed since $\p(xy) = \p(x)\p(y) = e'$ if $x,y \in \Ker_\p$. The inverse exists since $\p(x^{-1}) = \p(x)^{-1} = e'$.
+    \item This is true since $\p(gxg^{-1}) = \p(g)\p(x)\p(g)^{-1} = e'$.
+  \end{enumerate}
+\end{proof}
+\begin{corollary}
+  A homomorphism $\p:G\to G'$ is an injection iff $\Ker_\p = \{e\}$.
+\end{corollary}
+\begin{proof}
+  If the homomorphism is an injection then only one element will be mapped to $e'$, and since $\p(e) = e'$ must be true the kernel just contains the identity. If the kernel is just identity then it means that only $\p(e) = e'$. Since for any $w\in G$ we can define a $W$ as in \cref{lem:W}, $W = \Ker_\phi x \implies W = \{x\}$. Thus $\p$ is an injection.
+\end{proof}
+\begin{definition}[Normal subgroups]
+  A subgroup $H$ of group $G$ is said to be normal if $Hx = xH,\ \forall\ x\in G$.
+\end{definition}
+\begin{proposition}\label{pro:normal}
+  A subgroup $H$ is a normal subgroup of group $G$ iff either:
+  \begin{enumerate}
+    \item $xHx^{-1} \subset H,\ \forall\ x\in G$,
+    \item $HxHy = Hxy,\ \forall\ x,y\in G$.
+  \end{enumerate}
+\end{proposition}
+\begin{proof}
+  \begin{enumerate}
+    \item  ($\impliedby$) If $xHx^{-1} \subset H\implies xH \subset Hx$. Also since $x^{-1}Hx \subset H \implies Hx \subset xH$. Thus $xH = Hx$. ($\implies$) If $xH = Hx \implies H = x^{-1} H x$.
+    \item ($\implies$) Since $HxHy = H(xH)y = H(Hx)y = (HH)(xy)$. Since $HH = \{hh'\ |\ h,h' \in H\}$ and $H$ is a subgroup, it follows that $HH = H$. Thus $HxHy = Hxy$ if $H$ is normal. ($\impliedby$) If $HxHy = Hxy \implies H(xHx^{-1}) = H \implies xHx^{-1} = H$ which proves that $H$ is normal.
+  \end{enumerate}
+\end{proof}
+\begin{remark}
+  Note that the kernel is always a normal subgroup.
+\end{remark}
+\begin{proposition}\label{pro:quotient}
+  Let $G$ be a group and $N$ be a normal subgroup of $G$. Define the relation $\sim$ on $G$ as before as $a\sim b \iff ab^{-1} \in N$. Then as seen before $Na = [a]$. Define a product between equivalence classes as $NaNb = Nab$. This product is well defined and the collection of all equivalence classes forms a group under this product. The collection of equivalece classes is denoted by $G\bign/N$, and the group it forms under the product defined is called the Quotient group.
+\end{proposition}
+\begin{proof}
+  If $Na = Na'$ and $Nb=Nb'$ then $NaNb = Na'Nb'$, since $NaNb = Nab$ and $Na'Nb' = Na'b'$ it follows that $Nab = Na'b'$. Thus the product is well defined. Clearly set $G\bign/N$ is closed under this product due to \cref{pro:normal}. The identity of the group is $N$, and the inverse of $Na$ will be $Na^{-1}$.
+\end{proof}
+\begin{proposition}
+  There exists a homomorphism $\p: G \to G\bign/N$ such that $\Ker_\p = N$.
+\end{proposition}
+\begin{proof}
+  Consider the most natural map $\p(g) = Ng$. Then the kernel is $\Ker_\p = \{g\ |\ \p(g) = N\}$. Since $Ng = N \implies g \in N$ it follows that $\Ker_\p = N$.
+\end{proof}
+\begin{remark}
+  The order of the quotient group is the same as the index of $N$ in $G$. From Lagrange's theorem it follows that for finite groups $|G\bign/N| = |G|\bign/ |N|$.
+\end{remark}
+\begin{theorem}[First Isomorphism Theorem]\label{thm:1it}
+  If $\p:G\to G'$ is a homomorphism with kernel $\Ker_\p$ then $G' \simeq G\bign/ \Ker_\p$.
+\end{theorem}
+\begin{proof}
+  Consider the map $\psi: G\bign/ \Ker_\p \to G$ defined by $\psi(\Ker_\p a) = \phi(a)$. We prove that this is a group isomorphism.
+  \begin{enumerate}
+    \item \textit{(Well Defined)}. If $\Ker_\p a = \Ker_\p b$ then $ab^{-1} \in \Ker_\p$. It follows that $\psi(\Ker_\p a) = \p(a) = \p(ab^{-1})\p(b) = \p(b) = \psi(\Ker_\p b)$. Thus the map is well defined.
+    \item \textit{(Injective)}. If $\psi(\Ker_\p a) = \psi(\Ker_\p b)$. Then $\p(a) = \p(b) \implies \p(ab^{-1}) = e'$. Thus $ab^{-1} \in \Ker_\p$ which further implies that $\Ker_\p a = \Ker_\p b$.
+    \item \textit{Surjective}. Surjectivity of the map can be seen by construction. If $\p(a)\in G'$ then $\Ker_\p a \in G\bign/ \Ker_p$ is mapped to $\p(a)$. 
+    \item \textit{(Homomorphism)}. Since $\psi(\Ker_\p a \Ker_\p b) = \psi(\Ker_\p ab) = \p(ab) = \p(a)\p(b) = \psi(\Ker_\p a)\psi(\Ker_\p b)$, $\psi$ is a homomorphism.
+  \end{enumerate}
+  This completes the proof.
+\end{proof}

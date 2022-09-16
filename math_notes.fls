@@ -2063,6 +2063,10 @@ INPUT ./algebra/lagrange.tex
 INPUT algebra/lagrange.tex
 INPUT ./algebra/lagrange.tex
 INPUT algebra/lagrange.tex
+INPUT ./algebra/hom.tex
+INPUT algebra/hom.tex
+INPUT ./algebra/hom.tex
+INPUT algebra/hom.tex
 INPUT ./analysis/construction.tex
 INPUT analysis/construction.tex
 INPUT ./analysis/construction.tex
