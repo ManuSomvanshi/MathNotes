@@ -9,7 +9,7 @@
       \end{enumerate}
     \item A collection of axioms.
     \item Rules for inference.
-    \item A model, i.e. an assignment of truth value to valid statements in the language. We also require the assignment to be such that all axioms are true. A model only gives truth value to atomic statements.
+    \item A model, i.e. an assignment of truth value to valid statements in the language. We also require the assignment to be such that all axioms are true. 
   \end{enumerate}
 \end{definition}
 \begin{example}\label{def:prologic}
@@ -18,27 +18,27 @@
     \item Symbols: 
       \begin{enumerate}
         \item Letters: $P,Q,R,\cdots, P_1, P_2, \cdots$.
-        \item $\land$, $\lor$, $\sim$, $\to$, $\leftarrow$, $\leftrightarrow$, $($, $)$.
+        \item $\land$, $\lor$, $\lnot$, $\to$, $\leftarrow$, $\leftrightarrow$, $($, $)$.
       \end{enumerate}
     \item The valid forms in the laguage are:
       \begin{enumerate}
          \item Atomic forms: $P,\ Q,\ R,\ \cdots$
-         \item If $p$ is a valid form then $\sim p$ is also a valid form.
+         \item If $p$ is a valid form then $\lnot p$ is also a valid form.
          \item If $p,q$ are valid forms then $(p)\land (q),\ (p)\lor (q),\ (p)\to (q),\ (p)\leftrightarrow (q)$ are also valid forms.
       \end{enumerate}
     \item The axioms of propositional logic are:
       \begin{enumerate}
          \item (FL1) $p\to (q\to p)$.
          \item (FL2) $p\to (q\to r) \to (p\to q \to (p\to r))$.
-         \item (FL3) $\sim p \to \sim q \to (q\to p)$.
+         \item (FL3) $\lnot p \to \lnot q \to (q\to p)$.
       \end{enumerate}
     \item A valid form $q$ is \textit{infered} from $p_1,...,p_n$ if $q$ can be written whenever $p_1,...,p_n$. Denote this by $p_1,...,p_n \implies q$. The rules of inference are as follows in propositional logic:
       \begin{enumerate}
         \item $p\to q,\ p \implies q$ (Modus Ponens).
-        \item $p\to q,\ \sim q \implies \sim p$ (Modus Tolens).
+        \item $p\to q,\ \lnot q \implies \lnot p$ (Modus Tolens).
         \item $(p\to q)\land (r\to s), (p\lor r) \implies (q\lor s)$ (Constructive Dilemma).
-        \item $(p\to q)\land (r\to s),\ \sim q \lor \sim s\implies \sim p \lor \sim r$ (Destructive Dilemma).
-        \item $p\lor q,\ \sim p\implies q$ (Disjunctive Syllogism).
+        \item $(p\to q)\land (r\to s),\ \lnot q \lor \lnot s\implies \lnot p \lor \lnot r$ (Destructive Dilemma).
+        \item $p\lor q,\ \lnot p\implies q$ (Disjunctive Syllogism).
         \item $p\to q,\ (q\to r)\implies p\to r$ (Hypothetical Syllogism).
         \item $p,\ q \implies p\land q$ (Conjunction).
         \item $p\land q \implies p$ (Simplification).
@@ -49,13 +49,253 @@
         \item $p\land q\land r \iff p\land(q\land r)$ and $p\lor q\lor r \iff p\lor(q\lor r)$.
         \item $p\land q \iff q\land p$ and $p\lor q \iff q\lor p$.
         \item $p\land(q\lor r) = p\land q \lor p\land r$ and $p\lor(q\land r) = p\lor q \land p\lor r$.
-        \item $p\to q \iff \sim q\to \sim p$.
-        \item $p\iff \sim (\sim p)$.
-        \item $\sim (p\land q) \iff \sim p\lor \sim q$ and $\sim (p\lor q) \iff \sim p\land \sim q$.
+        \item $p\to q \iff \lnot q\to \lnot p$.
+        \item $p\iff \lnot (\lnot p)$.
+        \item $\lnot (p\land q) \iff \lnot p\lor \lnot q$ and $\lnot (p\lor q) \iff \lnot p\land \lnot q$.
         \item $p\land p\iff p$ and $p\lor p \iff p$.
-        \item $p\to q \iff \sim p\lor q$.
+        \item $p\to q \iff \lnot p\lor q$.
         \item $p\leftrightarrow q \iff (p\to q)\land (q\to p)$.
       \end{enumerate}
-    \item The model in propositional logic assigns each atomic form a value $\{T, F\}$. Given two valid forms $p,q$ every model must satisfy the following truth table:
+    \item The model in propositional logic assigns each atomic form a value $\{T, F\}$. Given two valid forms $p,q$ every model must satisfy the usual truth table which is assigned to the propositions $p\land q,p\lor q, p\to q, \lnot p$.
   \end{enumerate}
 \end{example}
+\begin{remark}
+  It is possible to replace the rules of inference only with MP. The resulting logical system is equivalent to propositional logic (shown in assignment 1).
+\end{remark}
+The model part of a logic system is called \textit{sematics}. Semantics is essentially assigning meaning to proposition. The inference rules, axioms, and replacement rules fall under \textit{syntactics}. 
+\subsection{Sematics of Propositional logic}
+\begin{definition}
+  A tautology is a valid form which is true in all models. For example $q\land \lnot q$. Similarly a contradiction is a statement which is false in all models of propositional logic. If a statement isnt a contradiction or tautology then it is called a contingency.
+\end{definition}
+\begin{definition}
+  Let $p_1,...,p_{\ell -1}$, $q$ be valid forms in propositional logic then:
+  \begin{enumerate}
+    \item If $q$ is a tautology then write $\vDash q$. 
+    \item We say that $p_1,...,p_{\ell-1}$ logically implies $q$ if:
+      $$\vDash p_1,...,p_{\ell-1} \to q$$
+    \item When $p_1,...p_{\ell -1}$ logically imply $q$ we write:
+      \[p_1,...,p_{\ell-1} \vDash q\]
+  \end{enumerate}
+  We call $p_1,...,p_{\ell -1}$ the premise and $q$ the conclusion.
+\end{definition}
+\begin{definition}
+  Two statements are logically equivalent if $\vDash p \leftrightarrow q$.
+\end{definition}
+\begin{proposition}
+  All tautologies are logically equivalent, and all contradictions are logically equivalent.
+\end{proposition}
+\subsection{Syntactics of Propositional logic}
+\begin{definition}
+  A formal proof of $q$ from the premise $p_1,...,p_{\ell -1}$ is a finite sequence of valid forms $q_0,...,q_n$ such that:
+  \begin{enumerate}
+    \item $q_i$ is either one of $p_i$,
+    \item $q_i$ is one of the axioms,
+    \item $q_i$ follows from $q_0,...,q_{i-1}$ using rules of inference/replacement rules.
+  \end{enumerate}
+  If a fomral proof of $q$ exists from premise $p_1,...,p_{\ell -1}$ then we write $p_1,...,p_{\ell -1} \vdash q$. 
+\end{definition}
+\begin{definition}[Given in class]
+  We say $p \implies q$ if $r\vdash p$ then $r \vdash q$.
+\end{definition}
+\begin{theorem}
+  $p\implies q$ if and only if $p\vdash q$.
+\end{theorem}
+\begin{proof}
+  Assuming $p\implies q$, it follows from definition that if $r \vdash p$ then $r\vdash q$. Thus the following proof sequence proves the forward implication: $p\vdash p, p\implies q, p\vdash q$. For the proof in other direction since $p \vdash q$ there is a sequence $p,q_0,...,q_{n-1}, q$. If $r \vdash p$ there is also a sequence $r, p_0,...,p_{k-1}, p$. Thus the proof sequence $r,p_0,...p_{k-1}, p, q_0,...,q_{n-1}, q$ is a proof from $r$ to $q$. Thus $r\vdash q$, completing the proof.
+\end{proof}
+\begin{definition}
+  Converse of $p\to q$ is $q\to p$.  
+\end{definition}
+\begin{definition}
+  Contrapositive of $p\to q$ is $\lnot q \to \lnot p$.
+\end{definition}
+\begin{proposition}
+  $p \to q \vdash \lnot q \to \lnot p$.
+\end{proposition}
+\begin{proof}
+  \begin{align*}
+    &q_0:\ p\to q,\ \text{given}\\  
+    &q_1:\ (p\to q) \to (\lnot q \to \lnot p),\ \text{FL3}\\
+    &q_2:\ \lnot q \to \lnot p,\ \text{MP}. 
+  \end{align*}
+\end{proof}
+Similarly it can be shown that the contrapositive implies the statement.
+\subsection{Proof Methods}
+\begin{lemma}
+  If $\vdash q$ then $\vdash p\to q$.
+\end{lemma}
+\begin{proof}
+  If $\vdash q$ then there exists a sequence $r_0,...,r_\ell, q$ where $r_i$ are either axioms or are infered from $r_0,...,r_{i-1}$. Thus the sequence $r_0,...,r_\ell,q,q\lor \lnot p, p \to q$ is a valid proof for $p\to q$. Thus $\vdash p \to q$.
+\end{proof}
+\begin{theorem}[Deduction]
+  $p \vdash q$ iff $\vdash p \to q$.
+\end{theorem}
+\begin{proof}
+  (Backward implication). If $\vdash p\to q$ then there exists a sequence $r_0,...,r_\ell, p\to q$ where $r_i$ are either axioms or are infered from rules of inference/replacement rules. Thus the sequence $r_0,..., r_l, p\to q, p, q$ is a valid proof of $q$ given the premise $p$. Thus $p\vdash q$.\\
+
+  (Forward implication). Very long, refer to theorem 1.4.4 of O'Leary for proof.
+\end{proof}
+\begin{corollary}
+  If $p_1,...,p_n, q\vdash r$ then $p_1,...,p_n\vdash q\to r$.
+\end{corollary}
+\begin{theorem}[Direct proof]
+  If $p_1,...,p_n,q \vdash r$ then $p_1,...,p_n \implies q\to r$.
+\end{theorem}
+\begin{proof}
+  Using deduction the we get $p_1,...,p_n \vdash q \to r$ and using the fact that $\vdash$ and $\implies$ are equivalent it follows that $p_1,...,p_n \implies q\to  r$.
+\end{proof}
+\begin{theorem}[Indirect Proof]
+  $\lnot q \to (p \land \lnot p) \implies q$.
+\end{theorem}
+\begin{proof}
+  \begin{align*}
+    &q_1:\ \lnot q\to (p\land \lnot p),\ \text{given}\\ 
+    &q_2:\ \lnot (p\land \lnot p) \to \lnot \lnot q,\ \text{1, contraposition}\\
+    &q_3:\ \lnot p\lor p \to q,\ \text{2, DN}\\ 
+    &q_4:\ p\to (p \to p),\ \text{FL1}\\ 
+    &q_5:\ \lnot p \lor (\lnot p \lor p), \text{4, Imp}\\
+    &q_6:\ (\lnot p \lor \lnot p) \lor p,\ \text{5, associativity}\\
+    &q_7:\ \lnot p \lor p, \text{6, idem}\\ 
+    &q_:\ q,\ \text{3, 7 M.P.}\\
+  \end{align*}
+  Thus $\lnot q \to (p \land \lnot p) \vdash q$ which is equivalent to the claim.
+\end{proof}
+\subsection{Consistency}
+\begin{notation}
+  $p_0,... \vdash q$ if any subsequence $p_{i_1},...p_{i_k} \vdash q$. If no subsequence proves $q$ then $p_0,... \nvdash q$.
+\end{notation}
+\begin{definition}
+  A sequence of valid forms $p_0,p_1,...$ is consistent if for every propositional form $q$, $p_0,p_1,... \nvdash q\lnot q$. We write this as $\Con(p_0,...)$.
+\end{definition}
+\begin{theorem}
+  If $p_0,...$ are valid forms then the following are equivalent:
+  \begin{enumerate}
+    \item $\Con(p_0,...)$.
+    \item Any subsequence of $p_0,...$ is consistent.
+    \item There exists a form $p$ such that $p_0,...\nvdash p$.
+  \end{enumerate}
+\end{theorem}
+\begin{proof}
+  We prove that $1\implies 2 \implies 3 \implies 1$.
+  \begin{enumerate}
+    \item Assume that there exists a subsequence $p_{i_1},...,p_{i_n}$ so that $p_{i_1},...,p_{i_n}\vdash q\land \lnot q$. Then it means that there is a subsequence such that a contradiction can be derived. Thus $\lnot \Con(p_0,...)$. Which is a contradiction. Thus every subsequence is consistent.
+    \item If every subsequence is consistent then there is no subsequence which derives the proposition of the form $q\land \lnot q$. Thus $p_0,... \nvdash q\land \lnot q$.
+  \end{enumerate}
+\item Assume that $p_0,...$ is not consistent. Then for all propositions $q$ there exists a subsequence such that $p_{i_1},...,p_{i_n} \vdash q\land \lnot q$. Thus $p_{i_1},...,p_{i_n}, r_0,...,r_\ell, q\land \lnot q, q$ is a valid proof of $q$. Which shows that for all propositions $q$, $p_0,... \vdash q$. Which is a contradiction.
+\end{proof}
+\begin{definition}
+  A sequence $p_0,...$ is maximally consistent if $\Con(p_0,...)$ and for any $p \neq p_i$ we have $\lnot \Con(p,p_0,...)$.
+\end{definition}
+Given any sequence which is not maximally consistent it is possible to construct a sequence which is maximally consistent by just adding all the implications of set in the set.
+\begin{theorem}
+  Every consistent sequence is a subsequence of maximally consistent sequence. 
+\end{theorem}
+\begin{proof}
+  Let $p_0,...$ be a consistent sequence and let $q_0,q_1,...$ be the sequence of all propositional forms. Then define a new sequence in the following way:
+  \begin{align*}
+    r_{2k} &= p_k,\ 0\leq k\\
+    r_{2k+1} &= \begin{cases}
+      q_k,\ \text{if $\Con(q_i, r_0,...,r_{2k},p_0,...)$}\\
+      p_k,\ \text{otherwise}  
+    \end{cases}
+  \end{align*}
+  Clearly $p_0,p_1,...$ is a subsequence of $r_0,r_1,...$ and that $\Con(r_0,r_1...)$ by definition. All that remains to show is that the sequence is maximal. Let $q$ be some proposition, then $q=q_i$ for some $i\geq 0$. If $\Con(q,r_0,...)$ then by construction $q=r_j$ for some $j\geq 0$ because it was added at step $2i+1$. Thus if $q \neq r_i$ for some $i$ then $\lnot \Con(q,r_0,...)$ (contrapositive of previous statement). 
+\end{proof}
+\subsection{Soundness}
+\begin{definition}
+  A logical system is sound if every theorem is a tautology.
+\end{definition}
+\begin{lemma}
+  All axioms of propositional logic are tautologies.
+\end{lemma}
+\begin{proof}
+  Easy to check using truth tables.
+\end{proof}
+\begin{lemma}\label{lem:axiom}
+  If $p \implies q$ then $p \to q$ is a tautology. Also if $p, q \implies r$ then $p\land q \to r$ is a tautology.
+\end{lemma}
+\begin{proof}
+  To show this we lnotply have to check that all the rules of inference, and the rules of replcaement are tautologies. Since MP implies all the other rules of inference it is enough to check that MP, replacement rules are tautologies. This can be verified to be true by making the truth table for all of them.
+\end{proof}
+\begin{lemma}\label{lem:infer}
+  If $p\to q$ and $p$ are tautologies then $q$ is a tautology.
+\end{lemma}
+\begin{proof}
+  If for any valuation function $v(p) = T$ and $v(p\to q) = T$ then from the truth table the only possibility is that $v(q) = T$, if $v$ is a valid model. 
+\end{proof}
+\begin{theorem}[Soundness]
+  If $\vdash p$ then $\vDash p$.
+\end{theorem}
+\begin{proof}
+  If $\vdash p$ then by definition there exists a proof sequence $q_0,q_1,...,q_n = p$ where each $q_i$ is either an axiom, or $q_0,q_1,...q_{i-1}\implies q_i$ using MP or replacement rules.
+  \begin{enumerate}
+    \item If $q_i$ is an axiom then it is a tautology, by \cref{lem:axiom}.
+    \item If $q_i$ is infered from $q_0,...,q_{i-1}$ then also it is a tautology becauseof \cref{lem:infer}.
+  \end{enumerate}
+  Since $q_n = p$, it follows that $p$ is a tautology.
+\end{proof}
+\begin{corollary}
+  If $p_1,...,p_n \vdash q$ then $p_1,...,p_n \vDash q$.
+\end{corollary}
+\begin{proof}
+  This follows from soundeness. The only additional part is that $q_i$'s in the proof sequence can now be one of $p_i$. But since we assume $v(p_i) = T$, it does not cause an issue in the proof.  
+\end{proof}
+\begin{corollary}
+  Propositional logic is consistent.
+\end{corollary}
+\begin{proof}
+  Since every theorem is a tautology, and $p\land \lnot p$ is a contradiction it cannot be a theorem. Thus within propositional logic $\nvdash p\land \lnot p$.
+\end{proof}
+\subsection{Complete}
+\begin{definition}
+  A logic system is complete if every tautology is a theorem.
+\end{definition}
+\begin{lemma}\label{lem:com1}
+  If $\lnot \Con(\lnot q, p_0,...)$ then $p_0,... \vdash q$.
+\end{lemma}
+\begin{proof}
+  If $\lnot \Con(p_0,...)$ then by theorem $1.21$ it is possible to show that $p_0,...\vdash q$. Thus assume $\Con(p_0,...)$. Since $\lnot \Con(\lnot q, p_0,...)$ there exists some $r$ such that:
+  \begin{align*}
+    \lnot q, p_0,...\vdash r\and \lnot r, \text{or,}\\
+    \lnot q, p_{i_1},...p_{i_n}\vdash r\and \lnot r.
+  \end{align*}
+  $\lnot q$ must show up in subsequence since the $p_i$'s are consistent. Thus there is a proof sequence: $p_{i_1},...,p_{i_n}, \lnot q,s_0,...,s_k, r\land \lnot r$. By indirect proof one can show that the subproof $p_{i_1},...,p_{i_n}\vdash q$ is valid. Thus $p_0,... \vdash q$.
+\end{proof}
+\begin{lemma}\label{lem:com2}
+  If $p_0,...$ is maximally consistent then for any $q$ either $q = p_i$ or $\lnot q = p_i$ for some $i\geq 0$.
+\end{lemma}
+\begin{proof}
+  Since $p_0,...$ is consistent both $q$ and $\lnot q$ cannot be in the sequence. Thus assume that $\lnot q$ is not. Thus by previous lemma we can show that since $\lnot \Con(\lnot q, p_0,...)$ then $p_0,... \vdash q$. Since the sequence is maximal it must contain $q$.
+\end{proof}
+\begin{hypothesis}[Induction hypothesis]
+  Induction on propositional forms states that a property is true for all propositional forms if:
+  \begin{enumerate}
+    \item It is true for all atomic forms.
+    \item If it is true for $p,q$ then it is true for $\lnot p$ and $p\to q$. ($p\land q,\ p\lor q$ are not included here cause they can be expressed using $\lnot,\to$).
+  \end{enumerate}
+  In proving the later statement we assume that said property holds for $p,q$. This assumption is called the induction hypothesis.
+\end{hypothesis}
+\begin{lemma}\label{lem:com3}
+  If $\Con(p_0,...)$ then there exists a valulation function $v$ such that $v(p) = T$ if and only if $p = p_i$ for some $i$.
+\end{lemma}
+\begin{proof}
+  Since any consistent sequence can be extended to a maximally consistent one, let's assume that $p_0,...$ is maximally consistent. Let $X_0,...$ be sequence of all atomic forms. Then define the valuation function as follows:
+  \begin{align*}
+    v(X_i) = \begin{cases}
+      T,\ \text{if $X_i= p_j$ for some $j\geq 0$}\\
+      F, \text{otherwise} 
+    \end{cases}
+  \end{align*}
+  Clearly, by construction, $v(X_j) = T$ iff $X_j = p_i$ for some $i$. Assume that $v(p) = T$ iff $p = p_i$ and $v(q) = T$ iff $q = p_i$ for $i$.
+  \begin{enumerate}
+    \item Assume $v(\lnot q) =T$. Then $v(q) = F$. Thus by induction $q$ is not in the list $p_0,...$. Thus $\lnot q$ must be in the list (by previous lemma). Hence if $v(\lnot q)$ then $\lnot q = p_i$ for some $i$. 
+    \item Conversely if $\lnot q = p_i$ for some $i$ then by consistency $q$ is not in the sequence and hence by induction $v(q) = F$. Thus $v(\lnot q) = T$. Hence $v(\lnot q) = T$ iff $\lnot q = p_i$ for some $i$.
+    \item Similarly case by case it can be shown that $v(p\to q) =T$ iff $p\to q = p_i$ for some $i$.
+  \end{enumerate}
+\end{proof}
+\begin{theorem}
+  Propositional logic is complete.
+\end{theorem}
+\begin{proof}
+  Let's say that $\nvdash p$. Then $\Con(FL1, FL2, FL3, \lnot p)$. It follows from the previous lemma that there exists a valuation function such that $v(p) = F$. Thus $\nvDash p$ (we have proven the contrapositive). 
+\end{proof}

@@ -2079,6 +2079,7 @@ INPUT ./logic_theory/symbolic.tex
 INPUT logic_theory/symbolic.tex
 INPUT ./logic_theory/symbolic.tex
 INPUT logic_theory/symbolic.tex
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-t1.tfm
 INPUT ./linear_algebra/fields.tex
 INPUT linear_algebra/fields.tex
 INPUT ./linear_algebra/fields.tex
