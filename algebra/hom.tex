@@ -113,15 +113,23 @@
   The order of the quotient group is the same as the index of $N$ in $G$. From Lagrange's theorem it follows that for finite groups $|G\bign/N| = |G|\bign/ |N|$.
 \end{remark}
 \begin{theorem}[First Isomorphism Theorem]\label{thm:1it}
-  If $\p:G\to G'$ is a homomorphism with kernel $\Ker_\p$ then $G' \simeq G\bign/ \Ker_\p$.
+  If $\p:G\to G'$ is a surjective homomorphism with kernel $\Ker_\p$ then $G' \simeq G\bign/ \Ker_\p$.
 \end{theorem}
 \begin{proof}
   Consider the map $\psi: G\bign/ \Ker_\p \to G$ defined by $\psi(\Ker_\p a) = \phi(a)$. We prove that this is a group isomorphism.
   \begin{enumerate}
     \item \textit{(Well Defined)}. If $\Ker_\p a = \Ker_\p b$ then $ab^{-1} \in \Ker_\p$. It follows that $\psi(\Ker_\p a) = \p(a) = \p(ab^{-1})\p(b) = \p(b) = \psi(\Ker_\p b)$. Thus the map is well defined.
     \item \textit{(Injective)}. If $\psi(\Ker_\p a) = \psi(\Ker_\p b)$. Then $\p(a) = \p(b) \implies \p(ab^{-1}) = e'$. Thus $ab^{-1} \in \Ker_\p$ which further implies that $\Ker_\p a = \Ker_\p b$.
-    \item \textit{Surjective}. Surjectivity of the map can be seen by construction. If $\p(a)\in G'$ then $\Ker_\p a \in G\bign/ \Ker_p$ is mapped to $\p(a)$. 
+    \item (\textit{Surjective}). Surjectivity of the map can be seen by construction. If $\p(a)\in G'$ then $\Ker_\p a \in G\bign/ \Ker_p$ is mapped to $\p(a)$. 
     \item \textit{(Homomorphism)}. Since $\psi(\Ker_\p a \Ker_\p b) = \psi(\Ker_\p ab) = \p(ab) = \p(a)\p(b) = \psi(\Ker_\p a)\psi(\Ker_\p b)$, $\psi$ is a homomorphism.
   \end{enumerate}
   This completes the proof.
+\end{proof}
+\begin{theorem}[Cauchy theorem for finite abelian groups]
+  If $G$ is a finite abelian group and a prime $p$ divides order of $G$ then there exists a subgroup of $G$ of order $p$.
+\end{theorem}
+\begin{proof}
+  Clearly for the trivial group this is true. Assume that the theorem is true for all groups with order less than $G$. Then there are two cases: either $G$ has non-trivial subgroups or it does not. If it does not hase non-trivial subgroups then it must be of prime order. Since $G$ is a subgroup of itself the theorem holds true.\\
+
+  If $|G|$ has some non-trivial subgroup $N$ then it's order must divide $|G|$. If a prime $p\ |\ |N|$ then there must exist a subgroup of $N$ of order $p$ (by induction). Now assume that $p$ does not divide $|N|$. Since $G$ is abelian it follows that $N$ is a normal subgroup. Thus $G/N$ is a group. Since $|G/N| = |G|/|N|$ and since $p$ does not divide $|N|$ we have that $p\ |\ |G/N|$. Since $|G/N|< |G|$ it follows that $G/N$ has a subgroup of order $p$.
 \end{proof}

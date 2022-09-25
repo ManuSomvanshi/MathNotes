@@ -21,3 +21,85 @@
     \item $E$ is dense in $X$ if every point of $X$ is either a limit point of $E$, a point in $E$, or both.
   \end{enumerate}
 \end{definition}
+\begin{proposition}
+  Every neighborhood is open.
+\end{proposition}
+\begin{proof}
+  Let $x\in X$ be some point and let $N_r(x)$ be some neighborhood of $x$. Let $p\in N_r(x)$. Choose $\e < r- d(x,p)$. Then for any $y\in N_\e(p)$, 
+  \[d(x,y) \leq d(x,p) + d(p,y) < r.\]
+  Hence every point $p$ is in the interior.
+\end{proof}
+\begin{proposition}
+  If $p$ is a limit point of $E$ then there are infinitely many points of $E$ in any neighborhood of $p$.
+\end{proposition}
+\begin{proof}
+  Assume that some neighborhood has finitely many points of $E$, given by the set $S= \{y_1,...,y_n\}$. Then let $\delta < \min\{d(p,y_i)\ |\ y_i \in S\}$. Then there exists another point $y\in N_\delta (p)$ such that $y\in E$ (since $p$ is a limit point). This is a contradiction, hence there are infinite points in every neighborhood.
+\end{proof}
+\begin{corollary}
+  A finite set of points has no limit points.
+\end{corollary}
+\begin{proof}
+  If it had a limit point, then every neighborhood of that point must have infinite points. This isnt possible since it has only finitely many points.
+\end{proof}
+\begin{proposition}
+  Let $\{E_\a\}$ be any collection of points then:
+  \[\bigcap_\a E_\a^c = \l(\bigcup_\a E_\a\r)^c.\]
+\end{proposition}
+\begin{proof}
+  It's simple. Just show if $x\in A$ then $x\in B$ and the converse, where $A,B$ are the LHS and RHS of the above equation respectively. 
+\end{proof}
+\begin{proposition}
+  A set is open iff it's compliment is closed.
+\end{proposition}
+\begin{proof}
+  Suppose $E^c$ is closed. Let $x\in E$ then $x\notin E^c$ which means that $x$ is not a limit point of $E^c$. Thus there exists a neighborhood $N$ of $x$ such that $N\cap E^c = \emptyset$. Thus $N\subset E$. Thus $x$ has a neighborhood contained in $E$, making it an interior point. Thus $E$ is open.\\
+
+  Suppose $E$ is open. Let $x$ be a limit point of $E^c$. Then for any neighborhood $N$ of $x$ there exists a point $p$ s.t. $p\in N\cap E^c$. Thus no neighborhood of $x$ is contained in $E$, thus $x$ is not an interior point of $E$ and since by assumption $E$ is open it follows that $x\in E^c$. Thus $E^c$ is closed.
+\end{proof}
+\begin{corollary}
+  A set is closed iff it's compliment is open.
+\end{corollary}
+\begin{proof}
+  Directly follows from previous proposition.
+\end{proof}
+\begin{proposition}
+  Let $X$ be a metric space and $\{G_\a\}$ be any collection of subsets, then:
+  \begin{enumerate}
+    \item If $\{G_\a\}$ is open then $\bigcup_\a G_\a$ is open.
+    \item If $\{G_\a\}$ is closed then $\bigcap_\a G_\a$ is closed.
+    \item If the collection $\{G_\a\}$ is finite and each set is open then $\bigcap_{\a=1}^n G_\a$ is open.
+    \item If the collection $\{G_\a\}$ is finite and each set is closed then $\bigcup_{\a=1}^n G_\a$ is closed.
+  \end{enumerate}
+\end{proposition}
+\begin{proof}
+  \begin{enumerate}
+    \item Let $x\in \bigcup_\a G_\a$ then there exists $\alpha$ s.t. $x\in G_\a$. Since $G_\a$ is open, every neighborhood $N$ of $x$ is contained in $G_\a$ and therefore in $\bigcup_\a G_\a$. Proving that $\bigcup_\a G_\a$ is open.
+    \item Let $x\in X$ be a limit point of $\bigcap_\a G_\a$. Then for every neighborhood $N$ of $x$, $N\cap \bigcap_\a G_\a$ has infinitely many points. Thus $N\cap G_\a$ has infinitely many points (forall $\a$). This means that $x$ is a limit point of every $G_\a$. Since $G_\a$ is closed $x\in G_a$, for all $\a$. Therefore $x\in \bigcap_\a G_\a$.
+    \item Let $x\in \bigcap_{\a=1}^n G_\a$ then for each $\a$ there exists a neighborhood $N_\a$ of $x$ such that $N_\a\subset G_\a$. Let $r$ be the minimum of the radii of the neighborhoods $N_\a$, then $N_r(x) \subset \bigcap_{\a=1}^n G_\a$. Thus every $x$ is in the interior of $\bigcap_{\a =1}^n G_\a$.
+    \item Just use the above proof for compliments, and then use de-morgan law.
+  \end{enumerate}
+\end{proof}
+\begin{definition}
+  Let $(X,d)$ be a metric space, $E\subset X$, $L$ be the set of limit points of $E$ then $\bar{E} \coloneq E\cup L$ is called the closure of $E$.
+\end{definition}
+\begin{proposition}
+  The closure of any set is closed.
+\end{proposition}
+\begin{proof}
+  It is obvious since every limit point is in the set by definition.
+\end{proof}
+\begin{proposition}
+  $E=\bar{E}$ iff $E$ is closed.
+\end{proposition}
+\begin{proof}
+  If $E$ is closed then $L\subset E \implies \bar{E} = E\cup L = E$. If $\bar{E} = E$ then $\bar{E}\cap L = E\cap L$. Since $L\subset \bar{E}$ it follows that $L = E\cap L$. Thus $L\subset E$.
+\end{proof}
+\begin{proposition}
+  If $E\subset F$ and $F$ is closed then $\bar{E} \subset F$.
+\end{proposition}
+\begin{proof}
+  Let $x$ be a limit point of $E$. Since $E\subset F$, it follows that $x$ is also a limit point of $F$ (since it every neighborhood of $x$ would contain a point $E$ which is also in $Y$). Since $F$ is closed every limit point of $F$ is in $F$. Thus if $L$ is the set of limit points of $E$ then $L\subset F$. Hence $\bar{E} = E\cup L \subset F$.
+\end{proof}
+\begin{proposition}
+  If $E\subset Y\subset X$ then $E$ is open relative to $Y$ iff $E = G\cap Y$ for some open set in $G$ in $X$.
+\end{proposition}
