@@ -1,0 +1,69 @@
+\section{Automorphisms}
+\begin{definition}
+  An automorphism is an isomorphism from a group to itself. Let $\aut(G)$ represent the set of all automorphisms.
+\end{definition}
+\begin{proposition}
+  $\aut(G)$ is a group under composition. 
+\end{proposition}
+\begin{proof}
+  It's trivial.
+\end{proof}
+\begin{definition}
+  The center of group is defined as $Z(G) = \{z \in G\ |\ \forall\ g\ zg = gz\}$.
+\end{definition}
+\begin{definition}
+  The set of all automorphisms of the form $\p_g:x\mapsto gxg^{-1}$ are called inner automorphisms, and they form a subgroup of the group of automorphisms. It is represented as $\inn(G)$.
+\end{definition}
+\begin{proposition}
+  The group $\inn(G)$ is isomorphic to a quotient of $G$.
+\end{proposition}
+\begin{proof}
+  Construct a map from $G\to \inn(G)$ the following way: $\psi: g \mapsto \p_g$.
+  \begin{enumerate}
+    \item Since
+      \begin{align*}
+        \psi(gh) = \p_{gh} = \p_g\p_h = \psi(\p_g)\psi(\p_h), 
+      \end{align*}
+      $\psi$ is a homomorphism.
+    \item For every $\p_g\in G$ there exists a $\p_g$, so $\psi$ is surjective.
+    \item The kernel of $\psi$ is:
+      \begin{align*}
+        \Ker_\psi = \{g\ |\ \psi(g) = \p_\e\} = \{g\ |\ gxg^{-1} = x,\ \forall\ x\in G\} = Z(G).
+      \end{align*}
+  \end{enumerate}
+  Thus using the first isomorphism theorem $\inn(G) \simeq G\bign/Z(G)$.
+\end{proof}
+\begin{definition}
+  Let $H$ and $N$ be groups, and let $\p:H\to \aut(N)$ be a homomorphism. Then the semi-direct product $N \rtimes_\p H$ is the set $N\times H$ equiped with the product:
+  \begin{align*}
+    (n_1, h_1)\star (n_2, h_2) = (n_1 \p(h_1)(n_2), h_1h_2).
+  \end{align*}
+\end{definition}
+\begin{proposition}
+  The semi-direct $N\rtimes_\p H$ is a group.
+\end{proposition}
+\begin{proof}
+  The closure and associativity part are trivial. The identity element is $(e_N, e_H)$. The inverse of $(n,h)$ is $(\p(h^{-1})(n^{-1}), h^{-1})$.
+\end{proof}
+\begin{remark}
+  In the case when $\p:H \to \aut(N)$ is given by $\p(h) = \text{id}$, the semidirect product is called the direct product. This is cause $(n_1,h_1)(n_2,h_2) = (n_1n_2, h_1 h_2)$ in this case.
+\end{remark}
+\begin{theorem}
+  Let $N,H$ be subgroups of $G$. Let $N$ be normal in $G$, $NH = G$ and $N\cap H = \{e\}$, then $G \simeq N\rtimes_\p H$ where $\p(h)(n) = hnh^{-1}$.
+\end{theorem}
+\begin{proof}
+ Construct the map $\psi:N\rtimes_\p H \to NH$ given by $(n,h)\mapsto nh$.
+ \begin{enumerate}
+   \item Since
+     \begin{align*}
+       \psi((n_1,h_1)(n_2,h_2)) = \psi(n_1 h_1 n_2 h_1^{-1}, h_1 h_2) = n_1 h_1 n_2 h_2 = \psi(n_1h_1)\psi(n_2h_2),
+     \end{align*}
+     $\psi$ is a homomorphism.
+   \item For any $nh\in NH$, $(n,h)\in N\rtimes_\p H$ is mapped to $nh$ by $\psi$. So $\psi$ is surjective.
+   \item The kernel of $\psi$ is:
+     \begin{align*}
+       \Ker_\psi = \{g\in N\rtimes_\p H\ |\ \psi(g) = e\} = \{(n,h) \ |\ nh = e\} = N\cap H = \{e\}.
+     \end{align*}
+ \end{enumerate}
+ Thus $NH \simeq N\rtimes_\p H$, thus $G\simeq N\rtimes_\p H$.
+\end{proof}

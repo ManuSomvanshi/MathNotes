@@ -22,6 +22,16 @@
   \end{enumerate}
 \end{definition}
 \begin{proposition}
+  A point $x$ is a limit point of $E\subset X$ if and only if there exists a sequence $(x_n)\in E$ which converges to $x$.
+\end{proposition}
+\begin{proof}
+  Suppose $x$ is a limit point. Then every neighborhood $N_{1/n}(x)$ $\exists\ x_n (\neq x) \in E$ such that $x_n \in N_{1/n}(x)$. Since,
+  \begin{align*}
+    d(x_n, x) < 1/n \implies \lim_{n\to \infty} x_n = x.
+  \end{align*}
+  Suppose that there exists a sequence $(x_n) \in E$ such that $x_n \to x$. Let $N_\e(x)$ be some neighborhood of $x$. Since there exists $N$ such that $n>N \implies d(x,x_n)<\e$ it follows that for all $n>N$, $x_n \in N_\e(x)$.
+\end{proof}
+\begin{proposition}
   Every neighborhood is open.
 \end{proposition}
 \begin{proof}
@@ -103,3 +113,125 @@
 \begin{proposition}
   If $E\subset Y\subset X$ then $E$ is open relative to $Y$ iff $E = G\cap Y$ for some open set in $G$ in $X$.
 \end{proposition}
+\begin{proof}
+  Suppose that $E = G\cap X$. Let $x\in E$. Then there exists a neighborhood $N_r(x)$ such that $N_r(x)\subset G$. Consider $N = N_r(x)\cap G$. Clearly this is a neighborhood of $x$ relative to $Y$. Since $N\subset E$, $x$ is an interior point of $E$.\\
+
+  Suppose $E$ is open relative to $Y$. Then $\exists\ r_x>0$ s.t. $V_{r_x}(x) \coloneqq \{p\ |\ d(x,p)<r_x,\ p \in Y\} \subset E$. Clearly $V_{r_x}(x) = N_{r_x}(x) \cap Y\subset E$. Let $G = \bigcup_{x\in E} N_{r_x}(x)$. Clearly $G$ is open. Thus $G\cap Y = E$ since $\bigcup_{x\in E} V_{r_x}(x) = E$.
+\end{proof}
+\begin{definition}
+  A collection $\{G_\a\}$ is said to be an open coering of $E\subset X$ if $G_\a$ are covered and $E\subset \bigcup_{\a} G_\a$. A subcovering is a subset of $\{G_\a\}$ which also covers $E$. 
+\end{definition}
+\begin{definition}
+  A subset $Y$ of metric space $X$ is said to be compact if every open covering of $Y$ contains a finite subcover.
+\end{definition}
+\begin{proposition}
+  If $K\subset Y\subset X$ then $K$ is compact in $X$ iff $K$ is compact in $Y$.
+\end{proposition}
+\begin{proof}
+  Suppose $K$ is compact in $X$. Let $\{H_\a\}$ be any open covering of $K$ in $Y$. Then by the previous theorem each set $H_\a = G_\a \cap Y$, where $G_\a$ is open in $X$. Since $K$ is compact in $X$ there exists a finite subcover $\{G_1,...G_n\}$. The collection $\{H_1=G_1\cap Y, ..., H_n G_n\cap Y\}$ will be a finite subcover of $K$ in $Y$. Thus there is a finite subcover of every open cover in $Y$.\\
+
+  Conversly, suppose that $K$ is compact relative to $Y$, then similarly using the same theorem it is possible to construct a finite subcovering of any opern cover of $K$ in $X$.
+\end{proof}
+\begin{proposition}
+  Compact subsets of $X$ are closed. 
+\end{proposition}
+\begin{proof}
+  We will prove that the compliment of a compact subset $K$ is open. Let $p\in K^c$ and $q\in K$. Let $\e_q < d(p,q)/2$. Then the union $\bigcup_{q\in K} N_{\e_q}(q)$ is an open covering of $K$. Since $K$ is compact there some finite $q_1,...,q_n$ s.t. $\{N_{\e_i}(q_i)\}$ is also a covering of $K$ (I have defined $\e_i = d(p,q_i)$). Let $G = \bigcap_{i = 1}^n N_{\e_i}(p)$. $G$ is an open neighborhood of $p$. Let $x\in G$ then $d(x,p)<d(p,q_i),\ \forall\ 1\leq i\leq n$. Since:
+  \begin{align*}
+    d(p,q_i) &\leq d(p,x) + d(q_i,x)\\
+    d(p,q_i) &< \f{1}{2}d(p,q_i) + d(q_i,x)\\
+    \implies \f{1}{2}d(p,q_i) < d(q_i,x).
+  \end{align*}
+  Thus $x\notin N_{\e_i}(q_i)$, and thus $x\notin K$. Meaning that $G\cap K = \emptyset$. Since $G$ is an open neighborhood of $p$, and $G\subset K^c$ it follows that $K^c$ is open.
+\end{proof}
+\begin{proposition}
+  Closed subsets of compact sets are compact.
+\end{proposition}
+\begin{proof}
+  Let $H\subset K$, where $K$ is compact and $H$ is closed. Let $\Omega$ be an open cover of $H$. Then $\Omega \cup \{H^c\}$ is also an open covering of $K$ (this only works since $H^c$ is open). Since $K$ is compact there exists a finite subcovering $\Phi$. If $H^c \in \Phi$ then $\Phi - \{H^c\}$ is a finite subcovering of $H$.
+\end{proof}
+\begin{corollary}
+  If $F$ is closed and $K$ is compact then $F\cap K$ is compact.
+\end{corollary}
+\begin{proof}
+  Since $K,H$ are closed $K\cap H$ is closed, and a subset of $K$. Thus it must be compact.
+\end{proof}
+\begin{proposition}
+  Let $ \mathscr{K} = \{K_\a\}$ be a collection of compact sets such that every subcollection has non-empty intersection. Then $\bigcap_{\a} K_\a \neq \emptyset$.
+\end{proposition}
+\begin{proof}
+  Suppose that the intersection is empty. Then there exists $K_1\in \mathscr{K}$ s.t. $K\cap K_\a = \emptyset$ whenever $K_\a\neq K_1$. This means that $K_1 \subset K^c_\a$. Thus $\{K^c_\a\}$ form an open cover of $K_1$. This implies that there exists a finite subcover $\{K^c_{\a_i}\ |\ 0 \leq i\leq n\}$ which covers $K_1$. Thus $K_1 \cap K_{\a_1} \cap ... \cap K_{\a_n} = \emptyset$, which is a contradiction to the hypothesis.
+\end{proof}
+\begin{corollary}
+  If $\{K_n\}$ are compact sets and $K_n \supset K_{n+1}$ then $\bigcap_{n\geq 1} K_n$ is non-empty.
+\end{corollary}
+\begin{proposition}
+  Let $E\subset K$ where $K$ is compact and $E$ is infinte, then $E$ has atleast one limit point in $K$.
+\end{proposition}
+\begin{proof}
+  Suppose there exists no limit point of $E$ in $K$. This means that $\forall\ q\in K\ \exists\ N(q)$ s.t. $N(q)$ has at most one point of $E$ (i.e. $q$). It is clear that $\{N(q)\}$ forms an open covering of $K$. Since $E$ is infinite and $N(q)$ only has upto one point of $E$ it is not possible to find a finite subcovering of $E$. Thus $\{N(q)\}$ has no finite subcovering of $K$ (since $E\subset K$). This is contrary to the fact that $K$ is compact.
+\end{proof}
+\begin{proposition}
+  If $I_n$ are non-empty intervals in $\R$ and $I_n \supset I_{n+1}$ then $\bigcap_{n\geq 1} I_n$ is non-empty.
+\end{proposition}
+\begin{proof}
+  Let $I_n = [a_n,b_n]$. Consider the set $\{a_n\}$. Clearly this in non-empty and bounded above by $b_1$. Let the supremum of the set be $x$. Since
+  \[a_n < b_m\]
+  for any $m$, it follows that $x\leq b_m$. We also know that $a_m \leq x$. Thus $x\in I_m$ for all $m$.
+\end{proof}
+\begin{corollary}
+  Let $I_n$ be a sequence of non-empty $k-$cells such that $I_n \supset I_{n+1}$.
+\end{corollary}
+\begin{proof}
+  Follows directly from the proposition above.
+\end{proof}
+\begin{theorem}
+  Every $k-$cell is compact.
+\end{theorem}
+\begin{proof}
+  Let $I$ be a $k-$cell with points $(x_1,...,x_k)$ such that $a_j \leq x_j \leq b_j$. Define $\e$ as:
+  \[\e = \l(\sum_{j=1}^n (b_j-a_j)^2\r)^{1/2}.\]
+  Clearly if $x,y\in I$ then $||x-y||<\e$. Suppose that $k-$cells are not compact. Then there exists an open cover $\Omega$ which does not have a finite subcover of $I$. Let $c_j = (a_j + b_j)/2$, then cartesian products of $[a_j, c_j]$ and $[c_j,b_j]$ in different combinations produce $2^k$ $k-$cells. At least one of these $k-$cells cannot be covered using a finite subcovering of $\Omega$, call this $I_1$. Repeat the same process for $I_1$ to gain $I_2$ and so on. Thus we have a sequence of $k-$cells such that:
+  \begin{enumerate}
+    \item $I\supset I_1 \supset I_2 \cdots$;
+    \item Each $I_n$ does not have a finite subcovering in $\Omega$;
+    \item If $x,y\in I_n$ then $||x-y|| < 2^{-n}\e$.
+  \end{enumerate}
+  By the above proposition we know that there exists at least one $x^*$ s.t. $x^*\in I_n$ for all $n$. Since $\Omega$ covers $I$ there exists $G\in \Omega$ s.t. $x^*\in G$. Since $G$ is open there exists $r>0$ s.t. $N_r(x^*)\subset G$. Choose $n$ large enough so that $2^{-n}\e < r$. This means that $I_n \subset N_{2^{-n}\e}(x^*) \subset G$. This is a contradiction since $G$ alone covers $I_n$.
+\end{proof}
+\begin{theorem}[Heine-Borel Theorem]
+  If $E$ is a subset of $\R^k$ then the following are equivalent:
+  \begin{enumerate}
+    \item $E$ is bounded and closed.
+    \item $E$ is compact.
+    \item Every infinite subset of $E$ has a limit point in $E$.
+  \end{enumerate}
+\end{theorem}
+\begin{proof}
+  $2$ follows from $1$ since every bounded set can be contained inside a $k$-cell, and the fact that every closed subset of a compact set is compact. $3$ follows from $2$ due to proposition $2.23$. All that is remaining is to show $1$ from $3$.\\
+  If $E$ is not bounded then there is a sequence in $x_1,...,x_n\in E$ such that $|x_n| > n$ for each $n$. Clearly this does not have a limit point in $\R^k$, hence does not have a limit point in $E$. Thus 3 implies that $E$ must be bounded. If $E$ is not closed then there is a point $x_0$ which is a limit point of $E$ but not in $E$. This means that there is a sequence in $(x_n)\in E$ which converges to $x_0$. Since every infinite subset of $E$ has a limit point in $E$, we have a contradiction. Thus $E$ must be closed.
+\end{proof}
+\begin{theorem}
+  Every bounded infinite subset of $\R^k$ has a limit point in $\R^k$.
+\end{theorem}
+\begin{proof}
+  If $E$ is a bounded subset of $\R^k$ then it is contained inside a $k$-cell $I$. Since $I$ is compact every limit point of every subset is contained in $I$ and thus in $\R^k$.
+\end{proof}
+\begin{definition}[Seperable Sets]
+  Two subsets $A,B \subset X$ are said to be seperated if $\bar{A}\cap B = A\cap \bar{B} = \emptyset$.
+\end{definition}
+\begin{definition}[Connected]
+  A subset $A\subset X$ is said to be connect if \textit{cannot} be written as the disjoint union of non-empty seperated sets.
+\end{definition}
+\begin{theorem}
+  $E\subset \R$ is connected if and only if $x,y \in E \And x<z<y \implies z\in E$.
+\end{theorem}
+\begin{proof}
+  Suppose that $E$ is connected and there exist $x,y\in E$ such that there is a $z\in (x,y)$ and $z\notin E$. Then let $A= (-\infty, z)\cap E$ and $B= (z,\infty) \cap E$. Since $A\subset (-\infty,z)$ and $B\subset (z,\infty)$ it follows that $A$ and $B$ are seperated. Since $A\cup B = E$, we have arrived at a contradiction.\\
+
+  To prove the converse suppose that $E$ is not connected. Then $E = A\cup B$ where $A$ and $B$ are seperated. Let $x\in A$ and $y\in B$ and w.l.o.g. assume $x<y$. Let $z =\sup(A\cap [x,y])$. This means that $z$ is a limit point of $A$ and thus $z\in \bar{A}$. Since $A$ and $B$ are seperated $z\notin B$. Hence $x\leq z < y$.
+  \begin{enumerate}
+    \item If $z\notin A$ then $x<z<y$ and $z \notin E$.
+    \item If $z\in A$; then $z\notin \bar{B}$. Since $z$ is not a limit point of $B$ there is an open neighborhood $(z,z_1) \cap B = \emptyset$. Thus $z_1 \notin B$. Since $z$ is a supremum of $A\cap [x,y]$ and $z_1\in [x,y]$, it follows that $z_1\notin A$. Therefore $z<z_1<y$ but $z\notin E$. This completes the proof.
+  \end{enumerate}
+\end{proof}

@@ -112,7 +112,7 @@
 \begin{remark}
   The order of the quotient group is the same as the index of $N$ in $G$. From Lagrange's theorem it follows that for finite groups $|G\bign/N| = |G|\bign/ |N|$.
 \end{remark}
-\begin{theorem}[First Isomorphism Theorem]\label{thm:1it}
+\begin{theorem}[First Isomorphism Theorem]\label{thm:1iso}
   If $\p:G\to G'$ is a surjective homomorphism with kernel $\Ker_\p$ then $G' \simeq G\bign/ \Ker_\p$.
 \end{theorem}
 \begin{proof}
@@ -125,11 +125,36 @@
   \end{enumerate}
   This completes the proof.
 \end{proof}
-\begin{theorem}[Cauchy theorem for finite abelian groups]
-  If $G$ is a finite abelian group and a prime $p$ divides order of $G$ then there exists a subgroup of $G$ of order $p$.
+\begin{theorem}[Correspondence Theorem]\label{thm:cor}
+  Let $\p:G\to G'$ be a surjective homomorphism, $H'$ be a subgroup of $G'$ and $H = \p^{-1}(H')$ then:
+  \begin{enumerate}
+    \item $H$ is a subgroup of $G$.
+    \item $\Ker_\p\subset H$
+    \item $H\bign/\Ker_\p\simeq H'$.
+    \item $H$ is normal if $H'$ is normal.
+  \end{enumerate}
 \end{theorem}
 \begin{proof}
-  Clearly for the trivial group this is true. Assume that the theorem is true for all groups with order less than $G$. Then there are two cases: either $G$ has non-trivial subgroups or it does not. If it does not hase non-trivial subgroups then it must be of prime order. Since $G$ is a subgroup of itself the theorem holds true.\\
+  Let $x,y\in H$ then by definition $\p(x), \p(y)\in H'$. This means that $\p(x)\p(y) \in H' \implies \p(xy) \in H'$ since $H'$ is a subgroup and $\p$ is a homomorphism. Therefore $xy\in H$.\\
 
-  If $|G|$ has some non-trivial subgroup $N$ then it's order must divide $|G|$. If a prime $p\ |\ |N|$ then there must exist a subgroup of $N$ of order $p$ (by induction). Now assume that $p$ does not divide $|N|$. Since $G$ is abelian it follows that $N$ is a normal subgroup. Thus $G/N$ is a group. Since $|G/N| = |G|/|N|$ and since $p$ does not divide $|N|$ we have that $p\ |\ |G/N|$. Since $|G/N|< |G|$ it follows that $G/N$ has a subgroup of order $p$.
+  If $g\in \Ker_\p$ then $\p(g) = e' \in H' \implies g\in H$. Thus $\Ker_\p\subset H$. Since $\p\big|_H: H\to H'$ is a surjective homomorphism, by first isomorphism theorem $H\bign/\Ker_\p \simeq H'$.\\
+
+  Let $g\in H$ and $x\in G$. Since $H'$ is normal $\p(x)\p(g)\p(x)^{-1} \in H' \implies \p(xgx^{-1})\in H' \implies xgx^{-1}\in H$. Therefore $H$ is normal.
+\end{proof}
+\begin{theorem}[Second Isomorphism Theorem]\label{thm:2iso}
+  $H,N$ be a subgroups of $G$ and $N$ be normal. Then:
+  \begin{enumerate}
+    \item $HN$ is a subgroup of $G$.
+    \item $H\cap N$ is normal in $H$.
+    \item $H\bign/ H\cap N \simeq HN\bign/N$.
+  \end{enumerate}
+\end{theorem}
+\begin{proof}
+  First two are easy to show. Let $\p: H\to HN\bign/N$ defined by $\p(h) = Nh$. This map is clearly a homomorphism. For any $g\in HN$ the coset $Ng = N(hn) = N(n'h') = Nh'$, thus for each $Ng\in HN\bign/ N\ \exists\ h'\in H$ s.t. $\p(h') = Ng$, meaning that $\p$ is onto. Also note that $\Ker_\phi = H\cap N$. Thus by \cref{thm:1iso} the last statement can be proven.
+\end{proof}
+\begin{theorem}[Third Isomorphism Theorem]\label{thm:3iso}
+  Let $\p:G\to G'$ be a surjective homomorphism, $N'$ be a normal subgroup of $G'$ and $N = \p^{-1}(N')$ then $G\bign/N \simeq G'\bign/N'$ and $G\bign/N \simeq (G\bign/\Ker_\p)\bign/(N\bign/ \Ker_\p)$.
+\end{theorem}
+\begin{proof}
+  Firstly from \cref{thm:cor} it follows that $N$ is normal and that $N/\Ker_\p \simeq N'$. Now let $\psi: G\to G'\bign/N'$ defined by $\psi(g) = N\p(g)$. Clearly this is a surjective homomorphism. The kernel of this homomorphism is $N$. Thus by \cref{thm:1iso} it follows that $G\bign/N \simeq G'\bign/N'$. Since $G/\Ker_\p \simeq G'$ and $N\bign/ \Ker_\p \simeq N'$, the last part of the theorem follows.
 \end{proof}

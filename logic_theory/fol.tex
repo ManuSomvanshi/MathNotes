@@ -1,0 +1,144 @@
+\section{First Order Logic}
+\subsection{Syntactics}
+\begin{definition}  
+The symbols used are:
+\begin{enumerate}
+  \item Variables: $x,y,z...$
+  \item Constants: $a,b,c...$
+  \item Quantifiers: $\forall,\ \exists$
+  \item Equals: $=$
+  \item Connectors: $\lnot, \land,\lor, \to$.
+  \item Functions: $f(x_1,...x_n)$.
+  \item Relations: $R(x_1,...,x_n)$.
+\end{enumerate}
+\end{definition}
+\begin{definition}
+  A term is:
+  \begin{enumerate}
+    \item either a variable
+    \item or a constant
+    \item or a function.
+  \end{enumerate}
+\end{definition}
+\begin{definition}
+  A formula is:
+  \begin{enumerate}
+    \item $t_1=t_2$ where $t_i$ are terms
+    \item $R(x_1,..x_n)$
+    \item If $p$ is a formula then $\lnot p$ is a formula
+    \item If $p,q$ are formulas then any connector between them would be a valid formula.
+    \item $\forall xp$ and $\exists xp$ are formulas.
+  \end{enumerate}
+\end{definition}
+The rules for terms and formulas gives us the grammar of FOL.
+\begin{definition}[Substitution for terms]
+    If $y$ is a variable then $y\f{t}{x}$ is defined as:
+    \begin{align*}
+      y\f{t}{x} \iff \begin{cases}
+        t ,\ \text{if $y=x$}\\
+        y, \text{otherwise}. 
+      \end{cases}
+    \end{align*}
+    If $c$ is a constant then
+    \begin{align*}
+      c\f{t}{x} \iff c.
+    \end{align*}
+    If $f$ is a function then 
+    \begin{align*}
+      f(x_1,...,x_n)\f{t}{x} \iff f(x_1\f{t}{x},...,x_n\f{t}{x}) 
+    \end{align*}
+\end{definition}
+\begin{definition}
+  Let $t_i$ be terms and $R$ be an relation. A variable is said to be free if:
+  \begin{enumerate}
+    \item A variable occurance in $t_0=t_1$ and $R(t_0,...,t_1)$ is free.
+    \item A variable occurance of $\lnot p$ is free if the occurance is free in $p$.
+    \item A variable occurance in $p\land q$, $p \lor q$, $p\to q$ is free if it is free in both $p$ and $q$.
+    \item Any occurance of $x$ in $\forall xp$ and $\exists xp$ is bound.
+    \item Any occurance of $x\neq y$ is free in $\forall yp$ and $\exists yp$ if the occurance in $p$ is free.
+  \end{enumerate}
+\end{definition}
+\begin{definition}
+  A formula with no free variable is called a sentence.
+\end{definition}
+\begin{definition}[Substitution in formulas]
+  Let $t_i$ be terms, $R$ be a relation and $p,q$ be valid formulas. Then:
+  \begin{enumerate}
+    \item $(t_0=t_1)\f{t}{x} \iff t_0\f{t}{x} = t_1\f{t}{x}$.
+    \item $R(t_0,...,t_n)\f{t}{x} \iff R(t_0\f{t}{x},...,t_n\f{t}{x})$.
+    \item $(\lnot p) \f{t}{x}\iff \lnot(p\f{t}{x})$.
+    \item $(p\land q)\f{t}{x} \iff p\f{t}{x}\land q\f{t}{x}$.
+    \item The rules for $\lor,\ \to$ follow from the above two.
+    \item When the expression includes quantifier $Q\in \{\forall,\ \exists\}$:
+      \begin{align*}
+        (Q yp)\f{t}{x} \iff \begin{cases}
+          Q y p\f{t}{x},\ \text{if $x\neq y$ and $y$ is not in $t$}\\
+          Q yp,\ \text{otherwise}. 
+        \end{cases}
+      \end{align*}
+  \end{enumerate}
+\end{definition}
+\subsection{Axioms, Rules of Inference and Replacement rules}
+FOL is built on top of propositional logic in the sense that all sentences can be treated as propositional forms and therefore FL1, FL2, FL3, MP, and all the replacement rules are applicable in FOL. We only need a few more rules to deal with quantifiers, and equality.
+\begin{axiom}
+  The following are axiom schemas involving quantifiers:
+  \begin{enumerate}
+    \item $\forall x p\to p\f{t}{x}$, where $x$ can be substituted with $t$ in $p$.
+    \item $\forall x (p \to q) \to \forall xp\to \forall xq$
+    \item $p \to \forall x p$ where $x$ \textit{does not occur freely} in $p$.
+    \item If $\p$ is an axiom then $\forall x \phi$ is an axiom.
+  \end{enumerate}
+\end{axiom}
+\begin{axiom}
+  The following axioms are for $=$ symbol:
+  \begin{enumerate}
+    \item $x=x$.
+    \item $x=y \to (p\to p')$ where $x$ occurs freely in $p$ and $p'$ is obtained by replacing any occurance of $x$ by $y$.
+  \end{enumerate}
+\end{axiom}
+\begin{proposition}
+  $x=y \to y =x$.
+\end{proposition}
+\begin{proof}
+  \begin{enumerate}
+    \item $x=x$ (axiom)
+    \item $x=y$ (given)
+    \item $x=y \to (x=x \to y=x)$ (axiom)
+    \item $x=x \to y=x$ (M.P on 2 and 3)
+    \item $y=x$ (M.P. on 1 and 4)
+  \end{enumerate}
+\end{proof}
+\begin{proposition}
+  $x=y,\ y =z \to x=z$.
+\end{proposition}
+\begin{proof}
+  \begin{enumerate}
+    \item $y=z$ (axiom)
+    \item $x=y$ (given)
+    \item $x=y \to (y=z \to x=z)$ (axiom)
+    \item $y=z \to x=z$ (M.P on 2 and 3)
+    \item $x=z$ (M.P. on 1 and 4)
+  \end{enumerate}
+\end{proof}
+The only additional replacement rule is the Quantifier Negation:
+\begin{property}[Quantifier Negation]
+  For any formula $p$,
+  \begin{align*}
+    \lnot \forall x p \iff \exists x \lnot p\\
+    \lnot \exists x p \iff \forall x \lnot p
+  \end{align*}
+\end{property}
+\subsection{Proof Methods}
+Proof methods like Direct proof, Indirect proof (contradiction) are also valid in FOL. The additional proof methods are:
+\begin{proposition}[Universal Generalization]
+  If $\vdash p(a) \implies \vdash \forall xp(x)$, where $a$ is a some constant.
+\end{proposition}
+\begin{proof}
+  Suppose that $\vdash p(a)$. Then there is a sequence $r_0,...,r_n$ such that each $r_i$:
+  \begin{enumerate}
+    \item Is either an axiom,
+    \item Or is infered using M.P from some $r_j:p, r_k:t\to r_i$ where $j,k<i$,
+    \item Or it follows from a replacement rule on $r_j,\ j<i$.
+  \end{enumerate}
+  Since a proofs are of finite length, it is possible to find a new variable $x$ which has not occured in any of $r_i$. In the case where $r_i$ is an axiom, $\forall x r_i$ is also an axiom. If $r_i$ is derived from MP from $t$ and $t\to r_i$ then using free generalization $t\to \forall xt$, and using universal MP $\forall x (t\to r_i) \to \forall x t \to \forall x r_i$. Thus using MP we get that $\forall x r_i$ is true whenever $r_j, r_k$ is true. Therefore $\vdash \forall x p$. If $r_i$ follows from a replacement rule, then the same replacement rule can be applied on $\forall x r_j$ to get $\forall x r_i$ since replacement rules only act on substrings.
+\end{proof}
