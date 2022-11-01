@@ -1,10 +1,10 @@
 # Fdb version 3
-["makeindex math_notes.idx"] 1665680579 "math_notes.idx" "math_notes.ind" "math_notes" 1666693217
+["makeindex math_notes.idx"] 1665680579 "math_notes.idx" "math_notes.ind" "math_notes" 1667231577
   "math_notes.idx" 0 -1 0 "pdflatex"
   (generated)
   "math_notes.ilg"
   "math_notes.ind"
-["pdflatex"] 1666693205 "math_notes.tex" "math_notes.pdf" "math_notes" 1666693217
+["pdflatex"] 1667231564 "math_notes.tex" "math_notes.pdf" "math_notes" 1667231577
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1650183167 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc" 1650179560 3136 aac2e2476de8af6c827239df395814ee ""
   "/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1650179560 2914 8283dfc24eaf1964346f843d7605c2b0 ""
@@ -336,19 +336,20 @@
   "algebra/lagrange.tex" 1662238973 3761 ea9520811b13321e414b76f7a1cf6fad ""
   "algebra/permutation.tex" 1662569525 4283 4f07d723c7610b451b00ce5d54c0d5ea ""
   "analysis/construction.tex" 1662402993 13962 d2266b2b83ecb9bb7465718327366278 ""
-  "analysis/metric.tex" 1665946961 16750 2b54c31817730e2e7838ba27511ee2f1 ""
+  "analysis/metric.tex" 1666771908 16776 30ed8816efe29dd2f7faf7b2308681b3 ""
+  "analysis/sequences.tex" 1666776698 3962 55c80800ba46a5ca2930c6a455e54d93 ""
   "basics/category.tex" 1656430270 4041 7e4b6065f470ffcda430451e53d11164 ""
   "basics/functions.tex" 1656612815 14434 5ce4182c2f32096849862d7894b83aef ""
   "basics/relations.tex" 1655741834 2718 8ee07f2bb7423a601c89fbeb1710cfa3 ""
   "basics/sets.tex" 1664971285 1760 a50779b874123f8dd4fc84fd548c3cad ""
   "linear_algebra/fields.tex" 1661803373 3933 fc884249ef0cb2315960a47d9a278c7c ""
-  "logic_theory/fol.tex" 1666693203 6051 1d9b75b61388af498c29db8a637a8cee ""
+  "logic_theory/fol.tex" 1667231563 8212 422dbb77a8ccc56fa1f3f7d2efebc2df ""
   "logic_theory/symbolic.tex" 1663560791 17037 32ef74cd47b1bd06e880f32210af40b7 ""
-  "math_notes.aux" 1666693217 25369 e4a313fa2c064e7fe8fef22e0898a593 "pdflatex"
+  "math_notes.aux" 1667231577 25712 4ccfa8fb71e9310e2303021a624f93ca "pdflatex"
   "math_notes.ind" 0 -1 0 "makeindex math_notes.idx"
-  "math_notes.mst" 1666693205 223 b8e66a4aaa0f29d90b9c1dae7c1aa92e "pdflatex"
-  "math_notes.tex" 1666457239 3574 0b0c818a8619ee0a95c8d88b49649ee1 ""
-  "math_notes.toc" 1666693217 4192 eeccc8f35f1471280b1f4f78f2c06480 "pdflatex"
+  "math_notes.mst" 1667231565 223 b8e66a4aaa0f29d90b9c1dae7c1aa92e "pdflatex"
+  "math_notes.tex" 1666769478 3605 382f76f8a156a30bbd74fa7635e9bdea ""
+  "math_notes.toc" 1667231577 4270 b9cdae5bd342cd0a54470eb72ff55480 "pdflatex"
   "measure_theory/caratheodory_thm.tex" 1657754426 17859 9145539cda508bdf1ae02ac895f2e555 ""
   "measure_theory/complete_measure.tex" 1658639322 5055 bce43bcf81391bb64301c5c67a0b8d64 ""
   "measure_theory/formal_def.tex" 1657462066 15836 8952f9131f2a9575f0b7a4f5f31cd85b ""

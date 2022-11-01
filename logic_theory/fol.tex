@@ -131,7 +131,7 @@ The only additional replacement rule is the Quantifier Negation:
 \subsection{Proof Methods}
 Proof methods like Direct proof, Indirect proof (contradiction) are also valid in FOL. The additional proof methods are:
 \begin{proposition}[Universal Generalization]
-  If $\vdash p(a) \implies \vdash \forall xp(x)$, where $a$ is a some constant.
+  If $\vdash p(a)$ then $\vdash \forall xp(x)$, where $a$ is a some constant.
 \end{proposition}
 \begin{proof}
   Suppose that $\vdash p(a)$. Then there is a sequence $r_0,...,r_n$ such that each $r_i$:
@@ -140,5 +140,49 @@ Proof methods like Direct proof, Indirect proof (contradiction) are also valid i
     \item Or is infered using M.P from some $r_j:p, r_k:t\to r_i$ where $j,k<i$,
     \item Or it follows from a replacement rule on $r_j,\ j<i$.
   \end{enumerate}
-  Since a proofs are of finite length, it is possible to find a new variable $x$ which has not occured in any of $r_i$. In the case where $r_i$ is an axiom, $\forall x r_i$ is also an axiom. If $r_i$ is derived from MP from $t$ and $t\to r_i$ then using free generalization $t\to \forall xt$, and using universal MP $\forall x (t\to r_i) \to \forall x t \to \forall x r_i$. Thus using MP we get that $\forall x r_i$ is true whenever $r_j, r_k$ is true. Therefore $\vdash \forall x p$. If $r_i$ follows from a replacement rule, then the same replacement rule can be applied on $\forall x r_j$ to get $\forall x r_i$ since replacement rules only act on substrings.
+  Since proofs are of finite length, it is possible to find a new variable $x$ which has not occured in any of $r_i$. In the case where $r_i$ is an axiom, $\forall x r_i$ is also an axiom. If $r_i$ is derived from MP from $t$ and $t\to r_i$ then using free generalization $t\to \forall xt$, and using universal MP $\forall x (t\to r_i) \to \forall x t \to \forall x r_i$. Thus using MP we get that $\forall x r_i$ is true whenever $r_j, r_k$ is true. Therefore $\vdash \forall x p$. If $r_i$ follows from a replacement rule, then the same replacement rule can be applied on $\forall x r_j$ to get $\forall x r_i$ since replacement rules only act on substrings.
+\end{proof}
+\begin{proposition}[Existential Generalization]
+  If $p_0,... \vdash q(c)$ then $p_0,... \vdash \exists x q(x)$, where $p_i$ dont have any occurance of $c$. 
+\end{proposition}
+\begin{proof}
+  Using direct proof we can write: 
+  \begin{align*}
+    p_0,... \vdash q(c) \implies \vdash p_0,... \to q(c)
+  \end{align*}
+  and
+  \begin{align*} 
+    p_0,... \vdash \exists x q(x) \implies \vdash p_0,... \to \exists xq(x)
+  \end{align*}
+  Using contraposition, it is enough to show that:
+  \begin{align*}
+    \qq{if} \vdash (\lnot q(c) \to \lnot p_0 \land ...) \qq{then} \vdash (\forall x\lnot  q(x) \to \lnot p_0 \land ...)
+  \end{align*}
+  Thus it is enough to show that $\forall x\lnot q(x) \vdash \lnot q(c)$. This follows from universal instantiation.
+\end{proof}
+\begin{proposition}[Existential Instantiation]
+  If $q(c), p_0,... \vdash r$ then $\exists x q(x), p_0,... \vdash r$, where $p_i$ do not have any occurance of $c$.
+\end{proposition}
+\begin{proof}
+  We need to show that:
+\begin{align*}
+  q(c), p_0,... \vdash r \qq{then} \exists x q(x), p_0,... \vdash r
+\end{align*}
+Using direct proof this can be written as:
+\begin{align*}
+  q(c)  \vdash p_0,...\to r \qq{then} \exists x q(x)\vdash p_0,...\to r
+\end{align*}
+ It is enough to show that $\exists x q(x) \vdash q(c)$. Suppose that $\exists x q(x)$ does not infer $q(a)$ for any constant $a$. This means that for every $a$ $\exists x q(x)$ infers $\lnot q(a)$. Using universal generalization we get $\forall x \lnot q(x)$, which is the same as $\lnot \exists x q(x)$. This is a contradiction. This means that $\exists xq(x)$ infers $q(c)$ for some constant $c$.
+\end{proof}
+\begin{proposition}[Proof by cases]
+  Let $p \iff  p_0 \lor ... \lor p_n$. If $p_0 \to q, p_1 \to q,..., p_n \to q$ then $p \to q$.
+\end{proposition}
+\begin{proof}
+  This can be shown for two cases and then easily generalised.
+  \begin{align*}
+    (p_1 \to q) \land (p_2 \to q) &\iff (\lnot p_1 \lor q) \land (\lnot p_2 \lor q)\\
+                        &\iff \lnot p_1 \land \lnot p_2 \lor q\\
+                        &\iff \lnot (p_1 \lor p_2) \lor q\\
+                        &\iff p_1 \lor p_2 \to q.
+  \end{align*}
 \end{proof}

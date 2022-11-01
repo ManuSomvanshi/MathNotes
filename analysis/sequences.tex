@@ -1,0 +1,93 @@
+\section{Sequences}
+\begin{proposition}
+  Let $x(n) = (x_1(n),...,x_k(n))$ be a sequence in $\R^k$ then $x(n)\to x=(x_1,...,x_k)$ iff $x_j(n) \to x_j$.
+\end{proposition}
+\begin{proof}
+  Suppose $x_j(n) \to x_j$. Let $\e>0$. There exists $N_j$ s.t.
+  \begin{align*}
+    n>N \implies ||x_j(n) - x_j|| < \f{\e}{k}.
+  \end{align*}
+  Since
+  \begin{align*}
+    ||x(n) - x|| = \sqrt{\sum_{j=1}^k (x_j(n) - x_j)^2} \leq \sum_{j=1}^k |x_j(n) - x_j|,
+  \end{align*}
+  it follows that for $N = \max\{N_j\}$:
+  \begin{align*}
+    n>N \implies ||x(n) - x|| <\e.
+  \end{align*}
+  Now suppose that $x(n) \to x$. Then there exists $N$ such that:
+  \begin{align*}
+    n>N \implies ||x(n) -x|| < \e.
+  \end{align*}
+  Since,
+  \begin{align*}
+    |x_i(n) - x_i| \leq \sqrt{\sum_{j=1}^k (x_j(n) - x_j)^2} = ||x(n) - x|| <\e
+  \end{align*}
+  It follows that for each $i$,
+  \begin{align*}
+    n>N \implies |x_i(n) - x_i| < \e.
+  \end{align*}
+\end{proof}
+\begin{definition}
+  If $(p_n)$ is a sequence in $X$, and let $(n_k)$ be a sequence in $\R$ such that $n_1<n_2<...$ then $(p_{n_k})$ is a subsequence of $(p_n)$.
+\end{definition}
+\begin{theorem}
+  Let $p_n$ be a sequence in a compact metric space $X$, then there is subsequence of $p_n$ which converges in $X$.
+\end{theorem}
+\begin{proof}
+  Let $E = \{x\ |\ \exists\ n\ \text{s.t.}\ x=p_n\}$. Suppose $E$ is finite. Then by pigeon hole principle there must be a $p\in E$ such that for infinitely many $n_i$,
+  \begin{align*}
+    p_{n_1} = ... = p.
+  \end{align*}
+  This is a subsequence which conerges to a point in $X$. Now suppose that $E$ is infinite. Since $X$ is a compact space, every infinite subset of $X$ must have a limit point in $X$. Thus there is some sequence $(x_n) \in E$ which converges to some $p\in X$. By definition $x_n = p_{n_{k}}$ for some $k$. 
+\end{proof}
+\begin{theorem}[Bolzano-Weistrass]
+  Every bounded sequence in $\R^k$ has a convergent subsequence.
+\end{theorem}
+\begin{proof}
+  Let $x_k$ be a sequence in $\R^k$ which is bounded. Since it is bounded it is contained inside a $k-$cell. Since $k-$cells are compact, and $x_k$ is a sequence contained in $x_k$ there exists a subsequence of $x_k$ which converges to a point in the $k-$cell.
+\end{proof}
+\begin{theorem}
+  The set of all subsequential limits of a sequence in $X$ is closed in $X$.
+\end{theorem}
+\begin{proof}
+  Let $p_n$ be a sequence. Let $E = \{x\ |\ \exists\ (p_{n_k}):\ p_{n_k} \to x\}$. Let $z$ be a limit point of $E$. The set $N_{1/2n}(z)$ contains some $x\in E$. By definition there exists a subsequence $p_{n_k}$ which converges to $x$. This means that there exists an $N_n$ such that
+  \begin{align*}
+    k\geq N_n \implies d(x,p_{N_n}) < \f{1}{2n}.
+  \end{align*}
+  It follows that $d(z,p_{N_1}) \leq d(z,x) + d(x,p_{N_1}) < 1/n$. Repeating this for each $n$ we get a subsequence $p_{N_1},p_{N_2},...$ which converges to $z$ by construction. Therefore $z\in E$. 
+\end{proof}
+\begin{proposition}
+  Every convergent sequence is cauchy.
+\end{proposition}
+\begin{proof}
+  Not hard to show.
+\end{proof}
+\begin{proposition}
+  Every compact space is complete.
+\end{proposition}
+\begin{proof}
+  Let $x_n$ be a cauchy sequence. Since $x_n$ is a sequence in a compact space there exists a convergent subsequence $x_{n_k}$ which converges to some $x\in X$. Let $\e>0$, then there exists $N_1$ and $N_2$ such that
+  \begin{align*}
+    k> N_1 \implies d(x_{n_k}, x_k) < \e/2\\
+    k> N_2 \implies d(x_{n_k}, x) < \e/2\\
+  \end{align*}
+  Since
+  \begin{align*}
+    d(x_k,x) \leq d(x_k, x_{n_k}) + d(x_{n_k}, x),
+  \end{align*}
+  choosing $N> \max\{N_1, N_2\}$,
+  \begin{align*}
+    k>N \implies d(x_k,x)<\e.
+  \end{align*}
+\end{proof}
+\begin{proposition}
+  $\R^k$ is complete.
+\end{proposition}
+\begin{proof}
+  If we can show that every cauchy sequence is bounded in $\R^k$ we are done. There exists an $N$ such that
+  \begin{align*}
+    n\geq N \implies x_n \in N_{1}(x_N).
+  \end{align*}
+  Thus $x_n$ is a bounded sequence.
+\end{proof}

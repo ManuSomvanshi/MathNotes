@@ -2088,6 +2088,10 @@ INPUT analysis/metric.tex
 INPUT /usr/share/texmf-dist/fonts/vf/public/mathpazo/zplmr7y.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
+INPUT ./analysis/sequences.tex
+INPUT analysis/sequences.tex
+INPUT ./analysis/sequences.tex
+INPUT analysis/sequences.tex
 INPUT ./logic_theory/symbolic.tex
 INPUT logic_theory/symbolic.tex
 INPUT ./logic_theory/symbolic.tex

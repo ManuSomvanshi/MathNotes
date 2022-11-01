@@ -22,14 +22,14 @@
   \end{enumerate}
 \end{definition}
 \begin{proposition}
-  A point $x$ is a limit point of $E\subset X$ if and only if there exists a sequence $(x_n)\in E$ which converges to $x$.
+  A point $x$ is a limit point of $E\subset X$ if and only if there exists a non-constant sequence $(x_n)\in E$ which converges to $x$.
 \end{proposition}
 \begin{proof}
   Suppose $x$ is a limit point. Then every neighborhood $N_{1/n}(x)$ $\exists\ x_n (\neq x) \in E$ such that $x_n \in N_{1/n}(x)$. Since,
   \begin{align*}
     d(x_n, x) < 1/n \implies \lim_{n\to \infty} x_n = x.
   \end{align*}
-  Suppose that there exists a sequence $(x_n) \in E$ such that $x_n \to x$. Let $N_\e(x)$ be some neighborhood of $x$. Since there exists $N$ such that $n>N \implies d(x,x_n)<\e$ it follows that for all $n>N$, $x_n \in N_\e(x)$.
+  Suppose that there exists a non-constant sequence $(x_n) \in E$ such that $x_n \to x$. Let $N_\e(x)$ be some neighborhood of $x$. Since there exists $N$ such that $n>N \implies d(x,x_n)<\e$ it follows that for all $n>N$, $x_n \in N_\e(x)$.
 \end{proof}
 \begin{proposition}
   Every neighborhood is open.
