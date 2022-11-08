@@ -1,0 +1,168 @@
+\section{Continuity}
+\begin{definition}
+  Let $X,Y$ be metric spaces, $p\in X$, $E\subset X$, and let $f:E\to Y$. Then we write
+  \begin{align*}
+    \lim_{x\to p} f(x) = q
+  \end{align*}
+  If there exists a $q\in Y$ which satisfies the following property: 
+  \begin{align*}
+    \forall \e>0,\ \exists \d>0:\ d_X(x,p) < \d \implies d_Y(f(x),q)<\e. 
+  \end{align*}
+\end{definition}
+\begin{theorem}\label{thm:cont}
+  Let $X,Y,E,f,p$ be the same as above. Then 
+  \begin{align*}
+    \lim_{x\to p} f(x) = q \iff \lim_{n\to \infty} f(p_n) = q,\ \text{for every sequence $p_n \to p$} 
+  \end{align*}
+\end{theorem}
+\begin{proof}
+  Suppose that as $x\to p$, $f(x) \to q$. Let $\e>0$, then
+  \begin{align*}
+    \exists\d>0:\ d_X(x,p) < \d \implies d_Y(f(x), q)<\e.
+  \end{align*}
+  Let $p_n$ be any sequence such that $p_n \to p$. Thus:
+  \begin{align*}
+    \exists\ N:\ n>N \implies d_X(p_n,p) &< \d\\
+    \implies d_Y(f(p_n), q) &< \e.
+  \end{align*}
+  Therefore $f(p_n) \to q$.\\
+
+  Conversly suppose that
+  \begin{align*}
+    \exists\e>0:\ \forall\d>0,\ d_X(x,p) < \d \And d_Y(f(x), p) \geq \e.
+  \end{align*}
+  Let $x_n\in E$ be the point such that
+  \begin{align*}
+    d_X(x_n, p) < \f{1}{n}
+  \end{align*}
+  but since,
+  \begin{align*}
+    d_Y(f(x_n), p) \geq \e
+  \end{align*}
+  for all $n$, it follows that:
+  \begin{align*}
+    \lim_{n\to \infty} f(x_n) \neq q.
+  \end{align*}
+\end{proof}
+\begin{remark}
+  Since the limit of a sequence is unique, it follows that the limit of a function is also unique. This follows from the above theorem.
+\end{remark}
+\begin{definition}
+  Let $X,Y,E,f,p$ be as before. Then $f$ is said to be continuous at $p$ if:
+  \begin{align*}
+    \forall \e>0,\ \exists \d>0:\ d_X(x,p) < \d \implies d_Y(f(x), f(p)) < \e.
+  \end{align*}
+\end{definition}
+\begin{theorem}
+  $f$ is continuous at $p$ if and only if
+  \begin{align*}
+    \lim_{x\to p} f(x) = f(p)
+  \end{align*}
+\end{theorem}
+\begin{proof}
+  This follows from \cref{thm:cont}.
+\end{proof}
+\begin{proposition}
+  Let $X,Y,Z$ be metric spaces, $p\in X$, and let $f:E\to Y$, $g:f(E)\to Z$ be functions continuous at $p$ and $f(p)$ respectively. Then $g\circ f$ is continuous at $p$. 
+\end{proposition}
+\begin{proof}
+ Let $\e>0$. Since $g$ is continuous at $f(p)$, there exists a $\d_1$ such that
+ \begin{align*}
+   d_Y(f(x), f(y))<\d_1 \implies d_Z(g(f(x)), g(f(p))) < \e.
+ \end{align*}
+ Now using the continuity of $f$ at $p$, there exists $\d>0$ such that:
+ \begin{align*}
+   d_X(x,p) < \d \implies d_Y(f(x), f(p)) < \d_1.
+ \end{align*}
+ Thus there exists $\d>0$ such that
+ \begin{align*}
+   d_X(x,p)< \d \implies d_Z(g\circ f(x), g\circ f(p)) < \e.
+ \end{align*}
+\end{proof}
+\begin{theorem}
+  $f$ is continuous on a metric space $X$ if and only if $f^{-1}(F)$ is an open set if $F\subset Y$ is open.
+\end{theorem}
+\begin{proof}
+  Suppose that $f$ is continuous every where and $F\subset Y$ is open. Let $p\in f^{-1}(F)$, then $f(p) \in F$ (by definition). Since $F$ is open there exists an $\e>0$ such that $N_\e(f(p)) \subset F$. Using continuity, there exists a $\d$ such that
+  \begin{align*}
+    d_X(x,p) <\d \implies d_Y(f(x), f(p)) <\e.
+  \end{align*}
+  Thus if $x\in N_\d(p)$ then $f(x) \in N_\e(f(p))$. Therefore $N_\d(p) \subset f^{-1}(N_\e(f(p)))$. But since $N_\e(f(p)) \subset F$ it follows that $N_\d(p) \subset f^{-1}(F)$.\\
+
+  Conversly suppose that $f^{-1}(F)$ is open whenever $F$ is open. Let $\e>0$. Then we know that $f^{-1}(N_\e(f(p)))$ is open. Clearly $x\in f^{-1}(N_\e(f(p)))$, thus there exists a $\d>0$ such that $N_\d(p) \subset f^{-1}(N_\e(f(p)))$. Therefore:
+  \begin{align*}
+    d_X(x,p) < \d \implies d_Y(f(x), f(p)) < \e.
+  \end{align*}
+\end{proof}
+\begin{definition}
+  A function $f:X\to \R^k$ is said to be bounded if $||f(x)|| <M$ for some $M$.
+\end{definition}
+\begin{proposition}
+  If $f:X\to Y$ is a continuous function, and $X$ is compact, then $f(X)$ is also compact. 
+\end{proposition}
+\begin{proof}
+  Let $V_\a$ be an open covering on $f(X)$. Then we know that:
+  \begin{align*}
+    f(X) \subset \bigcup_\a V_\a \implies X = \bigcup_\a f^{-1}(V_\a).
+  \end{align*}
+  Since $f$ is continuous $f^{-1}(V_\a)$ are open, and thus $f^{-1}(V_\a)$ form an open cover of $X$. Since $X$ is compact there exists a finite subcover $f^{-1}(V_{\a_i})$. Therefore:
+  \begin{align*}
+    X = \bigcup_{i=1}^n f^{-1}(V_{\a_i}) \implies f(X) \subset \bigcup_{i=1} V_{\a_i}.
+  \end{align*}
+  Hence $f(X)$ is compact.
+\end{proof}
+\begin{corollary}
+    If $f:X \to \R^k$, and $X$ is compact then $f(X)$ is closed and bounded and $f$ is a bounded function. 
+\end{corollary}
+\begin{corollary}
+  If $f:X\to \R$, and $X$ is compact and let
+  \begin{align*}
+    M = \sup_{x\in X}f(x) \And m = \inf_{x\in X} f(x).
+  \end{align*}
+  Then there exists $p,q\in X$ such that $f(p) = M$ and $f(q) = m$.
+\end{corollary}
+\begin{proof}
+  Since $X$ is compact, it follows that $f(X)$ is closed and bounded in $\R$. Since $f(X)$ is bounded the supremum and infimum would exist. Since there always exists a monotonous sequence $y_n \in f(X)$ such that $y_n \to M$, using the closedness we know that $M\in f(X)$. Therefore there exists $p$ such that $f(p) =M$. Similarly for $m$.
+\end{proof}
+\begin{proposition}
+  If $f:X\to Y$ is bijective and $X$ is compact, then $f^{-1}$ is continuous.
+\end{proposition}
+\begin{definition}
+  If $f:X\to Y$ where $X,Y$ are metric spaces, we say that $f$ is uniformly continuous on $X$ if
+  \begin{align*}
+    \forall\e>0,\ \exists\d>0:\ d_X(p,q) < \d \implies d_Y(f(p),f(q)) <\e.
+  \end{align*}
+\end{definition}
+\begin{remark}
+  Note that uniform continuity is defined for sets and not points. The $\d$ in uniform continuity is only dependent on $\e$ and not on $p,q$. In continuity $\d$ may depend on the point.
+\end{remark}
+\begin{theorem}
+  If $X$ is compact and $f:X\to Y$ is continuous function then $f$ is uniformly continuous.
+\end{theorem}
+\begin{proof}
+  Let $\e>0$. Then for each $p\in X$ we can write that:
+  \begin{align*}
+    \exists \d(p):\ d_X(p,q) < \d(p) \implies d_Y(f(p),f(q)) <\e.
+  \end{align*}
+  Let $V(p) = \{q\ |\ d_X(p,q) < \f{1}{2}\d(p)\}$. $\{V(p)\}$ is an open cover of $X$. Using compactness we can say that there exists a finite subcover $V(p_1),...,V(p_n)$ which covers $X$. Let $\d = \min(\d(p_1),...,\d(p_n))/2$. Then:
+  \begin{align*}
+    d_X(p,q) < \d \implies d_Y(f(p), f(q)) <\e.
+  \end{align*}
+\end{proof}
+\begin{proposition}
+  If $f:X\to Y$ is continuous, and $E\subset X$ is connected then $f(E)$ is also connected.
+\end{proposition}
+\begin{proof}
+  Suppose that $f(E)$ is not connected, then $f(E) = A\cup B$ where $A$ and $B$ are separated. Let $G = E\cap f^{-1}(A)$ and $H = E\cap f^{-1}(B)$. Since $G\subset f^{-1}(A)$ it follows that $G\subset f^{-1}(\bar{A})$. Since $f$ is continuous it follows that the latter is closed. Therefore
+  \begin{align*}
+    \bar{G} &\subset f^{-1}(\bar{A})\\
+    f(\bar{G}) &\subset \bar{A}\\
+  \end{align*}
+  Since $f(H) = B$ and $\bar{A}\cap B = \emptyset$ it follows that $\bar{G}\cap H = \emptyset$. Similarly it can be shown that $G\cap \bar{H} = \emptyset$. This means $E$ is not connected which is a contradiction.
+\end{proof}
+\begin{theorem}\label{thm:IVT}
+  Let $f:[a,b] \to \R$ be a continuous function. If $f(a)<f(b)$ and $f(a)<c<f(b)$ then there exists $x\in (a,b)$ such that $f(x) = c$.
+\end{theorem}
+\begin{proof}
+  Since $[a,b]$ is connected, it follows that $f([a,b])$ will also be connected, since $f$ is continuous. Since every connected set in $\R$ is an interal, it follows that $f([a,b])$ is an interval. If $f(a)<c<f(b)$ then $c\in f([a,b])$ therefore $f(x) =c$ for some $x$.
+\end{proof}

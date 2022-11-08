@@ -1,0 +1,52 @@
+\section{Group Actions}
+\begin{definition}
+  The action of a group $G$ on a set $S$ is a map $G\times S\to S$ such that
+  \begin{align*}
+    ex = x \And (g_1g_2)x = g_1(g_2x),\ \forall\ x\in S
+  \end{align*}
+\end{definition}
+\begin{example}
+  The action of $S_n$ on $\{1,...,n\}$ is given by $(\sigma, x) \mapsto \sigma(x)$.
+\end{example}
+\begin{example}
+  Let $G$ be a group and $H$ be a subgroup of $G$. Then the action of $H$ on $G$ given by $(h,g) \mapsto hg$ is called left translation.
+\end{example}
+\begin{example}
+  If $H$ is a subgroup of $G$, then the action $(h,g) \mapsto hgh^{-1}$ is called conjugation.
+\end{example}
+\begin{theorem}
+  Let $G$ act on a set $S$. The relation defined by:
+  \begin{align*}
+    x\sim x' \iff gx = x'\ \text{for some $g\in G$} 
+  \end{align*}
+  is an equivalence relation.
+\end{theorem}
+\begin{proof}
+  Clearly $x\sim x$ since $ex = x$. Suppose $x\sim y$. Then there exists $g$ such that $gx = y$. Multiplying by $g^{-1}$, $g^{-1}y = x$ and thus $y\sim x$. Suppose that $x\sim y$ and $y\sim z$. Then there exists $g$ and $h$ such that:
+  \begin{align*}
+    gx = y &\And hy = z\\
+    \implies h(gx) &= z\\
+    \implies (hg)x &= z\\
+    \implies x &\sim z
+  \end{align*}
+\end{proof}
+\begin{definition}
+  The equivalence classes of $\sim$ are called orbits of $G$ on $S$. The oribit of $G$ on $x\in S$ is denoted as $\bar{x}$.
+\end{definition}
+\begin{theorem}
+  Let $G$ act on $S$. Then $G_x = \{g\in G\ |\ gx=x\}$ is a subgroup of $G$.
+\end{theorem}
+\begin{proof}
+  Suppose $g_1,g_2 \in G_x$, then
+  \begin{align*}
+    g_1 x &= x \And g_2 x = x\\
+    \implies (g_1g_2)x &= g_1(g_2 x) = g_1 x = x.  
+  \end{align*}
+  Thus $G_x$ is closed. Suppose $gx=x$ then $g^{-1}x = x$. Therefore $G_x$ is a subgroup.
+\end{proof}
+\begin{definition}
+  The subgroup $G_x$ is called the stabilizer.
+\end{definition}
+\begin{proposition}
+  The cardinality of $\bar{x}$ is $i_{G}(G_x)$.
+\end{proposition}

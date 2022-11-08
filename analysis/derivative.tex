@@ -1,0 +1,106 @@
+\section{Differentiation}
+In this section we will only discuss functions $f:[a,b]\to \R$.
+\begin{definition}
+  Let $f$ be a function, and let $x\in [a,b]$ then define the quotient
+  \begin{align*}
+    \p(t) = \f{f(t)-f(x)}{t-x},\ t\neq x. 
+  \end{align*}
+  and let $f'(x)$ be
+  \begin{align*}
+    f'(x) = \lim_{t\to x} \p(t)
+  \end{align*}
+  Assuming that this limit exists. $f'(x)$ is called the derivative of $f$ at $x$. So to $f$ we are assigning a new function $f'$ whose domain is all those points where the above limit exists.
+\end{definition}
+\begin{proposition}
+  If $f$ is differentiable at $x$ then $f$ is continuous at $x$.
+\end{proposition}
+\begin{proof}
+  Since
+  \begin{align*}
+    \lim_{t\to x} f(t)-f(x) = \lim_{t\to x}\p(t)(t-x) = f'(x).0 = 0. 
+  \end{align*}
+  It follows that $f$ is continuous.
+\end{proof}
+\begin{proposition}
+  Suppose $f,g$ are functions which are differentiable at $x$. Then:
+  \begin{enumerate}
+    \item $(f+g)'(x) = f'(x) + g'(x)$
+    \item $(fg)'(x) = f(x)g'(x) + f'(x)g(x)$.
+  \end{enumerate}
+\end{proposition}
+\begin{proof}
+  Since
+  \begin{align*}
+    \lim_{t\to x}\p(t) = \lim_{t\to x} \f{f(t)+g(t) - (f(x) + g(x))}{t-x} = \lim_{t\to x} \f{f(t) - f(x)}{t-x} + \lim_{t\to x} \f{g(t)-g(x)}{t-x}
+  \end{align*}
+  it follows that $(f+g)'(x) = f'(x) + g'(x)$. For the second part let $h = fg$. Then
+  \begin{align*}
+    h(t) -h(x) = f(t)g(t) - f(x)g(x) = f(t)(g(t)-g(x)) + (f(t)-f(x))g(x)
+  \end{align*}
+  Thus
+  \begin{align*}
+    \lim_{t\to x}\p(t) = \lim_{t\to x}f(t)\lim_{t\to x}\f{g(t)-g(x)}{t-x} + \lim_{t\to x}g(x)\lim_{t\to x}\f{f(t)-f(x)}{t-x}.
+  \end{align*}
+\end{proof} 
+\begin{proposition}
+  Suppose $f:[a,b]\to \R$ and $g:f([a,b])\to \R$, $f$ is differentiable at $x$ and $g$ is differentiable at $f(x)$. Then $h = g\circ f$ is differentiable at $x$, and:
+  \begin{align*}
+    h'(x) = g'(f(x))f'(x).
+  \end{align*}
+\end{proposition}
+\begin{proof}
+  From the definition of derivative:
+  \begin{align*}
+    \p(t) &= \f{g(f(t)) - g(f(x))}{t-x}\\
+          &= \f{g(f(t)) - g(f(x))}{f(t)-f(x)}\f{f(t)-f(x)}{t-x}\\
+  \end{align*}
+  Therefore
+  \begin{align*}
+    \lim_{t\to x} \p(t) = g'(f(x)) f'(x).
+  \end{align*}
+\end{proof}
+\begin{definition}\label{def:locmax}
+  A function $f:X\to \R$ has a local minimum at $p$ if there exists $\delta > 0$ such that $d(p,q) <\d \implies f(q) < f(p)$. Similarly we define a local minimum.
+\end{definition}
+\begin{proposition}
+  If $f:[a,b] \to \R$ has a local maximum/minimum at $x$ and $f$ is differentiable at $x$ then $f'(x) = 0$.
+\end{proposition}
+\begin{proof}
+  Suppose $x$ is a point of local maximum then, there exists a $\d$ in accordance to \cref{locmax}. Let $t\in (x-\d, x)$, then:
+  \begin{align*}
+    \p(t) = \f{f(t)-f(x)}{t-x} \geq 0,
+  \end{align*}
+  if $t\in (x, x+\d)$ then
+  \begin{align*}
+    \p(t) = \f{f(t)-f(x)}{t-x} \leq 0.
+  \end{align*}
+  Since the limit exists, we must have $\lim_{t\to x}\p(t) = 0$. Therefore $f'(x) = 0$.
+\end{proof}
+\begin{proposition}
+  Let $h$ be a continuous function on $[a,b]$ and differentiable on $(a,b)$, and $h(a) = h(b)$ then there exists an $x\in (a,b)$ such that $h'(x) = 0$. 
+\end{proposition}
+\begin{proof}
+  If $h$ is a constant function then $h'(x) = 0$ everywhere on $(a,b)$. If $h(t)>h(a)$ for some $t$, then $h$ attains it's maximum at $x\in (a,b)$ (since $h(a) = h(b)$). Thus $h'(x) = 0$. Similarly if $h(t)<h(a)$ for some $t$ then there exists a local minimum $x\in (a,b)$, where $h'(x) = 0$.
+\end{proof}
+\begin{theorem}
+  If $f,g$ are continuous functions on $[a,b]$ and differentiable on $(a,b)$ then there exists $x\in (a,b)$ such that
+  \begin{align*}
+    (f(b) - f(a))g'(x) = (g(b) - g(a)) f'(x).
+  \end{align*}
+\end{theorem}
+\begin{proof}
+  Let
+  \begin{align*}
+    h(t) = g(t)(f(b) - f(a)) - f(t)(g(b) - g(a)),
+  \end{align*}
+  then $h(a) = h(b)$ and $h$ is continuous on $[a,b]$ and differentiable on $(a,b)$. Thus by the above theorem there exists an $x$ such that $h'(x) = 0$. This proves our claim.
+\end{proof}
+\begin{theorem}
+  Suppose $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$ then there exists an $x\in (a,b)$ such that
+  \begin{align*}
+    f(b) - f(a) = (b-a) f'(x).
+  \end{align*}
+\end{theorem}
+\begin{proof}
+  Use the previous theorem with $g(x) = x$.
+\end{proof}

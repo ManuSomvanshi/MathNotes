@@ -1715,6 +1715,7 @@ INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlib
 INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+INPUT ./analysis/derivative.tex
 INPUT /usr/share/texmf-dist/tex/latex/newpx/t1zpltlf.fd
 INPUT /usr/share/texmf-dist/tex/latex/newpx/t1zpltlf.fd
 INPUT /usr/share/texmf-dist/tex/latex/newpx/t1zpltlf.fd
@@ -2077,6 +2078,10 @@ INPUT ./algebra/free.tex
 INPUT algebra/free.tex
 INPUT ./algebra/free.tex
 INPUT algebra/free.tex
+INPUT ./algebra/action.tex
+INPUT algebra/action.tex
+INPUT ./algebra/action.tex
+INPUT algebra/action.tex
 INPUT ./analysis/construction.tex
 INPUT analysis/construction.tex
 INPUT ./analysis/construction.tex
@@ -2092,6 +2097,15 @@ INPUT ./analysis/sequences.tex
 INPUT analysis/sequences.tex
 INPUT ./analysis/sequences.tex
 INPUT analysis/sequences.tex
+INPUT ./analysis/continuity.tex
+INPUT analysis/continuity.tex
+INPUT ./analysis/continuity.tex
+INPUT analysis/continuity.tex
+INPUT ./analysis/derivative.tex
+INPUT analysis/derivative.tex
+INPUT ./analysis/derivative.tex
+INPUT analysis/derivative.tex
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-t1.tfm
 INPUT ./logic_theory/symbolic.tex
 INPUT logic_theory/symbolic.tex
 INPUT ./logic_theory/symbolic.tex
@@ -2163,8 +2177,8 @@ INPUT ./Figures//lebesgue_int.pdf
 INPUT /usr/share/texmf-dist/fonts/vf/public/mathpazo/zplmr7t.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 INPUT math_notes.aux
-INPUT /usr/share/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc
+INPUT /usr/share/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec-sc.enc
@@ -2187,5 +2201,6 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/newpx/zplri.pfb
