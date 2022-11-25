@@ -1,0 +1,110 @@
+\section{Sylow's Theorems}
+\begin{lemma}
+  If a group $H$ of order $p^n$ ($p$ is prime) acts on a finite set $S$ and if $S_0 = \{x\in S\ |\ \forall\ h\in H,\ hx = x\}$, then $|S| \equiv |S_0| \pmod{p}$.
+\end{lemma}
+\begin{proof}
+  By definition $x\in S_0$ if and only if $|\bar{x}| = 1$. Suppose that $S = S_0 \cup \bar{x}_1 \cup \cdots \cup \bar{x}_n$, where $\bar{x}_i$ are distinct and $|\bar{x}_i|>1$ (this is true since $\sim$ is an equialence relation on $S$). Hence $|S| = |S_0| + |\bar{x}_1| + \cdots +|\bar{x}_n|$. Since $|\bar{x}_i| = [H:H_{x_i}]$, and since the index of a subgroup divides $|H| = p^n$, it follows that $|\bar{x}_i| = p^k$ for some non zero $k\leq n$. Therefore $p\ |\ |\bar{x}_i|$ for each $i$. This means that $S \equiv  S_0 \pmod{p}$.
+\end{proof}
+\begin{theorem}[Cauchy's Theorem]
+  If $G$ is a group whose order is divisible by a prime $p$ then the group contains an element of order $p$.
+\end{theorem}
+\begin{proof}
+  Let $S = \{(a_1,\cdots, a_p)\ |\ a_i\in G \And a_1\cdots a_n = e\}$. The order of $S$ is $|G|^{p-1}$ (since the last element can be determined given the first $p-1$ elements). Since $p\ |\ |G|$ it follows that $p\ |\ |S|$. Let $Z_p$ act on $S$ by cyclic permutation,
+  \begin{align*}
+    k(a_1,\cdots, a_p) = (a_{k+1}, a_{k+2}, \cdots, a_p, a_1, a_2, \cdots, a_{k})
+  \end{align*}
+  Since $aa^{-1} = a^{-1}a =e$, it follows that $a_{k+1}a_{k+2}\cdots a_k = e$ and therefore the cyclic permutations are in $S$. Clearly $0x = x$ and $k(k'x) = (k+k')x$ where $x\in S$. This shows that cyclic permutation is a valid action on $S$.\\
+
+  Consider the set $S_0$ as defined previously. Suppose $(a_1,\cdot, a_p) \in S_0$ then it follows that every cyclic permutation is the same, which is only possible if $a_1=a_2= \cdots = a_p$. Since $(e,e,\cdots, e) \in S_0$, it is not empty. We know that $0 \equiv S \equiv S_0 \pmod{p}$, therefore $S_0$ must have atleast $p$ elements. Which means there exists $a\in G$ such that $(a,a,\cdots,a)\in S_0$ such that that $a^p = e$.
+\end{proof}
+\begin{definition}
+  A group $G$ in which every element has order $p^k$ for some $k\geq 0$ and $p$ prime is called a $p-$group. If $G$ is a subgroup of some other group then $G$ is called $p-$subgroup.
+\end{definition}
+\begin{corollary}
+  $G$ is a finite $p-$group if and only if $|G|$ is a power of $p$.
+\end{corollary}
+\begin{proof}
+  Suppose that there is some prime $q \neq p$ which divides the order of $G$. Then by Cauchy's theorem it follows that there exists $a\in G$ such that $a^q =e$. Since $G$ is a $p-$group the order of $a$ must be $p^k$ for some $k>0$. Since order is unique we have a contradiction here. Thus $p$ is the only prime which divides $|G|$.\\
+
+  Suppose that $|G| = p^m$. Let $a\in G$. The order of the subgroup $\{e,a,a^2,...\}$ must divide $p^m$ (Lagrange's theorem). This is only possible if the order of $a$ is $p^k$ where $k\leq m$.
+\end{proof}
+\begin{proposition}
+  The center $Z(G)$ of a non-trivial $p-$group $G$ contains more than one element.
+\end{proposition}
+\begin{proof}
+  Using the \cref{cor:class_eq} it follows that:
+  \begin{align*}
+    |G| = |Z(G)| + \sum_{i=1}^m [G: C_G(x_i)]
+  \end{align*}
+  where $\bar{x}_i$ are distinct conjugacy classes and $[G:C_G(x_i) = ]|\bar{x}_i| > 1$. Since each of $[G:C_G(x_i)]$ must divide $|G| = p^m$, it follows that $p\ |\ [G:C_G(x_i)]$. Therfore $p$ must also divide $Z(G)$. Since $|Z(G)| \geq 1$, it must be atleast $p$. Which means it has more than one element.
+\end{proof}
+\begin{lemma}
+  If $H$ is a $p-$subgroup of $G$ then $[G:H] \equiv [N_G(H):H]\pmod{p}$.
+\end{lemma}
+\begin{proof}
+  Let $S$ be the set of all cosets of $H$ in $G$. Then $|S| = [G:H]$. Let $H$ act on $S$ by left translation, i.e. $(g,xH)\mapsto (gx)H$. If $xH \in S_0$ then
+  \begin{align*}
+    gxH &= xH,\ \forall\ g\in H\\
+    x^{-1}gx &= H,\ \forall\ g\in H\\
+    \implies x^{-1}Hx &= H\\
+    \implies x&\in N_G(H).
+  \end{align*}
+  The cardinality of $S_0$ is thus the same as the number of cosets of $H$ in $N_G(H)$. Therefore $|S_0| = [N_G(H): H]$. By the lemma we have $|S|\equiv |S_0| \pmod(p)$, thus $[G:H] \equiv [N_G(H):H] \pmod{p}$. 
+\end{proof}
+\begin{corollary}
+  If $H$ is a $p-$subgroup of $G$ such that $p$ divides $[G:H]$ then $N_G(H) \neq H$.
+\end{corollary}
+\begin{proof}
+  Using the previous lemma we have
+  \begin{align*}
+    0 \equiv [G:H] \equiv [N_G(H): H] \pmod{p}
+  \end{align*}
+  Since $[N_G(H):H]$ is atleast $1$, we must have $[N_G(H):H]$ to be atleast $p$. Therefore $N_G(H) \neq H$.
+\end{proof}
+\begin{theorem}[Sylow's First Theorem]
+  Let $G$ be a group of order $p^nm$, $n\geq 1$, $p$ prime and $\gcd(p,m) = 1$. Then $G$ has a subgroup of order $p^i$ for each $1\leq i \leq n$ and moreover the subgroup of order $p^i$ is normal in subgroup of order $p^i+1$, where $1\leq i < n$.
+\end{theorem}
+\begin{proof}
+  By Cauchy's theorem we know that $G$ has an element of order $p$, and thus a subgroup of order $p$. By induction suppose that $G$ has a subgroup $H$ of order $p^i$. Then by the previous lemma and corollary we know that $[N_G(H): H] \neq H$ and $[G:H] \equiv [N_G(H): H] \equiv 0 \pmod{p}$. This means $p\ |\ [N_G(H):H]$. Since $H$ is normal in $N_G(H)$ it follows that $N_G(H) \bign/ H$ is a group whose order is divisible by $p$. Again by Cauchy's theorem there is a subgroup of $N_G(H)\bign/H$, of the form $H_1\bign/H$, of order $p$. Since $|H_1| = |H| |H_1\bign/H| = p^{i}p = p^{i+1}$, the proof is complete.
+\end{proof}
+\begin{definition}
+  A subgroup of $P$ of $G$ is said to be a Sylow $p-$subgroup if it is the maximal $p-$subgroup; i.e. if $P\subset H \subset G$ and $H$ is also a $p-$subgroup then $P=H$.
+\end{definition}
+\begin{corollary}
+  Suppose $G$ is a group of order $p^n m$ like before. Let $H$ be a $p-$subgroup of $G$. Then:
+  \begin{enumerate}
+    \item $H$ is a $p-$Sylow subgroup if and only if $|H| = p^n$.
+    \item Every conjugate of a Sylow $p-$subgroup is a Sylow $p-$subgroup.
+    \item If there is only one Sylow $p-$subgroup then it is normal in $G$.
+  \end{enumerate}
+\end{corollary}
+\begin{proof}
+  Suppose that $P$ is a Sylow $p-$subgroup of order $p^i$. Since by Sylow theorem we know that $P$ must be normal in a subgroup of order $p^{i+1}$, which is a contradiction. Thus $P$ cannot be a Sylow $p-$subgroup, unless $i=n$. Suppose now the converse. If $|H| = p^n$ then there cannot be any other subgroup of order $p^k$ such that $H$ is it's subgroup. Thus $H$ is a sylow $p-$subgroup.\\
+
+  Supposing $H$ is a Sylow $p-$subgroup, and let $K = gHg^{-1}$ for some $g\in G$. It is clear that $K$ is a subgroup of $p^n$, since the order of $H$ is also $p^n$. Therefore by 1 it follows that $K$ is a Sylow $p-$subgroup.\\
+
+  In case the there is only one Sylow $p-$subgroup, we have that $H = gHg^{-1}$ for every $g\in G$, since the conjugation is also a Sylow $p-$subgroup. Therefore $H$ is normal.
+\end{proof}
+\begin{theorem}[Sylow's Second Theorem]
+  Suppose $H$ is a $p$-subgroup of $G$ and $P$ is a Sylow $P$ subgroup of $G$. Then there exists $x\in G$ such that $H$ is a subgroup of $xPx^{-1}$.
+\end{theorem}
+\begin{proof}
+  Let $S$ be the set of all cosets of $P$. Let $H$ act on $S$ by left translation. Since $P$ is a Sylow $p-$subgroup it's index would not be divisible by $p$. Since $|S| = [G:P]$ it follows that $|S_0| \equiv [G:P] \pmod{p}$ and thus $|S_0| \neq 0$. Suppose that $xP \in S_0$, then:
+  \begin{align*}
+    hxP &= xP,\ \forall\ h\in H\\
+    xhx^{-1}P &= P,\ \forall\ h\in H\\
+    \implies xhx^{-1} &\in P,\ \forall\ h\in H\\
+    \implies xHx^{-1} &\subset P \implies H\subset x^{-1}Px.
+  \end{align*}
+\end{proof}
+\begin{remark}
+  In the case when $H$ is itself a Sylow $p-$subgroup it can be shown that $H = xPx^{-1}$, which means that any two Sylow $p-$subgroups are conjugations of each other.
+\end{remark}
+\begin{theorem}[Sylow's Third Theorem]
+  If $G$ is a finite group and $p$ is a prime, then the number of Sylow $p-$subgroups of $G$ divides $|G|$ and is of the form $kp+1$. 
+\end{theorem}
+\begin{proof}
+  Let $S$ be the set of Sylow $p$-subgroups of $G$. Let $G$ act on $S$ by conjugation. Since the stabilizer of $P$ is $N_G(P)$ and the orbit of $P$ is all of $S$ (by second Sylow's theorem), it follows that $|S| = [G:N_G(P)]$. Since $[G:N_G(P)]$ divides $|G|$ so does $|S|$.\\ 
+
+  Now let $P$ act on $S$. Clearly $|S_0|$ at least contains $P$. Suppose $Q\in S_0$, then $xQx^{-1} = Q$ for all $x\in P$. This means that $P$ is a subgroup of $N_G(Q)$. Since $Q$ is normal in $N_G(Q)$ and since all Sylow $p-$subgroups are conjugate, it follows that $Q = xQx^{-1} = P$ for some $x\in N_G(Q)$. Thus $S_0$ only has one element $P$, implying that $|S| \equiv |S_0| \equiv 1 \pmod{p}$ or $|S| = kp +1$.
+\end{proof}

@@ -14,7 +14,7 @@
 \begin{example}
   If $H$ is a subgroup of $G$, then the action $(h,g) \mapsto hgh^{-1}$ is called conjugation.
 \end{example}
-\begin{theorem}
+\begin{theorem}\label{thm:action_relation}
   Let $G$ act on a set $S$. The relation defined by:
   \begin{align*}
     x\sim x' \iff gx = x'\ \text{for some $g\in G$} 
@@ -48,5 +48,81 @@
   The subgroup $G_x$ is called the stabilizer.
 \end{definition}
 \begin{proposition}
-  The cardinality of $\bar{x}$ is $i_{G}(G_x)$.
+  The cardinality of $\bar{x}$ is the index of $G_x$ in $G$, i.e. $[G:G_x]$.
 \end{proposition}
+\begin{proof}
+  Let $G/G_x$ denote the set of cosets of $G_x$ in $G$. Let
+  \begin{align*}
+    \p: \bar{x} &\to G/G_x\\
+    gx &\mapsto gG_x
+  \end{align*}
+  be a map. This map is well defined since
+  \begin{align*}
+    gx &= hx\\
+    \implies x &= g^{-1}h x \\
+    \implies g^{-1}h &\in G_x \implies gG_x = hG_x.
+  \end{align*}
+  Clearly this map is also injective and surjective. Therefore the cardinality of $\bar{x}$ is same as $G/G_x$.
+\end{proof}
+\begin{definition}
+  If the group acts on itself, with the group action being conjugation then the orbits of $x\in G$ are called conjugacy classes and the stabilizer of $x$ is written as $C_G(x)$. Also the group $N_G(K) = \{g\in G\ |\ gKg^{-1} = K\}$ is called the normalizer of $K$ subgroup $K$.
+\end{definition}
+\begin{corollary}\label{cor:class_eq}
+  Suppose $G$ is a finite group and $K$ is a subgroup of $G$:
+  \begin{enumerate}
+    \item The number of elements in the conjugacy class of $x$ is $[G:C_G(x)]$ which divides $|G|$.
+    \item Suppose $G\bign/ \sim = \{\bar{x}_1, \bar{x}_2,...,\bar{x}_n \}$ then
+      \begin{align*}
+        |G| = \sum_{i=1}^n [G:C_G(x_i)]
+      \end{align*}
+      where $\sim$ is defined in \cref{thm:action_relation}.
+    \item the number of subgroups conjugate to $K$ are $[G:N_G(K)]$.
+  \end{enumerate}
+\end{corollary}
+\begin{proof}
+  Since the conjugacy classes are orbits and $C_G(x)$ is the stabilizer of $x$ it follows from the above theorem that the number of elements in $\bar{x}$ is $[G:C_G(x)]$. Since the group is finite by lagranges theorem we know that $|G|/[G:C_G(x)] = |C_G(x)|$. Similarly for 3 consider the set $S$ of all subsets of $G$ and let $G$ act on $S$ with conjugate group action. The number of subgroups conjugate to $K$ is essentially the orbit of $K$, thus its cardinality would be $[G:N_G(K)]$, since $N_G(K)$ is the stabilizer of $K$. For the proof of 2, we use the fact $G\bign/\sim$ is a partition of $G$, therefore all $\bar{x}_i$ are distinct and their union is $G$. Since the number of elements in each is $[G:C_G(x_i)]$ we get the result.
+\end{proof}
+\begin{definition}
+  Let $A(S)$ denote the permutation of $S$ (i.e. the set of all bijections $S\to S$)
+\end{definition}
+\begin{lemma}
+  If a group $G$ acts on a set $S$ then this action induces a homomorphism $G\to A(S)$.
+\end{lemma}
+\begin{proof}
+  Let $\p:G\to A(S)$ be defined as:
+  \begin{align*}
+    f_g(x) = \p(g)(x) = gx 
+  \end{align*}
+  clearly $f_g\in A(S)$. Since
+  \begin{align*}
+    \p(gh)(x) = f_{gh}(x) = g(hx) = g\circ h(x) = \p(g)\circ \p(h)(x)
+  \end{align*}
+  Thus $\p$ is a homomorphism.
+\end{proof}
+\begin{theorem}[Cayley's Theorem]
+  If $G$ is a group then there is an injective homomorphism $G\to A(G)$.
+\end{theorem}
+\begin{proof}
+  Let $G$ act on itself by the left translation. Then by the lemma above there is a homomorphism induced by this action. It is easy to show that the homomorphism is injective.
+\end{proof}
+\begin{remark}
+  For finite groups of order $n$ it can be shown that $A(G)$ is isomorphic to a subgroup of $S_n$.
+\end{remark}
+\begin{proposition}
+  If $G$ is a finite group and $H$ is a subgroup such that $[G:H] = p$, where $p$ is the smallest prime which divides $|G|$. Then $H$ is normal in $G$.
+\end{proposition}
+\begin{proof}
+  Let $S$ be the set of cosets of $H$ in $G$. Let $G$ act on $S$ by the following action:
+  \begin{align*}
+    g(xH) = (gx)H.
+  \end{align*}
+  There is a homomorphism induced by the action $G\to A(S)$. Since $S$ has order $p$, $A(S) \simeq S_p$ (symmetric group). Let $K$ be the kernel of the homomorphism induced by the action. Then
+  \begin{align*}
+    K = \{g\in G\ |\ \forall\ x\ gxH = xH\}  \implies K\subset H.
+  \end{align*}
+  By first isomorphism theorem $G\bign/K$ is isomorphic to some subgroup of $S_p$ (subgroup because the homomorphism is not onto). Thus by Lagrange's theorem $|G\bign/K|$ divides $p!$. Since $|G\bign/ K|$ divides $G$ it follows that every factor of $|G\bign/K|$ divides $G$. Since $p$ is the smallest number that divides $|G|$, if $[G:K]$ is anything but $1,p$, we will get a contradiction. Since
+  \begin{align*}
+    [G:K] = [G:H][H:K] = p[H:K] \geq p \implies [G:K] = p
+  \end{align*}
+  Therefore $[G:K] = p$ and $[H:K] = 1$, which means that $H=K$. Since $K$ is normal in $G$ (it's a kernel) it follows that $H$ is normal.
+\end{proof}

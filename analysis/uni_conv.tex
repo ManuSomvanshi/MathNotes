@@ -1,0 +1,42 @@
+\section{Uniform Convergence}
+\begin{definition}
+  A sequence of functions $f_n:X\to \C$ is said to be pointwise converging to $f$ if
+  \begin{align*}
+    \forall\ x\ f(x) = \lim_{n\to \infty} f_n(x),
+  \end{align*}
+  or, for all $\e>0$ there exists $N(x)$ such that
+  \begin{align*}
+    n>N(x) \implies |f_n(x) - f(x)| < \e.
+  \end{align*}
+\end{definition}
+\begin{definition}
+  A sequence of functions $f_n$ are said to be uniformly converging to $f$ if for all $\e>0$ there exists $N$ such that
+  \begin{align*}
+    n>N \implies |f_n(x)-f(x)| < \e,\ \forall\ x.
+  \end{align*}
+\end{definition}
+\begin{remark}
+  From here on if $N$ depends on $x$ I will write $N(x)$. Otherwise it means that $N$ does not depend on $x$.
+\end{remark}
+\begin{proposition}
+  A sequence of functions $f_n$ is uniformly convergent if and only if for each $\e>0$ there exists $N$ such that $m,n>N \implies |f_n(x) - f_m(x)|< \e$ for all $x\in E$.
+\end{proposition}
+\begin{proof}
+  Suppose that $f_n$ is uniformly convergent to $f$. Then there exists $N$ such that
+  \begin{align*}
+    n>N \implies |f_n(x) - f(x)| < \e/2.
+  \end{align*}
+  Using triangle inequality
+  \begin{align*}
+    |f_n(x) - f_m(x)| &< |f_m(x) - f(x)| + |f_n(x) - f(x)|\\ 
+                      &< \e.
+  \end{align*}
+  Conversly suppose that if $f_n$ is cauchy convergent. Then there exists $N$ such that
+  \begin{align*}
+    n,m>N \implies |f_n(x) - f_m(x)| <\e.
+  \end{align*}
+  Since $f_n(x)$ is a cauchy sequence in $\R$ for each $x$, by completeness of $\R$ we know that it converges to some number. Let $f(x)$ be this number. Then as $m\to \infty$ we get that
+  \begin{align*}
+    n>N \implies |f_n(x) - f(x)| < \e.
+  \end{align*}
+\end{proof}

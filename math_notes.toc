@@ -1,57 +1,60 @@
 \babel@toc {english}{}\relax 
 \babel@toc {english}{}\relax 
 \contentsline {part}{\numberline {I}Basics}{3}{part.1}%
-\contentsline {section}{\numberline {1}Elementary Set Theory}{3}{section.I.section.1}%
-\contentsline {section}{\numberline {2}Relations}{3}{section.I.section.2}%
-\contentsline {paragraph}{}{4}{paragraph*.1}%
-\contentsline {section}{\numberline {3}Functions}{4}{section.I.section.3}%
-\contentsline {paragraph}{}{5}{paragraph*.2}%
-\contentsline {paragraph}{}{7}{paragraph*.3}%
-\contentsline {paragraph}{}{7}{paragraph*.4}%
-\contentsline {paragraph}{Diagrams.}{8}{paragraph*.5}%
-\contentsline {paragraph}{Canonical Decomposition.}{8}{paragraph*.6}%
-\contentsline {paragraph}{Injective.}{9}{paragraph*.7}%
-\contentsline {paragraph}{Surjective.}{9}{paragraph*.8}%
-\contentsline {section}{\numberline {4}Categories}{10}{section.I.section.4}%
-\contentsline {paragraph}{}{11}{paragraph*.9}%
-\contentsline {part}{\numberline {II}Abstract Algebra}{12}{part.2}%
-\contentsline {section}{\numberline {1}Introduction}{12}{section.II.section.1}%
-\contentsline {section}{\numberline {2}More on Permutation Group}{16}{section.II.section.2}%
-\contentsline {section}{\numberline {3}Lagrange's Theorem}{18}{section.II.section.3}%
-\contentsline {section}{\numberline {4}Homomorphism and Normal Subgroups}{19}{section.II.section.4}%
-\contentsline {section}{\numberline {5}Automorphisms}{23}{section.II.section.5}%
-\contentsline {section}{\numberline {6}Free Groups}{24}{section.II.section.6}%
-\contentsline {section}{\numberline {7}Group Actions}{26}{section.II.section.7}%
-\contentsline {part}{\numberline {III}Analysis}{28}{part.3}%
-\contentsline {section}{\numberline {1}Construction of Real Numbers}{28}{section.III.section.1}%
-\contentsline {section}{\numberline {2}Metric Spaces and Euclidean Space}{32}{section.III.section.2}%
-\contentsline {section}{\numberline {3}Sequences}{38}{section.III.section.3}%
-\contentsline {section}{\numberline {4}Continuity}{40}{section.III.section.4}%
-\contentsline {section}{\numberline {5}Differentiation}{44}{section.III.section.5}%
-\contentsline {part}{\numberline {IV}Set Theory and Logic}{47}{part.4}%
-\contentsline {section}{\numberline {1}Symbolic Logic}{47}{section.IV.section.1}%
-\contentsline {subsection}{\numberline {1.1}Sematics of Propositional logic}{48}{subsection.IV.section.1.1}%
-\contentsline {subsection}{\numberline {1.2}Syntactics of Propositional logic}{48}{subsection.IV.section.1.2}%
-\contentsline {subsection}{\numberline {1.3}Proof Methods}{49}{subsection.IV.section.1.3}%
-\contentsline {subsection}{\numberline {1.4}Consistency}{50}{subsection.IV.section.1.4}%
-\contentsline {subsection}{\numberline {1.5}Soundness}{51}{subsection.IV.section.1.5}%
-\contentsline {subsection}{\numberline {1.6}Complete}{52}{subsection.IV.section.1.6}%
-\contentsline {section}{\numberline {2}First Order Logic}{53}{section.IV.section.2}%
-\contentsline {subsection}{\numberline {2.1}Syntactics}{53}{subsection.IV.section.2.1}%
-\contentsline {subsection}{\numberline {2.2}Axioms, Rules of Inference and Replacement rules}{54}{subsection.IV.section.2.2}%
-\contentsline {subsection}{\numberline {2.3}Proof Methods}{55}{subsection.IV.section.2.3}%
-\contentsline {part}{\numberline {V}Linear Algebra}{57}{part.5}%
-\contentsline {section}{\numberline {1}Fields}{57}{section.V.section.1}%
-\contentsline {part}{\numberline {VI}Topology}{59}{part.6}%
-\contentsline {part}{\numberline {VII}Measure Theory}{60}{part.7}%
-\contentsline {section}{\numberline {1}Intuition of Measure}{60}{section.VII.section.1}%
-\contentsline {section}{\numberline {2}Formal Notion of Measure}{62}{section.VII.section.2}%
-\contentsline {paragraph}{($\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$)}{63}{paragraph*.11}%
-\contentsline {paragraph}{}{66}{paragraph*.12}%
-\contentsline {section}{\numberline {3}Caratheodory Theorem}{68}{section.VII.section.3}%
-\contentsline {section}{\numberline {4}Lebesgue Measure}{74}{section.VII.section.4}%
-\contentsline {section}{\numberline {5}Complete Measures}{76}{section.VII.section.5}%
-\contentsline {section}{\numberline {6}Integration}{78}{section.VII.section.6}%
-\contentsline {paragraph}{($\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$)}{79}{paragraph*.14}%
-\contentsline {paragraph}{($\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Relbar \tmspace +\thickmuskip {.2777em}$)}{79}{paragraph*.15}%
+\contentsline {section}{\numberline {1}Elementary Set Theory}{4}{section.I.section.1}%
+\contentsline {section}{\numberline {2}Relations}{5}{section.I.section.2}%
+\contentsline {paragraph}{}{5}{paragraph*.1}%
+\contentsline {section}{\numberline {3}Functions}{6}{section.I.section.3}%
+\contentsline {paragraph}{}{6}{paragraph*.2}%
+\contentsline {paragraph}{}{8}{paragraph*.3}%
+\contentsline {paragraph}{}{8}{paragraph*.4}%
+\contentsline {paragraph}{Diagrams.}{9}{paragraph*.5}%
+\contentsline {paragraph}{Canonical Decomposition.}{9}{paragraph*.6}%
+\contentsline {paragraph}{Injective.}{10}{paragraph*.7}%
+\contentsline {paragraph}{Surjective.}{10}{paragraph*.8}%
+\contentsline {section}{\numberline {4}Categories}{12}{section.I.section.4}%
+\contentsline {paragraph}{}{12}{paragraph*.9}%
+\contentsline {part}{\numberline {II}Abstract Algebra}{14}{part.2}%
+\contentsline {section}{\numberline {1}Introduction}{15}{section.II.section.1}%
+\contentsline {section}{\numberline {2}More on Permutation Group}{20}{section.II.section.2}%
+\contentsline {section}{\numberline {3}Lagrange's Theorem}{22}{section.II.section.3}%
+\contentsline {section}{\numberline {4}Homomorphism and Normal Subgroups}{24}{section.II.section.4}%
+\contentsline {section}{\numberline {5}Automorphisms}{28}{section.II.section.5}%
+\contentsline {section}{\numberline {6}Free Groups}{30}{section.II.section.6}%
+\contentsline {section}{\numberline {7}Group Actions}{33}{section.II.section.7}%
+\contentsline {section}{\numberline {8}Sylow's Theorems}{36}{section.II.section.8}%
+\contentsline {part}{\numberline {III}Analysis}{39}{part.3}%
+\contentsline {section}{\numberline {1}Construction of Real Numbers}{40}{section.III.section.1}%
+\contentsline {section}{\numberline {2}Metric Spaces and Euclidean Space}{45}{section.III.section.2}%
+\contentsline {section}{\numberline {3}Sequences}{51}{section.III.section.3}%
+\contentsline {section}{\numberline {4}Continuity}{54}{section.III.section.4}%
+\contentsline {section}{\numberline {5}Differentiation}{58}{section.III.section.5}%
+\contentsline {section}{\numberline {6}Uniform Convergence}{61}{section.III.section.6}%
+\contentsline {section}{\numberline {7}Riemann Integration}{62}{section.III.section.7}%
+\contentsline {part}{\numberline {IV}Set Theory and Logic}{63}{part.4}%
+\contentsline {section}{\numberline {1}Symbolic Logic}{64}{section.IV.section.1}%
+\contentsline {subsection}{\numberline {1.1}Sematics of Propositional logic}{65}{subsection.IV.section.1.1}%
+\contentsline {subsection}{\numberline {1.2}Syntactics of Propositional logic}{65}{subsection.IV.section.1.2}%
+\contentsline {subsection}{\numberline {1.3}Proof Methods}{66}{subsection.IV.section.1.3}%
+\contentsline {subsection}{\numberline {1.4}Consistency}{67}{subsection.IV.section.1.4}%
+\contentsline {subsection}{\numberline {1.5}Soundness}{68}{subsection.IV.section.1.5}%
+\contentsline {subsection}{\numberline {1.6}Complete}{69}{subsection.IV.section.1.6}%
+\contentsline {section}{\numberline {2}First Order Logic}{71}{section.IV.section.2}%
+\contentsline {subsection}{\numberline {2.1}Syntactics}{71}{subsection.IV.section.2.1}%
+\contentsline {subsection}{\numberline {2.2}Axioms, Rules of Inference and Replacement rules}{72}{subsection.IV.section.2.2}%
+\contentsline {subsection}{\numberline {2.3}Proof Methods}{73}{subsection.IV.section.2.3}%
+\contentsline {part}{\numberline {V}Linear Algebra}{75}{part.5}%
+\contentsline {section}{\numberline {1}Fields}{76}{section.V.section.1}%
+\contentsline {part}{\numberline {VI}Topology}{78}{part.6}%
+\contentsline {part}{\numberline {VII}Measure Theory}{79}{part.7}%
+\contentsline {section}{\numberline {1}Intuition of Measure}{80}{section.VII.section.1}%
+\contentsline {section}{\numberline {2}Formal Notion of Measure}{82}{section.VII.section.2}%
+\contentsline {paragraph}{($\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$)}{83}{paragraph*.11}%
+\contentsline {paragraph}{}{86}{paragraph*.12}%
+\contentsline {section}{\numberline {3}Caratheodory Theorem}{89}{section.VII.section.3}%
+\contentsline {section}{\numberline {4}Lebesgue Measure}{96}{section.VII.section.4}%
+\contentsline {section}{\numberline {5}Complete Measures}{98}{section.VII.section.5}%
+\contentsline {section}{\numberline {6}Integration}{100}{section.VII.section.6}%
+\contentsline {paragraph}{($\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$)}{100}{paragraph*.14}%
+\contentsline {paragraph}{($\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Relbar \tmspace +\thickmuskip {.2777em}$)}{100}{paragraph*.15}%
 \contentsfinish 

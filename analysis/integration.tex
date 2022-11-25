@@ -1,0 +1,31 @@
+\section{Riemann Integration}
+\begin{definition}
+  A partition $P$ of an interval $[a,b]$ is a set of finite point $x_0\leq \cdots \leq x_n \in [a,b]$ such that $x_0 =a$ and $b=x_n$. We write $\Delta x_k = x_{k} - x_{k-1}$, where $1\leq k\leq n$
+\end{definition}
+\begin{definition}
+  Let $f:[a,b]\to \R$ be bounded on $[a,b]$. Let $P$ be a partition on $[a,b]$. Suppose
+  \begin{align*}
+    M_k &= \sup_{x_{k-1} \leq x \leq x_k} f(x)\\
+    m_k &= \inf_{x_{k-1} \leq x \leq x_k} f(x).
+  \end{align*}
+  Then define the upper and lower integrals as
+  \begin{align*}
+    U(f,P) &= \sum_{k=1}^{n} M_k \Delta x_i\\
+    L(f,P) &= \sum_{k=1}^{n} m_k \Delta x_i\\
+  \end{align*}
+\end{definition}
+\begin{definition}
+  Define the upper and lower Riemann integrals as:
+  \begin{align*}
+    \overline{\int^{b}_{a}} f(x) \dd x &= \sup_{P} U(f,P)\\
+    \underline{\int^{b}_{a}} f(x) \dd x &= \sup_{P} L(f,P)\\
+  \end{align*}
+  The function $f$ is said to be integrable if
+  \begin{align*}
+    \underline{\int^{b}_{a}} f(x) \dd x = \overline{\int^{b}_{a}} f(x) \dd x
+  \end{align*}
+  and the Riemann integral of $f$ on the interval $[a,b]$ is
+  \begin{align*}
+    \int^b_a f(x) \dd x = \underline{\int^{b}_{a}} f(x) \dd x = \overline{\int^{b}_{a}} f(x) \dd x
+  \end{align*}
+\end{definition}
