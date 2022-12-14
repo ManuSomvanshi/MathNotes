@@ -10,8 +10,8 @@
   \end{align*}
   Then define the upper and lower integrals as
   \begin{align*}
-    U(f,P) &= \sum_{k=1}^{n} M_k \Delta x_i\\
-    L(f,P) &= \sum_{k=1}^{n} m_k \Delta x_i\\
+    U(f,P) &= \sum_{k=1}^{n} M_k \Delta x_k\\
+    L(f,P) &= \sum_{k=1}^{n} m_k \Delta x_k\\
   \end{align*}
 \end{definition}
 \begin{definition}
@@ -29,3 +29,146 @@
     \int^b_a f(x) \dd x = \underline{\int^{b}_{a}} f(x) \dd x = \overline{\int^{b}_{a}} f(x) \dd x
   \end{align*}
 \end{definition}
+\begin{definition}
+  If $P$ is a partition then $P^*$ is said to be a refinement of $P$ if $P^* \supset P$. Given two partitions $P_1$ and $P_2$ then their common refinement $P^*$ is defined as $P_1 \cup P_2$.
+\end{definition}
+\begin{remark}
+  It is obvious that $L(f,P) \leq U(f,P)$ in general.
+\end{remark}
+\begin{proposition}
+  If $P^*$ is a refinment of $P$ then
+  \begin{align*}
+    L(f,P^*) \geq L(f,P)\\
+    U(f,P^*) \leq U(f,P)\\
+  \end{align*}
+\end{proposition}
+\begin{proof}
+  Let $P = \{x_1,\cdots, x_n\}$ and suppose that $P^* = \{x_1, \cdots, x_i, x^*, x_{i+1}, \cdots, x_n\}$, then
+  \begin{align*}
+    L(f,P^*) &= \sum_{k=1}^i m_k \Delta x_k + m'(x^* - x_{i}) + m''(x_{i+1} - x^*)+\sum_{k=i+2}^n m_k \Delta x_k.
+  \end{align*}
+  Therefore
+  \begin{align*}
+    L(f,P^*) -L(f,P) &= m'(x^* - x_{i}) + m''(x_{i+1} - x^*) - m_{i+1}(x_{i+1} - x_i)\\
+                     &= (m'' - m_{i+1}) (x_{i+1} - x^*) + (m' - m_{i+1}) (x^* - x_i) \geq 0.
+  \end{align*}
+  The last inequality is due to the fact that the infimum over a subset is greater than or equal to the infimum of the whole set. This shows that $L(f,P^*) \geq L(f,P)$. The $U(f,p)$ one follows in a similar manner.
+\end{proof}
+\begin{proposition}
+  The following inequality holds:
+  \begin{align*}
+    \underline{\int_a^b} f \dd x \leq \overline{\int^b_a} f \dd x
+  \end{align*}
+\end{proposition}
+\begin{proof}
+  Let $P_1, P_2$ be partitions and let $P^*$ be their common refinment. It follows that
+  \begin{align*}
+    L(f,P_1) \leq L(f,P^*) \leq U(f,P^*) \leq U(f,P_2)
+  \end{align*}
+  Keeping $P_2$ fixed if we take the supremum over $P_1$,
+  \begin{align*}
+    \underline{\int^b_a} f \dd x \leq U(f,P_2),
+  \end{align*}
+  Now taking the infimum over $P_2$ we get our result.
+\end{proof}
+\begin{theorem}
+  $f$ is Riemann integrable if and only if for all $\e>0$ there exists a partition $P$ such that
+  \begin{align*}
+    U(f,P) - L(f,P) < \e.
+  \end{align*}
+\end{theorem}
+\begin{proof}
+  Suppose that $\forall\ \e>0$ there exists a $P$ such that
+  \begin{align*}
+    U(f,P) - L(f,P) < \e.
+  \end{align*}
+  Since
+  \begin{align*}
+    L(f,P) \leq \underline{\int^b_a} f \dd x \leq \overline{\int^b_a} f \dd x \leq U(f,P)
+  \end{align*}
+  it follows that
+  \begin{align*}
+    \overline{\int^b_a} f \dd x - \underline{\int^b_a} f \dd x < \e,\ \forall\ \e>0
+  \end{align*}
+  Thus
+  \begin{align*}
+    \overline{\int^b_a} f\dd x = \underline{\int^b_a} f \dd x.
+  \end{align*}
+  Now suppose that $f$ is integrable. Using the fact that $\int^b_a f \dd x$ is supremum and infimum of $L(f,P)$ and $U(f,P)$ respectively, it follows that for each $\e$
+  \begin{align*}
+    U(f,P_1) -\int^b_a f \dd x < \e/2\\
+    \int^b_a f \dd x  - L(f,P_2)< \e/2
+  \end{align*}
+  For some paritions $P_1$ and $P_2$. Let $P$ be the common refinement of $P_1$ and $P_2$. Then
+  \begin{align*}
+    U(f,P) - L(f,P) < \e.
+  \end{align*}
+\end{proof}
+\begin{proposition}
+  If $f$ is continuous on $[a,b]$ then it is integrable.
+\end{proposition}
+\begin{proof}
+  Since $f$ is continuous on $[a,b]$ it follows that it is also uniformly continuous. Let $\e>0$. There exists a $\delta$ independent of $x,y$ such that
+  \begin{align*}
+    |x-y| < \d \implies |f(x) - f(y)| < \f{\e}{b-a}
+  \end{align*}
+  Let $P$ be a partition such that $\Delta x_i < \delta$. Therefore
+  \begin{align*}
+    U(f,P) - L(f,P) = \sum_{k=1}^n (M_k - m_k) \Delta x_k
+  \end{align*}
+  But since $\Delta x_k < \d$ it follows that $M_k - m_k < \e/(b-a)$. Thus
+  \begin{align*}
+    U(f,P) -L(f,P) < \e.
+  \end{align*}
+\end{proof}
+\begin{proposition}
+  If $f$ is a monotonic on $[a,b]$ then $f$ is integrable.
+\end{proposition}
+\begin{proof}
+  Suppose that $f$ is increasing. Choose a partition such that $\Delta x_i = (b-a)/n$ for some $n$. Since the function is increasing $M_i = f(x_i)$ and $m_i = f(x_{i-1})$. Therefore
+  \begin{align*}
+    U(f,P) - L(f,P) = \sum_{k=1}^n (M_i - m_i) \Delta x_i = \f{b-a}{n} (f(b)-f(a))
+  \end{align*}
+  Since $n$ is arbitrary it follows that $U(f,P) - L(f,P)$ can be made arbitrarily small.
+\end{proof}
+\begin{theorem}
+  If $f$ is bounded on $[a,b]$ and it has only finitely many discontinuities then $f$ is integrable.
+\end{theorem}
+\begin{proof}
+  Suppose that $f$ has only one discontinuity at $x_0$. Let $\e>0$. Let $P_1$ be a partition of $[a,x_0-1/n]$ and let $P_2$ be a partition of $[x_0+1/n, b]$. Since $f$ is continuous in both of these intervals it follows that
+  \begin{align*}
+    U(f,P_1) -L(f,P_1) < \e/2\\
+    U(f,P_2) -L(f,P_2) < \e/2
+  \end{align*}
+  Let $M,m$ be the supremum and infimum of $f$ in the interval $[x_0-1/n, x_0 + 1/n]$. Let $P = P_1\cup P_2$, then
+  \begin{align*}
+    U(f,P) - L(f,P) &= (U(f,P_1) - L(f,P_1)) + (M-m)\f{2}{n} + (U(f,P_2) - L(f,P_2))\\
+                    &< \e + \f{2(M-m)}{n}
+  \end{align*}
+  Since $n$ is arbitrary, taking the limit $n\to \infty$ we get that $f$ is integrable. This argument can be generalised to finitely many discontinuities.
+\end{proof}
+\begin{theorem}
+  Suppose that $f$ is integrable and $m\leq f \leq M$, and $\p$ is continuous on $[m,M]$, and $h = \p\circ f$. Then $h$ is integrable.
+\end{theorem}
+\begin{proof}
+  skipped for now...
+\end{proof}
+\begin{remark}
+  It is easy to show that the Riemann integral satisfies the following
+  \begin{enumerate}
+    \item It is linear
+    \item \begin{align*}
+      \int^b_a f \dd x =\int^c_a f \dd x +\int^b_c f \dd x
+      \end{align*}
+    \item If $f$ is Riemann integrable then $|f|$ is Riemann integrable as well and
+      \begin{align*}
+       \l|\int^b_a f \dd x \r| \leq \int^b_a |f| \dd x.
+      \end{align*}
+  \end{enumerate}
+\end{remark}
+\begin{theorem}
+  If $f_n$ is uniformly convergent $f$ and $f_n$ are Riemann intgrable then, $f$ is Riemann intgrable and 
+  \begin{align*}
+    \lim_{n\to \infty} \int^b_a f_n \dd x =\int^b_a f\dd x.
+  \end{align*}
+\end{theorem}

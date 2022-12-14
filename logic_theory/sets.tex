@@ -1,0 +1,159 @@
+\section{Set Theory as First Order Logic}
+\subsection{Zermano Frankel Axioms}
+In first order logic of set theory every variable is considered to be a set. We introduce a new symbol $\in$, which is a connector between variables; $x\in y$ is interpretted semantically as "$x$ is contained in $y$".
+\begin{axiom}[Extensionality]
+  This axioms says that two sets are equal if all of their elements are equal.
+  \begin{align*}
+    \forall x \forall y (x = y \leftrightarrow \forall w(w\in x \leftrightarrow w\in y)).
+  \end{align*}
+\end{axiom}
+\begin{axiom}[Empty Set]
+  This axiom states that there exists a set which contains nothing else in it. Formally,
+  \begin{align*}
+    \exists y\forall x (\lnot (x\in y)).
+  \end{align*}
+  Let $\emptyset$ be a witness to this axiom (meaning we instantiate it at $\emptyset$).
+\end{axiom}
+\begin{axiom}[Existence of pair]
+  Given two sets $x,y$ there exists a set containing exactly these two elements.
+  \begin{align*}
+    \forall x\forall y\exists z(\forall u (u\in z \leftrightarrow (u = x \lor u = y))).
+  \end{align*}
+  Usually this set is denoted by $\{x,y\}$.
+\end{axiom}
+\begin{axiom}[Union of sets]
+  Given a set $x$ there is a set which is the union of all elements of $x$.
+  \begin{align*}
+    \forall x \exists y \forall z (z \in y \leftrightarrow \exists u (u\in x \land z\in u)).
+  \end{align*}
+  This set is denoted as $\bigcup_{u\in x} u$.
+\end{axiom}
+\begin{remark}
+  Combining the axiom of unions with the axiom of pair: given $x,y$ then pair $\{x.y\}$ exists and by axiom of union $x\cup y$ is also a set.
+\end{remark}
+\begin{definition}
+  We write $x\subset y$ if $\forall u (u \in x \to u\in y)$. If $x\subset y$ we say $x$ is a subset of $y$.
+\end{definition}
+\begin{axiom}[Existence of power set]
+  Given any $x$ there exists a set $y$ which contains all subsets of $x$.
+  \begin{align*}
+    \forall x \exists y \forall z(z \in y \leftrightarrow z \subset x).
+  \end{align*}
+  This set is generally denoted as $ \mathfrak{P}(x)$.
+\end{axiom}
+\begin{axiom}[Restricted Comprehension]
+  Given a set $x$ and a relation $\p(z)$, then the elements of $x$ satisfying $\p(z)$ forms a set.
+  \begin{align*}
+    \forall x \exists y \forall z (z\in y \leftrightarrow (z\in x \land \p(z))).
+  \end{align*}
+  Note that this is an axiom schema. Also note that that $\p(z)$ has no free occurence of $x$, otherwise the definition will be recursive. We denote this set as $\{z\in x\ |\ \p(z)\}$.
+\end{axiom}
+\begin{definition}
+  Suppose $x,y$ are sets. Let $\p(z)$ be the property $z\in x$. Then we define $x\cap y$ as $\{z\in y\ |\ z\in x\}$.
+\end{definition}
+\begin{axiom}[Axiom of Regularity]
+  This axiom says that every non-empty set $x$ has atleast one $y\in x$ such that $y$ does not contain any element of $x$. This axiom prohibits paradoxes like Russell's paradoxwhich occur due to infinite descent. Formally
+  \begin{align*}
+    \forall x (\lnot (x = \emptyset) \to \exists y(y\in x \land y\cap x = \p)).
+  \end{align*}
+\end{axiom}
+\begin{remark}
+  Consider the set $\{x\}$. Since it only contains one element, by regularity axiom we have that $x\cap \{x\} = \emptyset$. This means that $\lnot \exists y(y \in x \land y=x)$ (if this were true then the intersection would be non-empty), which further implies $\lnot x\in x$. Thus axiom of regularity prohibits sets which contain themselves. 
+\end{remark}
+\begin{definition}
+  We write $\exists ! x \p(x)$ if $\exists x(\p(x) \land \forall w(\p(w) \leftrightarrow w=x))$. This is semantically read as "there exists a unique $x$".
+\end{definition}
+\begin{axiom}[Axiom of Replacement]
+  This axiom is about functions. It says that suppose forall $w\in x$ there exists a unique $u$ such that the property $\p(w,u)$ holds, then the collections of all such $u$ is contained in a set.
+  \begin{align*}
+    \forall x (\forall w (w\in x \to \exists ! u (\p(w,u)))\to \exists y \forall u(u\in y \leftrightarrow \exists w(w\in x \land \p(w,u))))
+  \end{align*}
+\end{axiom}
+\begin{definition}
+  Given a set $x$ the singleton set $\{x\}$ is defined as an instance of $\exists y \forall z(z\in y \leftrightarrow z=x)$. Similarly the set $x\cup \{x\}$ is an instance of $\exists y \forall z(z\in y \leftrightarrow \forall w(w = x \lor w\in z))$. The set $x\cup \{x\}$ is called the successor of $x$ and is denoted $S(x)$.
+\end{definition}
+\begin{axiom}[Axiom of Infinity]
+  There exists a set which consists infinitely many elements. Formally we define this set inductively, claiming that if $x$ is in the set then so is the successor of $x$.
+  \begin{align*}
+    \exists y (\emptyset \in y \land \forall x (x\in y \to S(x)\in y))
+  \end{align*}
+\end{axiom}
+\subsection{Relations}
+\begin{definition}
+  We define an ordered pair $(x,y)$ to be the set $\{\{x\}, \{x,y\} \}$.
+\end{definition}
+\begin{proposition}
+  Suppose $(x,y) = (u,v)$ then $x=u$ and $y=u$.
+\end{proposition}
+\begin{proof}[proof by Kuratowski's trick]
+  Since $\bigcap_{w\in (x,y)} w = \{x\}$ and similarly $\bigcap_{w\in (u,v)} w = \{u\}$, it follows that $\{x\}=\{u\}$ and thus $x=u$. Define
+  \begin{align*}
+    \d(p) = \{z\in \bigcup_{w\in p}w\ |\ \lnot (\bigcup_{w\in p} w =\bigcap_{w\in p}w ) \to \lnot (z \in \bigcap_{w\in p}w)\}
+  \end{align*}
+  Clearly $\d((x,y)) = \{y\}$ and $\d((u,v)) = \{y\}$. Since $(x,y) = (u,v)$ it follows that $v=y$.
+\end{proof}
+\begin{remark}
+  Suppose that $u\in x$ and $v\in y$. Then $\{u\}, \{u,v\} \subset x\cup y$. Thus $\{u\}, \{u,v\} \in \mathfrak{P} (x\cup y)$ which further means that $(u,v) \in \mathfrak{P} ( \mathfrak{P} (x\cup y))$.  
+\end{remark}
+\begin{definition}
+  Given two sets $x,y$ define
+  \begin{align*}
+    x\times y = \{z\in \mathfrak{P}( \mathfrak{P} (x\cup y))\ |\ \exists u\exists v (u\in x \land v\in y \land z = (u,v))\}
+  \end{align*}
+\end{definition}
+\begin{definition}
+  A relation $r$ is a subset of $x\times y$. If $(u,v)\in r$ then we write $urv$.
+\end{definition}
+\begin{definition}[Reflexive, Symmetric and Transitive]
+  A relation $r\subset x\times x$ is said to be reflexive if $\forall u (uru)$. It is said to be symmetric if $\forall u\forall v (urv \to vru)$. It is said to be trasitive if $\forall u \forall v \forall w (urv \land vrw \to urw)$. If $r$ is all three then it is called an equivalent relation.
+\end{definition}
+\begin{definition}
+  An equivalance class w.r.t an equivalance relation $r \subset x\times x$ and $u\in x$ is defined as
+  \begin{align*}
+    [u]_r = \{v\in x\ |\ urv\}
+  \end{align*}
+\end{definition}
+\begin{proposition}
+  If $r$ is an equivalent relation then $\forall u \forall v( \lnot ([u]_r \cap [v]_r = \emptyset) \to [u]_r = [v]_r)$.
+\end{proposition}
+\begin{proof}
+  If $[u]_r\cap [v]_r \neq \emptyset$ then $\exists w (urw \land vrw)$. But since $vrw \to wrv$ and $urw \land wrv \to urv$, it follows that $urv$. Therefore $[u]_r = [v]_r$.
+\end{proof}
+\begin{definition}
+  The quotient of a set $x$ w.r.t. an equivalance relation $r$ is given by $x\bign/r = \{z\in x\ |\ \exists u(u\in x\land z= [u]_r)\}$.
+\end{definition}
+\begin{definition}
+  A partial order is a relation $r$ on a set $x$ which is reflexive, transitive and anti-symmetric, i.e. $\forall u\forall v(urv \land vru \to u=v)$.
+\end{definition}
+\begin{definition}
+  A strict partial order $r$ on a set $x$ is transitive and $\forall u(\lnot uru)$.  
+\end{definition}
+\begin{definition}
+  A partial order is said to be a total order if $\forall u \forall v (urv \lor vru \lor v=u)$.
+\end{definition}
+\subsection{Functions}
+\begin{definition}
+  A function is a relation $f$ on $x\times y$ which satisfies the property
+  \begin{align*}
+    \forall u (u\in x \to \exists !v((u,v)\in f)). 
+  \end{align*}
+\end{definition}
+\begin{remark}
+  Note that due to the axiom of replacement we know that the collection of all values $v$ such that $(u,v)\in f$ is also a set.
+\end{remark}
+\begin{definition}
+  Define 
+  \begin{align*}
+    y^x = \{f\in \mathfrak{P}(x\times y)\ |\ \forall u (u\in x \to \exists !v((u,v)\in f)) \}
+  \end{align*}
+\end{definition}
+\begin{definition}
+  Given a function $f\in y^x$ and subset $z\subset x$ then we define the image of $z$ as
+  \begin{align*}
+    f(z) = \{v\in y\ |\ \exists u( u\in z \land (u,v)\in f\}.
+  \end{align*}
+  Similarly we define the inverse image of a subset $z\subset y$ is defined as
+  \begin{align*}
+    f^{-1}(z) = \{u\in x\ |\ \exists v(v\in z \land (u,v)\in f)\}.
+  \end{align*}
+\end{definition}

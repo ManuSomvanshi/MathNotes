@@ -1,0 +1,27 @@
+\section{Topological Spaces and Continuous Functions}
+\begin{definition}
+  A topological space is a pair $(X, \mathscr{T})$ where $X$ is a set and $ \mathscr{T}\subset \mathfrak{P} (X)$ such that:
+  \begin{enumerate}
+    \item Both $X$ and $\emptyset$ are in $ \mathscr{T}$.
+    \item The union of elements of any subset of $ \mathscr{T}$ is in $ \mathscr{T}$.
+    \item The intersection of elements of any finite subset of $ \mathscr{T}$ is in $ \mathscr{T}$.
+  \end{enumerate}
+  $ \mathscr{T}$ is said to be a topology on the set $X$.
+\end{definition}
+\begin{remark}[Abuse of Notation]
+  By definition a topological space is $(X, \mathscr{T})$, but for convinience of typing I will generally just say $X$ is a topological space given that no confusion arises.
+\end{remark}
+\begin{definition}
+  An open set of a topological space $X$ is a set which belongs to the topology $ \mathscr{T}$.
+\end{definition}
+\begin{definition}
+  If $(X, \mathscr{T})$ and $(X, \mathscr{T}')$ are topological spaces such that $ \mathscr{T} \subset \mathscr{T}'$ then $ \mathscr{T}'$ is said to be a finer than $ \mathscr{T}$. In case $ \mathscr{T} \subsetneq \mathscr{T}'$ then $ \mathscr{T}'$ is said to be strictly finer. Also $ \mathscr{T}$ may be said to coarser than or strictly coarser than $ \mathscr{T}'$ respectively in the above two cases. $ \mathscr{T}$ is comparable to $ \mathscr{T'}$ if $ \mathscr{T} = \mathscr{T}'$.
+\end{definition}
+Generally it is very hard to completely specify every element in the topology. Thus we use the concept of a basis and specify the topology in terms of these basis.
+\begin{definition}
+  A basis of a topology on $X$ is a collection, $ \mathscr{B}$, of subsets of $X$ such that:
+  \begin{enumerate}
+    \item $\forall x\in X \ \exists B\in \mathscr{B} (x\in B)$.
+    \item $\forall B_1,B_2 \in \mathscr{B}\ \forall x\in B_1\cap B_2\exists B_3 \in \mathscr{B} (x\in B_3 \land  B_3 \subset B_1\cap B_2)$.
+  \end{enumerate}
+\end{definition}
