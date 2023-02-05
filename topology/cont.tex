@@ -1,0 +1,105 @@
+\section{Continuity of functions}
+\begin{definition}
+  A function $f:X\to Y$ is said to be continuous if $f^{-1}(V) \in \mathscr{T}_X$ for every $V\in \mathscr{T}_Y$.
+\end{definition}
+\begin{theorem}
+  If $f:X\to Y$ is a function then, the following are equivalent:
+  \begin{enumerate}
+    \item $f$ is continuous.
+    \item for any subset $A$ of $X$, $f(\overline{A}) \subset \overline{f(A)}$.
+    \item for every closed set $C$ in $Y$, $f^{-1}(C)$ is closed.
+    \item for every $x\in X$ and each neighbourhood $V$ of $f(x)$ there exists a neighbourhood $U$ of $x$ such that $f(U) \subset V$.
+  \end{enumerate}
+\end{theorem}
+\begin{proof}
+  Suppose $1$. Suppose $x\in \bar{A}$ then $f(x)\in f(\bar{A})$. Let $V$ be any open neighbourhood of $f(x)$. By continuity we know that $f^{-1}(V)$ is an open neighbourhood of $x$. There there exists some $y\in f^{-1}(V)\cap A$. This implies that
+  \begin{align*}
+    f(y) \in f(f^{-1}(V))\cap f(A) \subset V\cap f(A).
+  \end{align*}
+  Therefore $V\cap f(A)$ is also non-empty. This proves that $f(x)\in \overline{f(A)}$. Hence $f(\bar{A}) \subset \overline{f(A)}$.\\
+
+  Suppose $2$. Let $A = f^{-1}(C)$. Let $x\in \bar{A}$ then 
+  \begin{align*}
+    f(x) \in f(\bar{A}) \subset \overline{f(A)} \subset \overline{C} = C. 
+  \end{align*}
+  Thus $x\in f^{-1}(C) = A$. Therefore $\bar{A} \subset A$ and thus $A = \bar{A}$. Meaning $A$ is closed.\\
+
+  Suppose $3$. Let $V$ be open in $Y$. Then $Y-V$ is closed. Then
+  \begin{align*}
+    f^{-1}(Y-V) = f^{-1}(Y) - f^{-1}(V) = X - f^{-1}(V).
+  \end{align*}
+  Since $f^{-1}(Y-V)$ is also closed it follows that $f^{-1}(V)$ is open.\\
+
+  Suppose $4$. Since
+  \begin{align*}
+    f(U) \subset V \implies U \subset f^{-1}(f(U)) \subset f^{-1}(V).
+  \end{align*}
+  it follows that $f$ is continuous. Now suppose $1$. For any open neighbourhood $V$ of $y$, $U = f^{-1}(V)$ is open in $X$. Clearly $x\in U$. Since
+  \begin{align*}
+    f(U) = f(f^{-1}(V)) \subset V
+  \end{align*}
+  the proof is complete.
+\end{proof}
+\begin{definition}
+  If $f:X\to Y$ is bijective and both $f$ and $f^{-1}$ are continuous then $f$ is called a homeomorphism.
+\end{definition}
+\begin{definition}
+  Let $f:X\to Y$ be an injection. If map $f':X\to \text{Im}(f)$ given by $x\mapsto f(x)$ is a homeomorphism then it is called an imbedding of $X$ into $Y$.
+\end{definition}
+\begin{theorem}
+  Let $X,Y,Z$ be topological spaces.
+  \begin{enumerate}
+    \item $f:X\to Y$ given by $f(x) = y_0$ for all $x\in X$ and some fixed $y_0\in Y$ is continuous.
+    \item $f:A\to X$ where $A\subset X$ is a subspace and $f(a) =a$ is continuous.
+    \item If $f:X\to Y$ is continuous and $g:Y\to Z$ is continuous then $g\circ f$ is continuous.
+    \item The map $f:X\to Y$ is continuous if $X$ can be written as a union of open sets $U_\a$ and $f\bigg|_{U_\a}$ are continuous.
+  \end{enumerate}
+\end{theorem}
+\begin{proof}
+  \begin{enumerate}
+    \item Since the inverse image of any open set is either $\emptyset$ or $X$ (depending on whether it contains $y_0$ or not), $f$ is continuous. 
+    \item Since the preimage of open set $V$ is just going to be in the subspace topology (since the preimage will be $V\cap A$).
+    \item Since $g$ is continuous $V = g^{-1}(W)$ will be open in $Y$ if $W$ is open in $Z$. Since $V$ is open it follows that $U = f^{-1}(V) = f^{-1}\circ g^{-1}(W)$ is open. Thus $g\circ f$ is continuous. 
+    \item Let $V$ be open in $Y$, then 
+      \begin{align*}
+        f^{-1}(V) &= \{x\in X\ |\ f(x)\in V\}\\
+               &= \{x\in \bigcup_\a U_\a\ |\ f(x)\in V\}\\
+               &= \bigcup_\a \{x\in U_\a\ |\ f\bigg|_{U_\a} (x) \in V\}\\
+               &= \bigcup_\a f\bigg|_{U_\a}^{-1}(V)\\
+      \end{align*}
+      Since the restrictions are continuous it follows the preomages on RHS are open. This $f^{-1}(V)$ is open.
+  \end{enumerate}
+\end{proof}
+\begin{theorem}[Pasting lemma]
+  Let $X = A\cup B$ where $A$ and $B$ are closed in $X$. Let $f:A\to Y$ and let $g:B\to Y$ be continuous functions. If $f(x) = g(x)$ for all $x\in A\cap B$ then the piece wise function $h:X\to Y$ given by
+  \begin{align*}
+    h(x) = \begin{cases}
+      f(x),\ x\in A\\
+      g(x),\ x\in B
+    \end{cases}
+  \end{align*}
+  is continuous.
+\end{theorem}
+\begin{proof}
+  Let $C$ be a closed set in $Y$. Then
+  \begin{align*}
+    h^{-1}(C) &= \{x\in X\ |\ h(x)\in C\}\\
+           &= \{x\in A\ |\ f(x)\in C\} \cup \{x\in B\ |\ g(x)\in C\}\\
+           &= f^{-1}(C) \cup g^{-1}(C)
+  \end{align*}
+  This shows that $h^{-1}(C)$ is also closed in $X$ using continuity of $f,g$.
+\end{proof}
+\begin{theorem}
+  If $f:A\to X\times Y$ is given by $f(a) = (f_1(a), f_2(a))$ where $f_1:A\to X$ and $f_2: A \to Y$. Then $f$ is continuous if and only if $f_1, f_2$ are continuous.
+\end{theorem}
+\begin{proof}
+  Suppose that $f$ is continuous. We have the following commuting diagram
+  \[
+    \begin{tikzcd}[sep=huge]
+      A \arrow{r}{f} \arrow[swap]{dr}{f_1} & X\times Y \arrow{d}{\pi_1} \\ & X
+    \end{tikzcd}
+  \]
+  Since $f_1 = \pi\circ f$ and both the projection and $f$ are continuous it follows that $f_1$ is continuous. Similarly $f_2$ is continuous.\\
+
+  Now suppose that $f_1$ and $f_2$ is continuous. Since $f^{-1}(U\times V) = f_1^{-1}(U)\cap f_2^{-1}(V)$ and finite intersection of open sets is open it follows that $f$ is continuous.
+\end{proof}

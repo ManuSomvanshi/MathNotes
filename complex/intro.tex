@@ -1,0 +1,71 @@
+\section{Algebra of Complex Numbers}
+\begin{definition}
+  Let $\C = \R \times \R$. Define addition and multiplication on $\C$ in the following way:
+  \begin{align*}
+    (x,y) + (a,b) &= (x+a,y+b) \\
+    (x,y)(a,b) &= (xa-yb, ay+bx),
+  \end{align*}
+  where addition and multiplication of $\R$ is the usual one. $\C, +, \cdot$ is called the complex numbers.
+\end{definition}
+\begin{remark}
+  It can be shown easily that $\C$ is a field with this addition and multiplication with additive identity $(0,0)$ and multiplicative identity $(1,0)$.
+\end{remark}
+\begin{proposition}
+  The field of real numbers is isomorphic to a subfield of $\C$. 
+\end{proposition}
+\begin{proof}
+  Consider the map $a\mapsto (a,0)$. It is easy to see that addition and multiplication are preserved. Clearly the map is also a bijection. Thus it is a field isomorphism to the subfield $\{(a,0)\ |\ a\in \R\}$.
+\end{proof}
+\begin{notation}
+  From here on if I say some real $a$ belongs to $\C$, I mean the element $(a,0)$.
+\end{notation}
+\begin{definition}
+  Let $i = (0,1)\in \C$.
+\end{definition}
+\begin{theorem}
+  $i^2 = -1$. 
+\end{theorem}
+\begin{proof}
+  By definition of the product:
+  \begin{align*}
+    (0,1)(0,1) = (-1, 0).
+  \end{align*}
+\end{proof}
+\begin{notation}
+  The element $(a,b)$ would be from here on represented as $a+ib$.
+\end{notation}
+\begin{theorem}
+  $\C$ is not an ordered field. 
+\end{theorem}
+\begin{proof}
+  Suppose that $<$ is a total ordering on the field $\C$. Either $i<0$, $i>0$, or $i=0$. Clearly the last case is not possible. Suppose that $i<0$. Then $-i>0$ and therefore by properties of ordered field $(-i)(-i)=-1>0$. Again using the same property $-1\times -1 =1 > 0$. But since $-1>0$ we must also have $1<0$. This is a contradiction. Thus $i<0$ is not possible. Similarly $i>0$ is not possible. Thus $\C$ cannot be ordered.
+\end{proof}
+\begin{definition}
+  Given a complex number $z = a+ib$ define the compliment of $z$, $\bar{z} = a-ib$.
+\end{definition}
+\begin{theorem}
+  The map $z\mapsto \bar{z}$ is a field isomorphism.
+\end{theorem}
+\begin{proof}
+  Easy to check.
+\end{proof}
+\begin{remark}
+  This shows that $z$ is indistinguishible from $\bar{z}$. Given any equation in terms of $z$, replacing $z$ with $\bar{z}$ every makes no difference.
+\end{remark}
+\begin{theorem}
+  If $z,w\in \C$ then
+   \begin{enumerate}
+     \item $\overline{z+w} = \bar{z} + \bar{w}$,
+     \item $\overline{zw} =\bar{z}\bar{w}$, 
+     \item $z\bar{z}$ is real and positive.
+   \end{enumerate} 
+\end{theorem}
+\begin{proof}
+  Can be easily show by writting $z=a+ib$ and $w=x+iy$.
+\end{proof}
+\begin{definition}
+  Define $|z| = \sqrt{z\bar{z}}$.
+\end{definition}
+\begin{remark}
+  It is easy to check that $|z|$ defines a norm on $\C$.
+\end{remark}

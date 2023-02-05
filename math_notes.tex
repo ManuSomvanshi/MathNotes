@@ -41,6 +41,8 @@
 \def\aut{\text{Aut}}
 \def\inn{\text{Inn}}
 \def\Con{\text{Con}}
+\def\Int{\text{Int}}
+\def\char{\text{char}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \numberwithin{equation}{section} 
 \makeatletter
@@ -66,7 +68,7 @@
 \pdfsuppresswarningpagegroup=1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %for only compiling specific files
-%\includeonly{topology/basic_defs}
+%\includeonly{algebra/rings, algebra/ideals}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
@@ -87,7 +89,7 @@
 \include{basics/category}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\part{Abstract Algebra}
+\part{Abstract Algebra \rm{1}}
 \include{algebra/intro}
 \include{algebra/permutation}
 \include{algebra/lagrange}
@@ -99,7 +101,12 @@
 \include{algebra/classification}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\part{Analysis}
+\part{Abstract Algebra \rm{2}}
+\include{algebra/rings}
+\include{algebra/ideals}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\part{Real Analysis}
 \include{analysis/construction}
 \include{analysis/metric}
 \include{analysis/sequences}
@@ -117,6 +124,7 @@
 \newpage
 \part{Topology}
 \include{topology/basic_defs}
+\include{topology/cont}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \part{Measure Theory}
@@ -126,4 +134,15 @@
 \include{measure_theory/lebesgue_measure}
 \include{measure_theory/complete_measure}
 \include{measure_theory/integration}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\part{Complex Analysis}
+\include{complex/intro.tex}
+\include{complex/holomorphic}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\part{Number Theory}
+\include{num_theory/prelims}
+\include{num_theory/ostrowski}
+\include{num_theory/padic}
 \end{document}

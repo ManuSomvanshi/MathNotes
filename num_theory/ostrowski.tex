@@ -1,0 +1,90 @@
+\section{Norms on Rationals}
+\begin{definition}
+  A norm $|\cdot|_*:\Q \to \R^+\cup\{0\}$ on $\Q$ is a map such that:
+  \begin{enumerate}
+    \item $|x|_* = 0 \iff x=0$.
+    \item $|xy|_* = |x|_*|y|_*$.
+    \item $|x+y|_*\leq |x|_*+|y|_*$.
+  \end{enumerate}
+\end{definition}
+\begin{proposition}
+  The following are immidiate consequences of the definition of norm:
+  \begin{enumerate}
+    \item $d(x,y) = |x-y|_*$ is a metric on $\Q$.
+    \item $|1|_* = |-1|_* = 1$.
+    \item $|-x|_* = |x|_*$.
+    \item $|p/q|_* = |p|_*/|q|_*$.
+    \item $|a|_*\leq a$ for all $a\in \N$.
+  \end{enumerate}
+\end{proposition}
+\begin{proof}
+  The first four are trivial. The last one can be proved by induction. It's true for the base case since $|1|_* = 1$. Suppose it is true for some $n$, then:
+  \begin{align*}
+    |n+1|_* \leq |n|_* + |1|_* \leq n+1.
+  \end{align*}
+  This completes the proof.
+\end{proof}
+\begin{remark}
+  If the norm is determined for every natural number then using property $4$ one can determine it for all of $\Q$. Also note that $|n|_* = 1$ for all $n\in \N$ determines a norm. This is called the trivial norm.
+\end{remark}
+\begin{lemma}\label{lem:ostro}
+  If there exists $a\in \N$ such that $a>1$ and $|a|_* <1$ then $|b|_* \leq 1$ for all $b\in \N$. Moreover there exists a unique prime $p$ such that $|p|_* < 1$.
+\end{lemma}
+\begin{proof}
+  Suppose that $b\in \N$. Then we can express $b$ in base $a$ in the following way:
+  \begin{align*}
+    b = \sum_{0}^m c_k a^k,\qq{where} 0\leq c_k<a \And c_m \neq 0. 
+  \end{align*}
+  Taking the norm,
+  \begin{align*}
+    |b|_* = \l|\sum_0^m c_k a^k\r|_* \leq \sum_0^m |c_k|_* |a|_*^k.
+  \end{align*}
+  Using the fact that $|c_k|_* \leq c_k < a$ and that $|a|_* \leq a <1$ we get:
+  \begin{align*}
+    |b|_* < (m+1)a.
+  \end{align*}
+  Since $c_m \neq 0$, it follows that $a^m \leq b < a^{m+1}$. Thus it follows that $m < \log_a(b) < m+1$. Hence we get
+  \begin{align*}
+    |b^n|_* = (n\log_a (b) + 1) a.
+  \end{align*}
+  This inequality must hold as $n\to \infty$. Since the RHS is linear in $n$ while the LHS is exponential, this is only possible if $|b|_*\leq 1$.\\
+
+  Since there exists a natural number $a$ such that $|a|_*< 1$ by prime factorization,
+  \begin{align*}
+    a = \prod_{i} p_i^{m_i} \implies |n|_* = \prod_i |p_i|_*^{m_i}
+  \end{align*}
+  Since $|a|_* < 1$ for at least one $p_i$, $|p_i|_* <1$. From here on refer to this prime as $p$. Suppose that $q$ is some other prime. Then by Bezout's identity $xp^n - yq^m = 1$ for some integers $x$ and $y$. Since
+  \begin{align*}
+    1 &= |1|_* = |xp^n - yq^m|_* \leq |x|_* |p|_*^n + |y|_* |q|_*^m\\
+      &\leq |p|_*^n + |q|_*^m\\
+  \end{align*}
+  Since $|p|_*^n$ can be made arbitrarily small by choosing a large enough $n$, it follows that
+  \begin{align*}
+    1 \leq q.
+  \end{align*}
+  Since we already know that for naturals $|n|_* \leq 1$, it follows that $|q|_* = 1$. Thus $p$ is the only prime with norm less than $1$.
+\end{proof}
+\begin{definition}
+  For a prime $p$ let $|\cdot|_p$ be a norm on $\Q$ defined as:
+  \begin{align*}
+    |p|_p = \frac{1}{p} \And |q|_p = 1,\qq{where $q\neq p$ is a prime.}
+  \end{align*}
+  This is called the $p-$adic norm.
+\end{definition}
+\begin{observation}
+  It is easy to verify that this is a norm on $\Q$.
+\end{observation}
+\begin{theorem}[Ostrowksi's Theorem]
+  There are only two types of norms on $\Q$:
+  \begin{enumerate}
+    \item The usual norm, denoted $|\cdot|_\infty$.
+    \item For each prime $p$, the $p-$adic norm on $\Q$.
+  \end{enumerate}
+  All other norms are just some power of these norms.
+\end{theorem}
+\begin{proof}[Sketch of proof]
+  As shown in \cref{lem:ostro} if there exists $a>1$ such that $|a|<1$ the resulting norm must be of the second type. Using a similar proof it can be shown that in the opposite case the norm must be of type 1. Also it is easy to show that power of a norm is also a norm.
+\end{proof}
+\begin{remark}
+  Just like we can "complete" rationals in the usual norm to achieve the real numbers, a similar process can be carried out for the $p-$adic norm to get a different field of numbers called the $p-$adic numbers. These are represented by $\Q_p$. Here $\Q_p$ can be thought of as a quotient space over the equivalence relation of cauchy sequences in the $p-$adic norm.
+\end{remark}

@@ -1,0 +1,51 @@
+\section{Preliminaries}
+\begin{definition}
+  Given two numbers $a$ and $b$, the greatest number $g$ that divides both $a$ and $b$ is called the greatest common divisor of $a,b$. This is represented as $\gcd(a,b)$.
+\end{definition}
+\begin{theorem}[Euclid's Algorithm]
+  Suppose $a,b\in \N$. Consider the following algorithm:
+  \begin{align*}
+    a &= q_1 b + r_1,\ 0 \leq r_1 < b\\
+    b &= q_2 r_1 + r_2,\ 0\leq r_2< r_1\\
+    r_1 &= q_3 r_2 + r_3, 0\leq r_3 < r_2\\
+    &\cdots\\
+    r_{N-1} &= q_{N+1}r_{N}.
+  \end{align*}
+  Then the $\gcd(a,b) = r_{N-1}$.
+\end{theorem}
+\begin{proof} 
+  This algorithm must eventually end since the remainders are decresing sequence of non-negative numbers.Thus eventually a remainder will become $0$. Since $r_N$ divides $r_{N-1}$, it also follows that $r_{N}$ divides $r_{N-2}$ since
+  \begin{align*}
+    r_{N-2} = q r_{N-1} + r_{N},\ \text{and}
+  \end{align*}
+  $r_N$ divides each of the terms. Iterating this argument we get that $r_N | a$ and $r_N | b$. Thus $r_N$ is a common divisor, and hence $r_N \leq g = \gcd(a,b)$. Suppose that $c$ is a common divisor of $a,b$. Then $c | r_1$ since $r_1 = a-bq_1$. Repeating this argument we get that $c|r_N$. This means that any common divisor is less than $r_N$. Thus $r_N = g$.  
+\end{proof}
+\begin{theorem}[Bezout's Identity]
+  If $g=\gcd(a,b)$ then $g = sa+tb$ for some $s,t\in \Z$. 
+\end{theorem}
+\begin{proof}
+  Let $S= \{ua+vb\in \N\ |\ u,v\in \Z\}$. Since $S$ is a set of positive numbers it has a minimum element, let $d$ be this minimum element. We can write $d=sa+tb$. Suppose that
+  \begin{align*}
+    a = qd +r,\ 0\leq r< d.
+  \end{align*}
+  Since $d = sa+tb$ it follows that
+  \begin{align*}
+    r = a(1-qs) -tb.
+  \end{align*}
+  thus either $r\in S$ or $r=0$. Since $r<d$ and $d$ is the least element of $S$ it follows that $r$ is not in $d$. Thus $r=0$. This means $d | a$. Similarly $d | b$. Thus $d$ is a common factor. Now suppose that $c|a,b$. Then $a=nc$ and $b=mc$. Hence
+  \begin{align*}
+    d &= sa + tb\\
+      &= c(sn+tm),
+  \end{align*}
+  implying that $c|d$ and hence $c\leq d$. This proves that $d = \gcd(a,b)$.
+\end{proof}
+\begin{theorem}
+  The ring $\Z\bign/MN\Z$ is isomorphic to $\Z\bign/M\Z \times \Z\bign/N\Z$ whenever $\gcd(M,N) = 1$.
+\end{theorem}
+\begin{proof}
+  Consider the map $\p$ given by
+  \begin{align*}
+    a \bmod{MN} \mapsto (a\bmod{M}, a\bmod{N}).
+  \end{align*}
+  Clearly,
+\end{proof}

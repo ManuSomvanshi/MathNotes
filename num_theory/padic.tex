@@ -1,0 +1,68 @@
+\section{Algebra of $p-$Adic numbers}
+\begin{definition}
+  Let $r\in \Q^*$. Then it can be uniquely written in the form $r = p^k \f{m}{n}$ where $\gcd(m,p) = \gcd(n,p) = 1$. Thus $|r|_p = p^{-k}$. Define the function $v_p:\Q^* \to \Z$ given by $v_p(r) = k$. This can be extended to $v_p: \Q \to \Z\cup \{\infty\}$ by using the convention $p^{-\infty} = 0$.
+\end{definition}
+\begin{proposition}
+  If $r,s\in \Q$ then $v_p(rs) = v_p(r) + v_p(s)$.
+\end{proposition}
+\begin{proof}
+  Let $|r|_p = p^{-k}$ and $|s|_p = p^{-j}$. Then $|rs|_p = p^{-(k+j)}$. It follows that $v_p(rs) = k+j = v_p(r) + v_p(s)$.
+\end{proof}
+\begin{proposition}
+  If $r,s\in \Q$ then $v_p(r+s) \geq \min\{v_p(r),v_p(s)\}$, where the equality holds whenever $v_p(r) \neq v_p(s)$.
+\end{proposition}
+\begin{proof}
+  Let $r = p^k \f{m}{n}$ and let $s = p^t \frac{u}{v}$ with $k\leq t$ and $\gcd(p,m) = \gcd(p,n) = \gcd(p,u) = \gcd(p,v) = 1$, then:
+  \begin{align*}
+    r+s = p^k \f{mv + p^{t-k}un}{nv} \implies v_p(r+s) \geq k = \min\{v_p(r), v_p(s)\}.
+  \end{align*}
+  In the case that $t>k$ we get that $\gcd(p, mv + p^{t-k}un) = 1$ (since $\gcd(p,mv)=1$). Thus in this case the equality holds.
+\end{proof}
+\begin{proposition}
+  $r_n\in \Q$ is a cauchy sequence w.r.t. $|\cdot|_p$ if and only if for all $k\in \Z$ there exists a $N$ such that $n,m>N \implies |r_n-r_m|_p < p^k$.
+\end{proposition}
+\begin{proof}
+  Suppose $r_n$ is a cauchy sequence,
+  \begin{align*}
+    \forall \e>0 \ \exists N (n,m>N \implies |r_n-r_m|_p<\e).
+  \end{align*}
+  Choose $\e = p^k$ we get the result.\\
+
+  Conversly suppose that $\forall k\in \Z$ there exists an $N$ such that $n,m>N$ implies $|r_n-r_m|_p < p^k$. Since for all $\e>0$ there exists a $k\in \Z$ such that $p^k < \e$ (choose $k=\lfloor 1/\e \rfloor$).
+\end{proof}
+\begin{corollary}
+  $r_n$ is cauchy if and only if $\forall k\in \Z\cup\{\infty\} \exists N(n,m>N\implies v_p(r_n) \geq k)$.
+\end{corollary}
+\begin{remark}
+  Since the norm is a (uniformly) continuous function on $\Q$ it can be extended to a continuous function on $\Q_p$. And the definitions of Cauchy sequences remains thet same.
+\end{remark}
+\begin{proposition}
+  Suppose that $x_n\in \Q_p$ such that $x_n \to \b$ where $\b\in \Q_p$. Then $v_p(x_n) = const.$ if $n>N$ for some $N$.
+\end{proposition}
+\begin{proof}
+  Since $p^{-k} \to 0$ as $k\to \infty$, there is some $k$ such that $\beta > p^{-k}$ and thus there exists $N$ such that $n>N \implies |x_n|_p > p^{-k}\implies v_p(x_n) < k$. Since $x_n$ is also cauchy we know that $n,m>M \implies v_p(x_n - x_m) \geq k$.\\
+
+  Let $n,m>\max\{N,M\}$ then $v_p(x_n-x_m)\geq k$ and $v_p(x_n) < k$. It follows that $v_p(x_n) \leq v_p(x_n-x_m)$. Also since $x_n = x_m + (x_n -x_m)$ it follows that $x_n\geq v_p(x_n - x_m)$. Thus $v_p(x_n) = v_p(x_n - x_m)$. By the addition theorem it follows that this only happens when $v_p(x_n) = v_p(x_m)$. 
+\end{proof}
+\begin{definition}
+  Let
+  \begin{align*}
+    \Z_{(p)} = \{r\in \Q\ |\ v_p(r)\geq 0\} \And \Z_p = \{x\in \Q_p\ |\ v_p(x)\geq 0\}.
+  \end{align*}
+  Represent by $p^k\Z_p$ the elements with valuation greater than $k$.
+\end{definition}
+\begin{proposition}
+  Any rational $r$ thats represented as $p^k \frac{m}{n}$ belongs in $ma+p^{k+1}\Z_{(p)}$.
+\end{proposition}
+\begin{proof}[Sketch of proof]
+  It follows directly from Bezout's identity. There exists $a,b$ such that $an+bp =1$. It can then be shown that $r - p^k(ma) \in \Z_{(p)}$.
+\end{proof}
+\begin{theorem}
+  The map $\p: \Z\bign/p\Z \to \Z_{(p)}$ given by $c\mapsto p^k c + p^{k+1}\Z_{(p)}$ is a group isomorphism.
+\end{theorem}
+\begin{theorem}
+  Any $p-$adic number $x$ with valuation $k$ can be expressed as
+  \begin{align*}
+    x = \sum_{j=k}^\infty c_j p^j
+  \end{align*}
+\end{theorem}
