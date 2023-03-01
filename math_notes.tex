@@ -68,7 +68,8 @@
 \pdfsuppresswarningpagegroup=1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %for only compiling specific files
-%\includeonly{algebra/rings, algebra/ideals}
+%\includeonly{algebra/rings/rings, algebra/rings/ideals, algebra/rings/factorization, algebra/rings/local}
+%\includeonly{topology/basic_defs, topology/cont, topology/connectedness}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
@@ -90,20 +91,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \part{Abstract Algebra \rm{1}}
-\include{algebra/intro}
-\include{algebra/permutation}
-\include{algebra/lagrange}
-\include{algebra/hom}
-\include{algebra/auto}
-\include{algebra/free}
-\include{algebra/action}
-\include{algebra/sylow}
-\include{algebra/classification}
+\include{algebra/groups/intro}
+\include{algebra/groups/permutation}
+\include{algebra/groups/lagrange}
+\include{algebra/groups/hom}
+\include{algebra/groups/auto}
+\include{algebra/groups/free}
+\include{algebra/groups/action}
+\include{algebra/groups/sylow}
+\include{algebra/groups/classification}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \part{Abstract Algebra \rm{2}}
-\include{algebra/rings}
-\include{algebra/ideals}
+\include{algebra/rings/rings}
+\include{algebra/rings/ideals}
+\include{algebra/rings/factorization}
+\include{algebra/rings/local}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \part{Real Analysis}
@@ -125,6 +128,7 @@
 \part{Topology}
 \include{topology/basic_defs}
 \include{topology/cont}
+\include{topology/connectedness}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \part{Measure Theory}
@@ -145,4 +149,5 @@
 \include{num_theory/prelims}
 \include{num_theory/ostrowski}
 \include{num_theory/padic}
+\include{num_theory/units}
 \end{document}
